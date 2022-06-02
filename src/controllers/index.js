@@ -94,6 +94,15 @@ module.exports = {
         } catch (error) {
             return res.render('error', {error});
         }
+    },
+
+    usersList: async (req, res) => {
+        try {
+            let users = await User.findAll({include:{all:true}});
+            return res.send(users);
+        } catch (error) {
+            return res.render('error', {error});
+        }
     }
 }
     
