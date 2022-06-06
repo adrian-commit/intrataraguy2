@@ -1,49 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<title>Side Navigation Bar</title>
-	<link rel="stylesheet" href="resources/css/styles2.css">
-	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-   
+	<title>TCE</title>
+    <link href="resources/css/menuLateral.css" rel="stylesheet">
+    <link href="resources/css/formul.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
-<body>
 
-<div class="wrapper">
-    <div class="sidebar">
-        <h2>Mis Tareas</h2>
-        
-        <ul>
-            <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="/register"><i class="fas fa-user"></i>Tablero/Usuarios</a></li>
-            <li><a href="/login"><i class="fas fa-address-card"></i>Login</a></li>
-            <li><a href="/tareas"><i class="fas fa-project-diagram"></i>Tareas</a></li>
 
-           
-        </ul> 
- 
+<!--Menu Vertical-->
+<body id="body"> 
+    <header>
+        <div class="icon__menu">
+            <i class="fas fa-bars" id="btn_open"></i>
+        </div>
+    </header>
+  
+    <div class="menu__side" id="menu_side">
+  
+        <div class="name__page">
+            <i class="far fa-address-card"></i>
+            <h4>Intranet TCE</h4>
+        </div>
+  
+        <div class="options__menu">	
+  
+            <a href="/" class="selected">
+                <div class="option">
+                    <i class="fas fa-home" title="Inicio"></i>
+                    <h4>Inicio</h4>
+                </div>
+            </a>
+  
+            <a href="/tareas">
+                <div class="option">
+                    <i class="far fa-file" title="Tarea"></i>
+                    <h4>Tarea</h4>
+                </div>
+              </a>
+  
+            <a href="/users">
+                <div class="option">
+                    <i class="far fa-id-badge" title="Usuarios"></i>
+                    <h4>Usuarios</h4>
+                </div>
+            </a>
+  
+  
+        </div>
+  
     </div>
-    <div class="main_content">
-        <div class="contenedor">
-            <h2>Página de Inicio</h2>
-            <% if (locals.login) { %>                
-                <h3>Usuario conectado: <strong><%= locals.name %></strong></h3>                        
-                <a href="logout" class="a-logout"><button>Cierre de sesion</button>  </a>
-            <%} else { %>
-                <h1><strong><%= locals.name %></strong></h1>   
-                <a href="login" class="a-login">Ir a Login</a>
-            <% } %>
-          </div>
-        <div class="header">Historial de tareas
-          
-</div>  
-        <div class="info">
-          <div>Aca va el hstorial de tareas</div>
-          <br>
-          <br>
-          <div>Aca va si llego, algunas tarjetas con datos numericos! cantidad de </div>
-      </div>
+
+
+    <!--Inicio de parte General-->
+    <div class="">
+        <h1>Conceptos generales</h1>
     </div>
-</div>
+    <br>
+    <br>
+    <div class="">
+        <h1>Vistas Generales</h1>
+    </div>
+    <br>
+    <br>
+    <div class="">
+        <h1>Calendario</h1>
+    </div>
+      
+        </body>
+
+        <script src="./resources/js/menulateral.js"></script>
 
 </html>
