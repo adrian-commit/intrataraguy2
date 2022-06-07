@@ -108,7 +108,7 @@ module.exports = {
     usersList: async (req, res) => {
         try {
             let users = await User.findAll({include:{all:true}});
-            return res.send(users);
+            return res.render('users', {users: users});
         } catch (error) {
             return res.render('error', {error});
         }
