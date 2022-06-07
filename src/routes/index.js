@@ -11,7 +11,8 @@ router.get('/', notLoggedMiddleware, index);
 router.get('/login', loggedMiddleware, login);
 router.get('/register', loggedMiddleware, register);
 router.get("/logout", logout);
-router.get('/usuarios',notLoggedMiddleware, usersList);
+router.get('/users',notLoggedMiddleware, usersList);
+
 
 router.post('/create', storage);
 router.post('/access', access);
