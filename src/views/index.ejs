@@ -21,7 +21,7 @@
     <div class="menu__side" id="menu_side">
   
         <div class="name__page">
-            <i class="far fa-address-card"></i>
+            <i class="fa-solid fa-users-rectangle"></i>
             <h4>Intranet TCE</h4>
         </div>
   
@@ -41,28 +41,31 @@
                 </div>
               </a>
   
-            <a href="/usuarios">
+            <a href="/users">
                 <div class="option">
                     <i class="far fa-id-badge" title="Usuarios"></i>
                     <h4>Usuarios</h4>
                 </div>
             </a>
 
-            
-        
-  
-  
+            <a href="/clientes">
+                <div class="option">
+                    <i class="fa-solid fa-person-chalkboard" title="Clientes"></i>
+                    <h4>Clientes</h4>
+                </div>
+            </a>
+
         </div>
   
-    </div>
-    <div class="main_content">
-        <div class="contenedor">
-            <% if (locals.login == true) { %>                
-                <h3>Usuario conectado: <strong><%= locals.user.userName %></strong></h3>                        
-                <a href="logout" class="a-logout"><button>Cierre de sesion</button>  </a>
-            <% } %>
-        </div>    
-    </div>
+            </div>
+            <div class="main_content">
+                <div class="contenedor">
+                    <% if (locals.login == true) { %>                
+                        <h3>Usuario conectado: <strong><%= locals.user.userName %></strong></h3>                        
+                        <a href="logout" class="a-logout"><button>Cierre de sesion</button>  </a>
+                    <% } %>
+                </div>    
+            </div>
     <br>
     <br>
     <br>
