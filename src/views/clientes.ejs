@@ -27,9 +27,18 @@
 
             <label for="staffQuantity">Cantidad de Empleados</label>
                 <input type="text" name="staffQuantity" required tabindex="5">
-
-            <label for="typeActivity">Tipo de Actividad</label>
-                <input type="text" name="typeActivity" required tabindex="6">
+                <br>
+                <br>
+                <label for="typeActivity">Tipo de Actividad</label>                          
+                <select id="rol" name="typeActivity" class="select-css" tabindex="6">
+                    <option value="Servicio" selected>Servicio</option>
+                    <option value="Agropecuaria">Agropecuario</option>
+                    <option value="Contruccion">Contruccion</option>
+                    <option value="Unipersonal">Unipersonal</option>
+                    <option value="Comercial">Comercial</option>                    
+                </select>
+                <br>
+                <br> 
 
                 <label for="rol">Tipo de Persona</label>                          
                 <select id="rol" name="typePerson" class="select-css" tabindex="7">
