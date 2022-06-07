@@ -39,8 +39,8 @@ app.use(userLogged);
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 app.use('/tareas', require('./routes/works'));
+app.use('/calendario', require('./routes/calendario'));
 app.use('/clientes', require('./routes/clientes'));
-
 
 //3-Invocamos a dotenv
 /*const dotenv = require('dotenv');
