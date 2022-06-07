@@ -5,57 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources/css/styles.css">
-    <title>clientes</title>
+    <title>Clientes</title>
 </head>
 <body>
     
     <div class="register-form">
 		<h1>Clientes TCE </h1>
-		<form action="/create" method="POST">
-            <label for="user">Nombre de Usuario</label>
-                <input 
-                type="text" 
-                name="userName" 
-                required tabindex="1" 
-                autofocus
-                >            
-            <label for="email">Email</label>
-                <input 
-                type="email" 
-                name="email" 
-                required tabindex="2"
-                >
-            <label for="rol">Rol</label>                          
-            <select 
-            id="rol" 
-            name="rol" 
-            class="select-css" 
-            tabindex="3"
-            >
-                <option value="admin" selected>Admin</option>
-                <option value="data entry">Data Entry</option>                    
-            </select>
+		<form action="/register" method="POST">
+
+            <label for="name">Nombre Cliente</label>
+                <input type="text" name="name" required tabindex="1" autofocus>
+
+            <label for="businessName">Razon Social</label>
+                <input type="text" name="businessName" required tabindex="2">
+
+            <label for="cuit">CUIT</label>
+                <input type="text" name="cuit" required tabindex="3">
+            
+            <label for="officesQuantity">Cantidad Sucursales</label>
+                <input type="text" name="officesQuantity" required tabindex="4">
+
+            <label for="staffQuantity">Cantidad de Empleados</label>
+                <input type="text" name="staffQuantity" required tabindex="5">
+
+            <label for="typeActivity">Tipo de Actividad</label>
+                <input type="text" name="typeActivity" required tabindex="6">
+
+                <label for="rol">Tipo de Persona</label>                          
+                <select id="rol" name="typePerson" class="select-css" tabindex="7">
+                    <option value="Fisica" selected>Fisica</option>
+                    <option value="Juridica">Juridica</option>                    
+                </select>
+             <br>
              <br> 
-            <label for="pass">Password</label>
-			    <input 
-                type="password" 
-                name="pass" 
-                required tabindex="4"
-                >
+             <br>  
+        
             <div style="display: inline;">             
-            <a href="/clientes" class="btn-cancel">Cancel</a><input type="submit" class="btn-save" value="Save">           
+            <a href="/" class="btn-cancel">Cancelar</a><input type="submit" class="btn-save" value="Cargar">           
             </div>
 		</form>		
 	</div>
-   
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <% if(typeof alert != "undefined") {  %>
         <script>
             Swal.fire({
                 title:'<%= alertTitle%>',
                 text:'<%= alertMassage%>',
                 icon:'<%= alertIcon%>',
+                icon:'<%= %>',
                 showConfirmButton:'<%= showConfirmButton%>',
                 timer:'<%= timer%>',
             }).then(()=>{

@@ -1,4 +1,4 @@
-const {login,register,clientes} = require('../controllers/clientes');
+const {clientes} = require('../controllers/clientes');
 const {Router} = require('express');
 const router = Router();
 
