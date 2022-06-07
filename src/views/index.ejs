@@ -26,12 +26,9 @@
     <div class="main_content">
         <div class="contenedor">
             <h2>Página de Inicio</h2>
-            <% if (locals.login) { %>                
-                <h3>Usuario conectado: <strong><%= locals.name %></strong></h3>                        
+            <% if (locals.login == true) { %>                
+                <h3>Usuario conectado: <strong><%= locals.user.userName %></strong></h3>                        
                 <a href="logout" class="a-logout"><button>Cierre de sesion</button>  </a>
-            <%} else { %>
-                <h1><strong><%= locals.name %></strong></h1>   
-                <a href="login" class="a-login">Ir a Login</a>
             <% } %>
           </div>
         <div class="header">Historial de tareas

@@ -3,9 +3,7 @@ const {hashSync, compareSync} = require('bcryptjs');
 const session = require('express-session');
 
 module.exports = {
-    index: (req, res) => {
-        res.render('index');
-    },
+    
     login: (req, res)=>{
         res.render('login'); 
     },
@@ -16,7 +14,7 @@ module.exports = {
 
     storage: async (req, res) => {
         try {
-            let userInDb = await User.findAll({where:{email: req.body.email}});
+            let userInDb = await User.findAll({where:{email: req.body.email},include:{all:true}});
             if (userInDb != "") {
                 return res.render('register', {
                     alert: true,
@@ -54,22 +52,22 @@ module.exports = {
 
     access: async (req, res) => {
         try {
-            let userLogin = await User.findOne({where:{email: req.body.email}});
+            let userLogin = await User.findOne({where:{email: req.body.email},include:{all:true}});
             if (userLogin) {
                 let userPass = compareSync(req.body.pass, userLogin.password);
                 if (userPass) {
                     delete userLogin.password;
                     req.session.userLogged = userLogin;
-                    console.log(req.session);
-                    return res.render('index', {
-                        alert: true,
+                    return res.redirect('/');
+                    /* , {
+                        /* alert: true,
                         alertTitle: "Conexión Exitosa",
                         alertMassage: "¡LOGIN CORRECTO!",
                         alertIcon: 'succes',
                         showConfirmButton: false,
                         timer:2500,
-                        ruta:'index'
-                    })
+                        ruta:'/' */ 
+                    
                 }
                 return res.render('login',{
                     alert: true,
@@ -94,6 +92,17 @@ module.exports = {
         } catch (error) {
             return res.render('error', {error});
         }
+    },
+
+    index: (req,res) => {
+        res.render('index', {user:req.session.userLogged}); 
+        console.log(req.session.userLogged);
+            
+    },
+
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect('login');
     },
 
     usersList: async (req, res) => {
