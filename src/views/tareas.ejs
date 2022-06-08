@@ -15,11 +15,11 @@
 <!--Formuario Vertical-->
 <body id="body">
     
-  <header>
+<header>
       <div class="icon__menu">
           <i class="fas fa-bars" id="btn_open"></i>
       </div>
-  </header>
+</header>
 
   <div class="menu__side" id="menu_side">
 
@@ -65,29 +65,27 @@
             </div>
         </a>
 
-
+        <a href="/datosPersonales">
+            <div class="option">
+                <i class="fa-regular fa-face-smile" title="Calendario"></i>
+                <h4>Datos Personales/Registro</h4>
+            </div>
+        </a>
       </div>
-
-  </div>
-
-
-
-
+    </div>
 <br>
-
-
+<br>
 <!--Formulario -->
 <div class="contenedor">
     <div class="hijo">
     <form >
         <h2>Mis   Tareas</h2>
         <label for="Clientes">Cliente</label>
-        <select id="Clientes" name="Clientes">
-        <option value="Clarc">Clarc</option>
-        <option value="Demonte">Demonte</option>
 
-        
-      </select>
+        <select id="Clientes" name="Clientes">
+         <option value="Clarc">Clarc</option>
+         <option value="Demonte">Demonte</option>
+        </select>
   
       <label for="Grupo">Grupo</label>
       <select id="Grupo" name="Grupo">
@@ -118,11 +116,11 @@
 
     </form>
     <div id="contenedor">
-      <div class="reloj" id="Horas">00</div>
-      <div class="reloj" id="Minutos">:00</div>
-      <div class="reloj" id="Segundos">:00</div>
-      <div class="reloj" id="Centesimas">:00</div>
-      <button class='btn btn-success btn-lg' type="button" name="start"></button>
+        <div class="reloj" id="Horas">00</div>
+        <div class="reloj" id="Minutos">:00</div>
+        <div class="reloj" id="Segundos">:00</div>
+        <div class="reloj" id="Centesimas">:00</div>
+    <button class='btn btn-success btn-lg' type="button" name="start"></button>
         <input type="button" class="boton" id="inicio" value="Inicio &#9658;" onclick="inicio();" >
         <input type="button" class="boton" id="parar" value="Pausa &#8718;" onclick="parar();" disabled>
         <input type="button" class="boton" id="continuar" value="Reinicio &#8634;" onclick="inicio();" disabled>
@@ -130,7 +128,6 @@
     </div>
   </div>
 </div>  
-
 
 </body>
 
