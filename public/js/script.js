@@ -1,3 +1,5 @@
+//Calendario-Scripts//
+
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
@@ -8,11 +10,11 @@ document.addEventListener('DOMContentLoaded', function() {
         right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
       },
       initialDate: new Date(),
-      navLinks: true, // can click day/week names to navigate views
-      businessHours: true, // display business hours
-      editable: true,
+      navLinks: true, 
+      businessHours: true, 
       selectable: true,
       locale: 'es',
+      themeSystem:'Darkly',
       buttonText:{
           today:'Hoy',
           month:'Mes',
