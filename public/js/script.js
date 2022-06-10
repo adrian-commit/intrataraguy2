@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
       businessHours: true, 
       selectable: true,
       locale: 'es',
-      themeSystem:'Darkly',
       buttonText:{
           today:'Hoy',
           month:'Mes',
