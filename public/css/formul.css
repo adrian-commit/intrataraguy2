@@ -67,6 +67,18 @@
    
    }
 
+   .columna{
+     background-color:#82A284;
+     color:#06283D;
+     padding:20px;
+     white: 25%;
+     margin:10px;
+   }
+
+   .grande{
+     display: flex;
+   }
+
 
 
 

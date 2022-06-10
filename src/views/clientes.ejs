@@ -13,7 +13,7 @@
 		<h1>Clientes TCE </h1>
 		<form action="/register" method="POST">
 
-            <label for="name">Nombre Cliente</label>
+            <label for="name">Nombre</label>
                 <input type="text" name="name" required tabindex="1" autofocus>
 
             <label for="businessName">Razon Social</label>
@@ -27,9 +27,21 @@
 
             <label for="staffQuantity">Cantidad de Empleados</label>
                 <input type="text" name="staffQuantity" required tabindex="5">
-
-            <label for="typeActivity">Tipo de Actividad</label>
-                <input type="text" name="typeActivity" required tabindex="6">
+            
+            <label for="timeExcersiceEnd">Fecha - Fin de Ejercicio</label>
+                <input type="text" name="timeExcersiceEnd" required tabindex="6">
+                <br>
+                <br>
+                <label for="typeActivity">Tipo de Actividad</label>                          
+                <select id="rol" name="typeActivity" class="select-css" tabindex="7">
+                    <option value="Servicio" selected>Servicio</option>
+                    <option value="Agropecuaria">Agropecuaria</option>
+                    <option value="Contruccion">Contruccion</option>
+                    <option value="Unipersonal">Unipersonal</option>
+                    <option value="Comercial">Comercial</option>                    
+                </select>
+                <br>
+                <br> 
 
                 <label for="rol">Tipo de Persona</label>                          
                 <select id="rol" name="typePerson" class="select-css" tabindex="7">

@@ -1,9 +1,9 @@
-const {clientes} = require('../controllers/clientes');
+const {calendario} = require('../controllers/calendario');
 const {Router} = require('express');
 const router = Router();
 
 
-router.get('/', clientes);
+router.get('/', calendario);
 
 
 

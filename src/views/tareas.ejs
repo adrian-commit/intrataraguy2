@@ -9,91 +9,82 @@
     <link href="resources/css/menuLateral.css" rel="stylesheet">
     <link href="resources/css/formul.css" rel="stylesheet">
     <link href="resources/css/cronometro.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ab05c0d697.js" crossorigin="anonymous"></script>
 </head>
 
 <!--Formuario Vertical-->
 <body id="body">
     
-  <header>
+<header>
       <div class="icon__menu">
           <i class="fas fa-bars" id="btn_open"></i>
       </div>
-  </header>
+</header>
 
   <div class="menu__side" id="menu_side">
 
       <div class="name__page">
-          <i class="far fa-address-card"></i>
+        <i class="fa-solid fa-users-rectangle"></i>
           <h4>Intranet TCE</h4>
       </div>
 
       <div class="options__menu">	
+        <a href="/" class="selected">
+            <div class="option">
+                <i class="fas fa-home" title="Inicio"></i>
+                <h4>Inicio</h4>
+            </div>
+        </a>
 
-          <a href="/" class="selected">
-              <div class="option">
-                  <i class="fas fa-home" title="Inicio"></i>
-                  <h4>Inicio</h4>
-              </div>
+        <a href="/tareas" class="selected">
+            <div class="option">
+                <i class="far fa-file" title="Tarea"></i>
+                <h4>Tareas</h4>
+            </div>
           </a>
 
-          <a href="/tareas">
-              <div class="option">
-                  <i class="far fa-file" title="Tarea"></i>
-                  <h4>Tarea</h4>
-              </div>
-            </a>
+        <a href="/users" class="selected">
+            <div class="option">
+                <i class="far fa-id-badge" title="Usuarios"></i>
+                <h4>Usuarios</h4>
+            </div>
+        </a>
 
-          <a href="/users">
-              <div class="option">
-                  <i class="far fa-id-badge" title="Usuarios"></i>
-                  <h4>Usuarios</h4>
-              </div>
-          </a>
+        <a href="/clientes" class="selected">
+          <div class="option">
+              <i class="fa-solid fa-person-chalkboard" title="Clientes"></i>
+              <h4>Clientes</h4>
+          </div>
+      </a>
 
-
+      <a href="/calendario" class="selected">
+          <div class="option">
+              <i class="fa-solid fa-calendar-days" title="Calendario"></i>
+              <h4>Calendario</h4>
+          </div>
+      </a>
+      <a href="/datosPersonales" class="selected">
+          <div class="option">
+              <i class="fa-regular fa-face-smile" title="Calendario"></i>
+              <h4>Datos Personales</h4>
+          </div>
+      </a>
+          
       </div>
-
-  </div>
-
-
-
-
+    </div>
 <br>
-
-
+<br>
 <!--Formulario -->
 <div class="contenedor">
     <div class="hijo">
     <form >
         <h2>Mis   Tareas</h2>
         <label for="Clientes">Cliente</label>
+
         <select id="Clientes" name="Clientes">
-        <option value="Clarc">Clarc</option>
-        <option value="Demonte">Demonte</option>
-        <option value="ACOSTA EUSEBIO HERNAN">ACOSTA EUSEBIO HERNAN </option>
-        <option value="AL SRL">AL SRL</option>
-        <option value="ALBERGUCCI ENRIQUE TOMAS">ALBERGUCCI ENRIQUE TOMAS</option>
-        <option value="ALEMANY LILIAN GRACIELA">ALEMANY LILIAN GRACIELA</option>
-        <option value="ANA GALVEZ DE SWICSZS">ANA GALVEZ DE SWICSZS</option>
-        <option value="AVANZAR SA">AVANZAR SA</option>
-        <option value="AYALA AUTOMOTORES SA">AYALA AUTOMOTORES SA</option>
-        <option value="AYALA GERARDO">AYALA GERARDO</option>
-        <option value="AYALA RAMON">AYALA RAMON</option>
-        <option value="AYALA SILVINA">AYALA SILVINA</option>
-        <option value="AZ SA">AZ SA</option>
-        <option value="AZ SA MECAR SA - UT">AZ SA MECAR SA - UT</option>
-        <option value="B & C SRL">B & C SRL</option>
-        <option value="BEDINI LILIANA">BEDINI LILIANA</option>
-        <option value="BRAS TEC SA">BRAS TEC SA</option>
-        <option value="BUSELLATO DELIA">BUSELLATO DELIA</option>
-        <option value="CABAC SRL">CABAC SRL</option>
-        <option value="CASINOS DEL CHACO SA">CASINOS DEL CHACO SA</option>
-        <option value="CASINOS DEL LITORAL">CASINOS DEL LITORAL</option>
-        <option value="CASINOS GALA SA">CASINOS GALA SA</option>
-        <option value="CASTRO LUIS">CASTRO LUIS</option>
-        
-      </select>
+         <option value="Clarc">Clarc</option>
+         <option value="Demonte">Demonte</option>
+        </select>
   
       <label for="Grupo">Grupo</label>
       <select id="Grupo" name="Grupo">
@@ -124,11 +115,11 @@
 
     </form>
     <div id="contenedor">
-      <div class="reloj" id="Horas">00</div>
-      <div class="reloj" id="Minutos">:00</div>
-      <div class="reloj" id="Segundos">:00</div>
-      <div class="reloj" id="Centesimas">:00</div>
-      <button class='btn btn-success btn-lg' type="button" name="start"></button>
+        <div class="reloj" id="Horas">00</div>
+        <div class="reloj" id="Minutos">:00</div>
+        <div class="reloj" id="Segundos">:00</div>
+        <div class="reloj" id="Centesimas">:00</div>
+    <button class='btn btn-success btn-lg' type="button" name="start"></button>
         <input type="button" class="boton" id="inicio" value="Inicio &#9658;" onclick="inicio();" >
         <input type="button" class="boton" id="parar" value="Pausa &#8718;" onclick="parar();" disabled>
         <input type="button" class="boton" id="continuar" value="Reinicio &#8634;" onclick="inicio();" disabled>
@@ -136,7 +127,6 @@
     </div>
   </div>
 </div>  
-
 
 </body>
 

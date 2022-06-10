@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #d8d9da;
+}
+
+.calendar{
+    padding: 20px 40px;
+}
+
+.months-container{
+    gap: 40px;
+    justify-content: center;
+}
+
+.calendar .months-container .month-container{
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    min-width: 280px;
+    box-shadow: 15px 15px 40px rgba(0,0,0,0.15);
+}
+
+.calendar table.month th.month-title{
+    font-size: 30px;
+    font-weight:500;
+    font-family: Cambria, Cochin, Georgia, 'Times New Roman', serif;  
+} 
+
+.calendar table.month td:first-child,
+.calendar table.month td:last-child,
+.calendar table.month thead tr:nth-child(2) th:first-child,
+.calendar table.month thead tr:nth-child(2) th:last-child{
+    color: crimson;
+}
+
+.calendar table.month td.day .day .day-content{
+    padding: 6px 9px;
+}
+
+.calendar table.month th.day-header {
+    font-size: 14px;
+}
+
+.month tr td{
+    font-size:14 px;
+    font-weight: 500 ;
+    color: #777; 
+}
+
+table.month td.day .day-content:hover {
+    background: rgba(30, 63, 250, 0.83);
+    color: #fff;
+}
+    
+
+

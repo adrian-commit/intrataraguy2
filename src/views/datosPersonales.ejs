@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resources/css/styles.css">
+    <title>Datos Personales / Profesionales TCA</title>
+</head>
+<body>
+    
+    <div class="register-form">
+		<h1>Datos Personales, Profesionales-TCE </h1>
+		<form action="/register" method="POST">
+
+        <br>
+        <br>
+
+            <label for="firstname">Nombre</label>
+                <input type="text" name="firstname" required tabindex="1" autofocus>
+
+            <label for="LastName">Apellido</label>
+                <input type="text" name="LastName" required tabindex="2" autofocus>
+
+            <label for="dni">DNI</label>
+                <input type="text" name="dni" required tabindex="3">
+
+            <label for="telephone">Telefono</label>
+                <input type="text" name="telephone" required tabindex="4">
+            
+            <label for="birhtDay">Cumpleaños</label>
+                <input type="text" name="birhtDay" required tabindex="5">
+
+            <label for="profession">Profesion</label>
+                <input type="text" name="profession" required tabindex="6">
+            
+            <label for="hobbie">Hobbie</label>
+                <input type="text" name="hobbie" required tabindex="7">
+            
+            <label for="childrens">Hijos</label>
+                <input type="text" name="childrens" required tabindex="8">
+
+        <br>
+        <br>
+            <label for="teams">Equipo de Trabajo</label>                          
+                <select id="rol" name="teams" class="select-css" tabindex="9">
+                <option value="Info 1" selected>Info 1</option>
+                <option value="Info 2">Info 2</option>
+                <option value="Info 3">Info 3</option>
+                <option value="Info 4">Info 4</option>
+                <option value="Laboral">Laboral</option>                    
+                </select>
+        <br>
+        <br> 
+        <br> 
+                 <div style="display: inline;">             
+                <a href="/" class="btn-cancel">Cancelar</a><input type="submit" class="btn-save" value="Cargar">           
+            </div>
+		</form>		
+	</div>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <% if(typeof alert != "undefined") {  %>
+        <script>
+            Swal.fire({
+                title:'<%= alertTitle%>',
+                text:'<%= alertMassage%>',
+                icon:'<%= alertIcon%>',
+                icon:'<%= %>',
+                showConfirmButton:'<%= showConfirmButton%>',
+                timer:'<%= timer%>',
+            }).then(()=>{
+                window.location='/<%= ruta %>'
+            })
+
+        </script>    
+
+    <%  } %> 
+
+</body>
+</html>
