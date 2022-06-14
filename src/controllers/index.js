@@ -1,6 +1,7 @@
 const {User,DataUser,Client} = require('../database/models');
 const {hashSync, compareSync} = require('bcryptjs');
 const session = require('express-session');
+const db = require('../database/models');
 
 module.exports = {
     
@@ -112,6 +113,7 @@ module.exports = {
             return res.render('error', {error});
         }
     },
+
 
     datosPersonales: (req, res)=>{
         res.render('datosPersonales');

@@ -1,0 +1,40 @@
+table, th, td {
+    border: 1px solid;
+    padding: 15px;
+    text-align: left;
+  }
+
+  table {
+    width: 100%;
+  }
+  
+  th {
+    height: 70px;
+    text-align: left;
+  }
+
+  td {
+    text-align: center;
+    height: 50px;
+    vertical-align: bottom;
+  }
+
+  tr:hover {background-color: coral;}
+
+  tr {
+    text-align: center;
+  }
+
+.bot-1{
+    color:green;
+    text-align: center;
+    height: 100px;
+    
+}
+
+.bot-2{
+    color: red;
+    text-align: center;
+    height: 100px;
+  
+}

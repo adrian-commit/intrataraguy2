@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="menu.css" content="width=device-width, initial-scale=1.0">
     <link href="resources/css/menuLateral.css" rel="stylesheet">
+    <link href="resources/css/tablas.css" rel="stylesheet">
     <link href="resources/css/formul.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
@@ -22,30 +23,43 @@
 <br>
 
 
-<div class="container">
+<div class="">
+    <h1>Listado de usuarios</h1>
+    <br>
+    <br>
+    <div style="overflow-x:auto;">
     <table>
         <thead>
-            <tr class="tabla-usuario">
+            <tr class="">
                 <th>ID</th>
-                <th>USUARIO</th>
-                <th>ROL</th>
+                <th>NOMBRE</th>
+                <th>EMAIL</th>
+                <th>MODIFICACIONES</th>
+                
             </tr>
         </thead>
         <tbody>
         
-            <tr>
-                <td><% users.id %> </td>
-                <td><% users.userName %> </td>
-                <td><% users.is_admin %> </td>
+           
+                <% for (let i = 0;i < users.length; i++) { %>
+                <tr>
+                <td><%=users[i].id%> </td>
+                <td><%=users[i].userName%> </td>
+                <td><%=users[i].email%> </td>
+
                 <td>
-                    <a href="/edit" class="">EDITAR</a>
-                    <a href="/delete" class="">BORRAR</a>
+                   <button><a href="/edit" class="bot-1"><i class="fa-regular fa-id-badge"></i> -ALTAS</a></button>
+                   <button><a href="/delete" class="bot-2"><i class="fa-solid fa-skull-crossbones"></i> -BAJAS</a></button>
                 </td>
+
+                <% } %> 
+
+                
             </tr>
             
         </tbody>
     </table>
-  
+</div>
 </div>  
 
 </body>
