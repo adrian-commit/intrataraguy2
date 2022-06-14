@@ -1,4 +1,4 @@
-const {User,DataUser} = require('../database/models');
+const {User,DataUser,Client} = require('../database/models');
 const {hashSync, compareSync} = require('bcryptjs');
 const session = require('express-session');
 
@@ -96,7 +96,6 @@ module.exports = {
 
     index: (req,res) => {
         res.render('index', {user:req.session.userLogged}); 
-        console.log(req.session.userLogged);
             
     },
 
@@ -112,6 +111,58 @@ module.exports = {
         } catch (error) {
             return res.render('error', {error});
         }
-    }
+    },
+
+    datosPersonales: (req, res)=>{
+        res.render('datosPersonales');
+    },
+
+    storageInfo: async (req,res) => {
+        try {
+            let newInfo = await DataUser.findByPk(req.body.id);
+            await newInfo.update({
+                firstName:req.body.firstName,
+                lastName:req.body.lastName,
+                dni:req.body.dni,
+                telephone:req.body.telephone,
+                birthDay:req.body.birthDay,
+                profession:req.body.profession,
+                hobbie:req.body.hobbie,
+                childrens:req.body.childrens == 'si' ? true : false,
+                team:req.body.teams,
+                user_id: newInfo.user_id
+            })
+            return res.send(newInfo);
+        } catch (error) {
+            return res.render('error', {error});
+        }
+    },
+
+    clientes: (req, res)=>{
+            res.render('clientes');
+    },
+
+    storageClient: async (req,res) => {
+        try {
+            let newClient = await Client.create({
+                name:req.body.name,
+                businessName:req.body.businessName,
+                typePerson:req.body.typePerson,
+                cuit:req.body.cuit,
+                officesQuantity:req.body.officesQuantity,
+                staffQuantity:req.body.staffQuantity,
+                typeActivity:req.body.typeActivity,
+                timeExerciseEnd:req.body.timeExerciseEnd
+            });
+            return res.send(newClient);
+        } catch (error) {
+            return res.render('error', {error});
+        }
+    },
+    
+    calendario: (req, res)=>{
+            res.render('calendario');
+    },
+
 }
     

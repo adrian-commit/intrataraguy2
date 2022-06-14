@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
           type: DataTypes.STRING,
           allowNull: true
         },
-        LastName: {
+        lastName: {
           type: DataTypes.STRING,
           allowNull: true
         },
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
           type: DataTypes.TEXT,
           allowNull: true
         },
-        hoobie: {
+        hobbie: {
           type: DataTypes.TEXT,
           allowNull: true
         },

@@ -11,16 +11,16 @@
     
     <div class="register-form">
 		<h1>Datos Personales, Profesionales-TCE </h1>
-		<form action="/register" method="POST">
+		<form action="/createPersonalInfo" method="POST">
 
         <br>
         <br>
-
+            <input type="hidden" name="id" id="id" value="<%= locals.user.id %>">
             <label for="firstname">Nombre</label>
-                <input type="text" name="firstname" required tabindex="1" autofocus>
+                <input type="text" name="firstName" required tabindex="1" autofocus>
 
             <label for="LastName">Apellido</label>
-                <input type="text" name="LastName" required tabindex="2" autofocus>
+                <input type="text" name="lastName" required tabindex="2" autofocus>
 
             <label for="dni">DNI</label>
                 <input type="text" name="dni" required tabindex="3">
@@ -28,8 +28,8 @@
             <label for="telephone">Telefono</label>
                 <input type="text" name="telephone" required tabindex="4">
             
-            <label for="birhtDay">Cumpleaños</label>
-                <input type="text" name="birhtDay" required tabindex="5">
+            <label for="birthDay">Cumpleaños</label>
+                <input type="date" name="birthDay" required tabindex="5">
 
             <label for="profession">Profesion</label>
                 <input type="text" name="profession" required tabindex="6">
@@ -37,8 +37,9 @@
             <label for="hobbie">Hobbie</label>
                 <input type="text" name="hobbie" required tabindex="7">
             
-            <label for="childrens">Hijos</label>
-                <input type="text" name="childrens" required tabindex="8">
+            <label for="childrens">Hijos: </label>
+                <input type="radio" id="Si" name="childrens" value="si" required tabindex="8"><label for="Si">Si</label>
+                <input type="radio" id="No" name="childrens" value="no" required tabindex="8" checked><label for="No">No</label>
 
         <br>
         <br>
