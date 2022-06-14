@@ -22,8 +22,30 @@
 <br>
 
 
-<div class="">
-  <h1>Panel de Usuarios</h1>
+<div class="container">
+    <table>
+        <thead>
+            <tr class="tabla-usuario">
+                <th>ID</th>
+                <th>USUARIO</th>
+                <th>ROL</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td><% users.id %> </td>
+                <td><% users.userName %> </td>
+                <td><% users.is_admin %> </td>
+                <td>
+                    <a href="/edit" class="">EDITAR</a>
+                    <a href="/delete" class="">BORRAR</a>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+  
 </div>  
 
 </body>
