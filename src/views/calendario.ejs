@@ -17,65 +17,7 @@
 <!--Formuario Vertical-->
 <body id="body">
     
-  <header>
-      <div class="icon__menu">
-          <i class="fas fa-bars" id="btn_open"></i>
-      </div>
-  </header>
-
-  <div class="menu__side" id="menu_side">
-
-      <div class="name__page">
-        <i class="fa-solid fa-users-rectangle"></i>
-          <h4>Intranet TCE</h4>
-      </div>
-
-      <div class="options__menu">	
-
-          <a href="/" class="selected">
-              <div class="option">
-                  <i class="fas fa-home" title="Inicio"></i>
-                  <h4>Inicio</h4>
-              </div>
-          </a>
-
-          <a href="/tareas" class="selected">
-              <div class="option">
-                  <i class="far fa-file" title="Tarea"></i>
-                  <h4>Tareas</h4>
-              </div>
-            </a>
-
-          <a href="/users" class="selected">
-              <div class="option">
-                  <i class="far fa-id-badge" title="Usuarios"></i>
-                  <h4>Usuarios</h4>
-              </div>
-          </a>
-
-          <a href="/clientes" class="selected">
-            <div class="option">
-                <i class="fa-solid fa-person-chalkboard" title="Clientes"></i>
-                <h4>Clientes</h4>
-            </div>
-        </a>
-
-        <a href="/calendario" class="selected">
-            <div class="option">
-                <i class="fa-solid fa-calendar-days" title="Calendario"></i>
-                <h4>Calendario</h4>
-            </div>
-        </a>
-        <a href="/datosPersonales" class="selected">
-            <div class="option">
-                <i class="fa-regular fa-face-smile" title="Calendario"></i>
-                <h4>Datos Personales</h4>
-            </div>
-        </a>
-
-      </div>
-
-  </div>
+    <%- include("./includes/menu")%>
 
 
 

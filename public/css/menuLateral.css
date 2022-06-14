@@ -25,10 +25,18 @@ header{
     height: 80px;
     background: #f5f5f5;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0;
     z-index: 200;
+}
+
+.user_menu {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .icon__menu{
@@ -85,6 +93,7 @@ header{
     width: 20px;
     margin-right: 20px;
 }
+
 
 .options__menu{
     padding: 20px 30px;
@@ -148,6 +157,9 @@ a.selected{
 
 
 @media screen and (max-width: 760px){
+    header {
+        max-width: 1024px;
+    }
     .body_move{
         margin-left: 0px;
     }

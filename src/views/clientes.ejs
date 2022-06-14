@@ -11,7 +11,7 @@
     
     <div class="register-form">
 		<h1>Clientes TCE </h1>
-		<form action="/register" method="POST">
+		<form action="/createClient" method="POST">
 
             <label for="name">Nombre</label>
                 <input type="text" name="name" required tabindex="1" autofocus>
@@ -20,16 +20,16 @@
                 <input type="text" name="businessName" required tabindex="2">
 
             <label for="cuit">CUIT</label>
-                <input type="text" name="cuit" required tabindex="3">
+                <input type="number" name="cuit" required tabindex="3">
             
             <label for="officesQuantity">Cantidad Sucursales</label>
-                <input type="text" name="officesQuantity" required tabindex="4">
+                <input type="number" name="officesQuantity" required tabindex="4">
 
             <label for="staffQuantity">Cantidad de Empleados</label>
-                <input type="text" name="staffQuantity" required tabindex="5">
+                <input type="number" name="staffQuantity" required tabindex="5">
             
-            <label for="timeExcersiceEnd">Fecha - Fin de Ejercicio</label>
-                <input type="text" name="timeExcersiceEnd" required tabindex="6">
+            <label for="timeExerciseEnd">Fecha - Fin de Ejercicio</label>
+                <input type="date" name="timeExerciseEnd" required tabindex="6">
                 <br>
                 <br>
                 <label for="typeActivity">Tipo de Actividad</label>                          

@@ -33,7 +33,7 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: true
       },
-      hoobie: {
+      hobbie: {
         type: Sequelize.TEXT,
         allowNull: true
       },

@@ -184,7 +184,9 @@ body{
   }
   .register-form input[type="password"],
   .register-form input[type="text"],
-  .register-form input[type="email"] {
+  .register-form input[type="email"],
+  .register-form input[type="date"],
+  .register-form input[type="number"] {
     width: 100%;
     padding: 15px;
     border: 1px solid #ced4da;

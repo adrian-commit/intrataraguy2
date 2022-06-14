@@ -12,7 +12,7 @@ module.exports = {
        telephone:37894555662,
        birthDay:'1992-09-16',
        profession: 'contador publico',
-       hoobie: 'correr',
+       hobbie: 'correr',
        childrens: false,
        team: 'info 1',
        user_id: 1
@@ -25,7 +25,7 @@ module.exports = {
       telephone:37945668967,
       birthDay:'1981-03-23',
       profession: 'contador publico',
-      hoobie: 'bailar',
+      hobbie: 'bailar',
       childrens: true,
       team: 'info 2',
       user_id: 2
