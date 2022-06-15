@@ -2,6 +2,7 @@ table, th, td {
     border: 1px solid;
     padding: 15px;
     text-align: left;
+   
   }
 
   table {
@@ -19,22 +20,39 @@ table, th, td {
     vertical-align: bottom;
   }
 
-  tr:hover {background-color: coral;}
+  tr:hover {background-color: #90c2eb;}
 
-  tr {
+  th {
     text-align: center;
+    background-color: #1874c0;
+    color: aliceblue;
+ 
   }
 
 .bot-1{
     color:green;
-    text-align: center;
-    height: 100px;
-    
+    clear:right;
+    text-align: right;
+    vertical-align:auto;
+    line-height:10px;
+
 }
 
 .bot-2{
-    color: red;
-    text-align: center;
-    height: 100px;
+    color: red; 
+    clear:right;
+    text-align: right;
+    vertical-align:auto;
+    line-height:10px;
+    
   
+}
+
+h1{
+  text-align: center;
+}
+
+i {
+ max-width:fit-content;
+ max-height: auto;
 }
