@@ -17,51 +17,43 @@
     
     <%- include("./includes/menu")%>
 
-
-
-
 <br>
 
+<!--Tabla de Usuarios-->
 
-<div class="">
-    <h1>Listado de usuarios</h1>
-    <br>
-    <br>
-    <div style="overflow-x:auto;">
-    <table>
-        <thead>
-            <tr class="">
-                <th>ID</th>
-                <th>NOMBRE</th>
-                <th>EMAIL</th>
-                <th>EDITAR</th>
-                <th>ELIMINAR</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-        
-           
-                <% for (let i = 0;i < users.length; i++) { %>
-                <tr>
-                <td><%=users[i].id%> </td>
-                <td><%=users[i].userName%> </td>
-                <td><%=users[i].email%> </td>
+        <div class="">
+            <h1>Listado de Usuarios</h1>
+            <br>
+            <br>
 
-                <td><a href="/datosPersonales"><i class="fa-regular fa-id-badge" style="color:darkgreen; opacity: 0.7; font-size: 40px;"></i></a></td>
-                <td><a href="#"><i class="fa-solid fa-skull-crossbones" style="color:red; opacity: 0.7; font-size: 40px;"></i></a></td>    
-                <% } %> 
+            <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <tr class="">
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>EMAIL</th>
+                        <th>EDITAR</th>
+                        <th>ELIMINAR</th>   
+                    </tr>
+                </thead>
+                <tbody>
+                        <% for (let i = 0;i < users.length; i++) { %>
+                        <tr>
+                        <td><%=users[i].id%> </td>
+                        <td><%=users[i].userName%> </td>
+                        <td><%=users[i].email%> </td>
 
-                
-            </tr>
-            
-        </tbody>
-    </table>
-</div>
-</div>  
+                        <td><a href="/datosPersonales"><i class="fa-regular fa-id-badge" style="color:darkgreen; opacity: 0.7; font-size: 40px;"></i></a></td>
+                        <td><a href="#"><i class="fa-solid fa-skull-crossbones" style="color:red; opacity: 0.7; font-size: 40px;"></i></a></td>    
+                        <% } %>                 
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>  
 
 </body>
 
-<script src="./resources/js/cronometro.js" ></script>
 <script src="./resources/js/menulateral.js"></script>
 </html>
