@@ -115,13 +115,13 @@ body{
   .btn-cancel{
     width: 50%;
     padding: 15px;
-    background-color: #9CA3AF;
+    background-color: #f15f51;
     border: 0;
     box-sizing: border-box;
     cursor: pointer;
     font-weight: bold;
     font-size:medium;
-    color: #ffffff;
+    color: #1E3A8A;
     text-align: center;
     margin-top: 20px;
     /* Para dar la apariencia de un boton */
@@ -144,13 +144,13 @@ body{
   .btn-save{
     width: 50%;
     padding: 15px;
-    background-color: #1D4ED8;
+    background-color: #82A284;
     border: 0;
     box-sizing: border-box;
     cursor: pointer;
     font-weight: bold;
     font-size:medium;
-    color: #ffffff;
+    color:#1E3A8A;
     margin-top: 20px;
     /* Para dar la apariencia de un boton */
     -webkit-appearance: button;
