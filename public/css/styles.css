@@ -1,9 +1,11 @@
 body{
     font-family: 'Roboto';  
-    background-color: #f5f5f5;
+    background-color: #DFDFDE;
     margin: auto;
     text-align: center;
   }
+
+
   
   /* Login form */
   .login-form, .contenedor {
@@ -177,10 +179,11 @@ body{
   }
   
   .register-form h1 {
-    text-align: left;
+    text-align: center;
     color:midnightblue ;
-    font-size: 22px;
+    font-size: 40px;
     padding: 70px 0 10px 0;
+
   }
   .register-form input[type="password"],
   .register-form input[type="text"],

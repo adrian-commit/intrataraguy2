@@ -27,12 +27,12 @@
   }
   
  .hijo {
-    border-radius: 50px;
+    border-radius: 10px;
     width: 35%;
     background-color: #f2f2f2;
     padding: 20px;
     margin: 0 auto;
-    font-family: 'Lato', sans-serif;
+    font-family: Helvetica;
   }
 
   body{
@@ -41,7 +41,12 @@
 
   .hijo h2{
       margin:5%;
-      height: 30px;
+      height: 20px;
+      text-align: center;
+      font-size: 55px;
+      color:#140101; 
+      background-color: #3aad02;height: max-content; border-radius: 10px; opacity: 0.8;
+      font-family: Helvetica;
   
   }
 
@@ -71,7 +76,7 @@
      background-color:#82A284;
      color:#06283D;
      padding:20px;
-     white: 25%;
+     width: 30%;
      margin:10px;
    }
 
