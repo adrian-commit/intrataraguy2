@@ -43,9 +43,19 @@ table, th, td {
     clear:right;
     text-align: right;
     vertical-align:auto;
-    line-height:10px;
-    
-  
+    line-height:10px;      
+}
+
+.bot-exportar{
+  text-align: center;
+  padding: 2px;
+  background-color: #90c2eb;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  clear:right;
+  text-decoration: none;
+  display: inline-block;
+
 }
 
 h1{
@@ -55,4 +65,15 @@ h1{
 i {
  max-width:fit-content;
  max-height: auto;
+}
+
+.boton-1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: #a2aaa3;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 5px;
 }
