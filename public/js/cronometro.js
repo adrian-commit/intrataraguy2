@@ -1,5 +1,4 @@
 
-
 var centesimas = 0;
 var segundos = 0;
 var minutos = 0;
@@ -62,3 +61,53 @@ function cronometro () {
 		Horas.innerHTML = horas;
 	}
 }
+
+//-- capturar los lugares donde van los inputs --//
+const displayInicio = document.getElementById('displayInicio');
+const displayPausa = document.getElementById('displayPausa');
+const displayContinuar = document.getElementById('displayContinuar');
+const displayFin = document.getElementById('displayFin');
+//-- capturar los botones --//
+const play = document.getElementById('inicio');
+const pausa = document.getElementById('parar');
+const continuar = document.getElementById('continuar');
+const fin = document.getElementById('reinicio');
+
+//-- capturar el input de fecha --//
+const fecha = document.getElementById('fecha');
+
+//-- setear para colocar el tiempo adentro del formulario--//
+const tiempoInicio = play.addEventListener('click', () => {
+	displayInicio.innerHTML = ` 
+	<label for="tiempoInicio">Inicio: </label>
+	<input id="tiempoInicio" type="time" name="tiempoInicio" value="${dayjs().format('hh:mm:ss')}" readonly>
+	` ;
+});  
+
+const tiempoPausa = pausa.addEventListener('click', () => {
+	displayPausa.innerHTML = ` 
+	<label for="tiempoPausa">Pausa: </label>
+	<input id="tiempoPausa" type="time" name="tiempoPausa" value="${dayjs().format('hh:mm:ss')}" readonly>
+	` ;
+});  
+
+const tiempoContinuar = continuar.addEventListener('click', () => {
+	displayContinuar.innerHTML = ` 
+	<label for="tiempoContinuar">Continuar: </label>
+	<input id="tiempoContinuar" type="time" name="tiempoContinuar" value="${dayjs().format('hh:mm:ss')}" readonly>
+	` ;
+});  
+
+const tiempoFin = fin.addEventListener('click', () => {
+	displayFin.innerHTML = ` 
+	<label for="tiempoFin">Terminar: </label>
+	<input id="tiempoFin" type="time" name="tiempoFin" value="${dayjs().format('hh:mm:ss')}" readonly>
+	` ;
+});
+
+//-- setear para colocar la fecha adentro del formulario--//
+const agregarFecha = fecha.innerHTML = ` 
+<label for="date">fecha</label>
+<input type="date" id="date" name="date" value="${dayjs().format('YYYY-MM-DD')}" readonly> 
+` 
+

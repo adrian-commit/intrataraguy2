@@ -59,6 +59,11 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
       });
 
+      Client.hasMany(models.Work, {
+        as:'tarea',
+        foreignKey: 'client'
+      })
+
     }
    
     return Client; 

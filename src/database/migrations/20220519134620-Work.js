@@ -21,6 +21,18 @@ module.exports = {
         type: Sequelize.DATEONLY,
         allowNull: false
       },
+      client: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      team: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      observations: {
+        type: Sequelize.TEXT,
+        allowNull: false
+      },
       timeBeginning: {
         type: Sequelize.TIME,
         allowNull: false
@@ -37,6 +49,11 @@ module.exports = {
         type: Sequelize.TIME,
         allowNull: true
       },
+      condition: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        default:'Pendiente'
+      }
     });
 
   },

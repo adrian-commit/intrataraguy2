@@ -20,6 +20,18 @@ module.exports = (sequelize, DataTypes) => {
           type: DataTypes.DATEONLY,
           allowNull: false
         },
+        client: {
+          type: DataTypes.INTEGER,
+          allowNull: false
+        },
+        team: {
+          type: DataTypes.STRING,
+          allowNull: false
+        },
+        observations: {
+          type: DataTypes.TEXT,
+          allowNull: false
+        },
         timeBeginning: {
           type: DataTypes.TIME,
           allowNull: false
@@ -35,6 +47,11 @@ module.exports = (sequelize, DataTypes) => {
         timeContinue: {
           type: DataTypes.TIME,
           allowNull: true
+        },
+        condition: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          default:'Pendiente'
         }
     }
 
@@ -49,6 +66,11 @@ module.exports = (sequelize, DataTypes) => {
       Work.hasOne(models.Service, {
         as: 'servicio',
         foreignKey: 'tarea_id'
+      })
+
+      Work.belongsTo(models.Client, {
+        as: 'cliente',
+        foreignKey:'client'
       })
       
     }

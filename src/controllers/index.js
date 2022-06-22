@@ -1,4 +1,4 @@
-const {User,DataUser,Client} = require('../database/models');
+const {User,DataUser,Client,Team} = require('../database/models');
 const {hashSync, compareSync} = require('bcryptjs');
 const session = require('express-session');
 
@@ -14,7 +14,7 @@ module.exports = {
 
     storage: async (req, res) => {
         try {
-            let userInDb = await User.findAll({where:{email: req.body.email},include:{all:true}});
+            let userInDb = await User.findAll({where:{email: req.body.email}});
             if (userInDb != "") {
                 return res.render('register', {
                     alert: true,
@@ -26,10 +26,13 @@ module.exports = {
                     ruta:'register'
                 })
             } else {
+                let team = await Team.findOne({where:{name:req.body.team}});
+                console.log(team);
                 let newUser = await User.create({
                     userName: req.body.userName,
                     email: req.body.email,
                     password: hashSync(req.body.pass, 10),
+                    team_id: team.id,
                     is_admin: req.body.rol == 'admin' ? true : req.body.rol == 'data entry' ? false : false
                 })
                 let newDataUser = await DataUser.create({
@@ -59,14 +62,6 @@ module.exports = {
                     delete userLogin.password;
                     req.session.userLogged = userLogin;
                     return res.redirect('/');
-                    /* , {
-                        /* alert: true,
-                        alertTitle: "Conexión Exitosa",
-                        alertMassage: "¡LOGIN CORRECTO!",
-                        alertIcon: 'succes',
-                        showConfirmButton: false,
-                        timer:2500,
-                        ruta:'/' */ 
                     
                 }
                 return res.render('login',{

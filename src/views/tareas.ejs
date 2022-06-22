@@ -21,43 +21,51 @@
 <!--Formulario -->
 <div class="contenedor">
     <div class="hijo">
-    <form >
-        <h2>Mis   Tareas</h2>
-        <label for="Clientes">Cliente</label>
+    <form action="/tareas/create" method="POST">
+      <h2>Mis   Tareas</h2>
 
-        <select id="Clientes" name="Clientes">
-         <option value="Clarc">Clarc</option>
-         <option value="Demonte">Demonte</option>
-        </select>
-  
-      <label for="Grupo">Grupo</label>
-      <select id="Grupo" name="Grupo">
-        <option value="Info1">Info1</option>
-        <option value="Info2">Info2</option>
-        <option value="Info3">Info3</option>
-        <option value="Laboral">Laboral</option>
+      <label for="name">Tarea</label>
+      <select id="name" name="name">
+        <option value="Sueldos">Sueldos</option>
+        <option value="Iva - Impuestos">Iva - Impuestos</option>
+        <option value="Ganancias - Impuestos">Ganancias - Impuestos</option>
       </select>
-  
-      <label for="Area">Area</label>
-      <select id="Area" name="Area">
+
+      <label for="area">Area</label>
+      <select id="area" name="area">
         <option value="Laboral">Laboral</option>
         <option value="Impositivo">Impositivo</option>
         <option value="Contabilidad y Auditoria">Contabilidad y Auditoria</option>
       </select>
 
-      <label for="Area">Tarea</label>
-      <select id="Area" name="Area">
-        <option value="Sueldos">Sueldos</option>
-        <option value="Iva - Impuestos">Iva - Impuestos</option>
-        <option value="Ganancias - Impuestos">Ganancias - Impuestos</option>
+      <label for="cliente">Cliente</label>
+      <select id="cliente" name="cliente">
+        <% clientes.forEach(cliente => { %>
+           <option value="<%= cliente.name %> "><%= cliente.name %></option>
+        <% }) %>
       </select>
-      
-      <label for="fname">Observaciones</label>
-      <input type="text" id="fname" name="fname">
+  
+      <label for="equipo">Equipo</label>
+      <select id="equipo" name="equipo">
+        <% equipos.forEach(equipo => { %>
+          <option value="<%= equipo.name %> "><%= equipo.name %></option>
+        <% }) %>
+      </select>
 
-         <!-- Cronometro-->
+      <label for="comment">Observaciones</label>
+      <input type="text" id="comment" name="comment">
 
+     <section id="fecha"></section> 
+     <section id="displayInicio"></section>
+     <section id="displayPausa"></section>
+     <section id="displayContinuar"></section>
+     <section id="displayFin"></section> 
+
+     <a href="/" class="btn-cancel">Cancelar</a>
+     <input type="submit" class="btn-save" value="Cargar">
     </form>
+    
+    <!-- Cronometro-->
     <div id="contenedor">
         <div class="reloj" id="Horas">00</div>
         <div class="reloj" id="Minutos">:00</div>
@@ -66,15 +74,19 @@
     <button class='btn btn-success btn-lg' type="button" name="start"></button>
         <input type="button" class="boton" id="inicio" value="Inicio &#9658;" onclick="inicio();" >
         <input type="button" class="boton" id="parar" value="Pausa &#8718;" onclick="parar();" disabled>
-        <input type="button" class="boton" id="continuar" value="Reinicio &#8634;" onclick="inicio();" disabled>
+        <input type="button" class="boton" id="continuar" value="Continuar &#8634;" onclick="inicio();" disabled>
         <input type="button" class="boton" id="reinicio" value="Terminar" onclick="reinicio();" disabled>   
         
-        </div>
+    </div>
      </div>
+      
 </div>  
 
 </body>
 
-<script src="./resources/js/cronometro.js" ></script>
+
 <script src="./resources/js/menulateral.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.3/dayjs.min.js"></script>
+<script src="./resources/js/cronometro.js" ></script>
+
 </html>

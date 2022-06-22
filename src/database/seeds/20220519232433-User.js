@@ -9,6 +9,7 @@ module.exports = {
        userName:'LucianoTesti',
        email:'lucianotesti@gmail.com',
        password: 'lucianotesti',
+       team_id: 1,
        is_admin: false
      },
      {
@@ -16,6 +17,7 @@ module.exports = {
       userName:'PedroRios',
       password:'pedrorios',
       password: 'pedrorios@gmail.com',
+      team_id: 2,
       is_admin: false
      }
 

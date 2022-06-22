@@ -21,6 +21,10 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false
       },
+      team_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
       is_admin: {
         type: Sequelize.BOOLEAN,
         allowNull:false,

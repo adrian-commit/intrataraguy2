@@ -25,6 +25,11 @@
                 name="email" 
                 required tabindex="2"
                 >
+            <label for="pass">Password</label>
+			 <input 
+             type="password" 
+             name="pass"
+             >
             <label for="rol">Rol</label>                          
             <select 
             id="rol" 
@@ -35,13 +40,16 @@
                 <option value="admin" selected>Admin</option>
                 <option value="data entry">Data Entry</option>                    
             </select>
-             <br> 
-            <label for="pass">Password</label>
-			    <input 
-                type="password" 
-                name="pass" 
-                required tabindex="4"
-                >
+
+            <label for="team">Equipo</label>
+            <select id="team" name="team" class="select-css" >
+                <option value="Info 1">Info 1</option>
+                <option value="Info 2">Info 2</option>
+                <option value="Info 3">Info 3</option>
+                <option value="Laboral">Laboral</option>      
+            </select>
+
+            
             <div style="display: inline;">             
             <a href="/login" class="btn-cancel">Cancelar</a><input type="submit" class="btn-save" value="Cargar">           
             </div>

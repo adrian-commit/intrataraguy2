@@ -48,6 +48,11 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
       });
 
+      User.belongsTo(models.Team, {
+        as:'equipo',
+        foreignKey:'team_id'
+      })
+
     }
 
     return User; 

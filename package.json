@@ -10,13 +10,16 @@
     "sql:create": "sequelize db:create",
     "sql:drop": "sequelize db:drop",
     "sql:migrate": "sequelize db:migrate:undo:all && sequelize db:migrate",
-    "sql:seed": "sequelize db:seed:undo:all && sequelize db:seed:all"
+    "sql:seed": "sequelize db:seed:undo:all && sequelize db:seed:all",
+    "db:mg": "sequelize migration:generate --name=Team",
+    "db:sd": "sequelize seed:generate --name=Team"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "dayjs": "^1.11.3",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
