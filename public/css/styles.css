@@ -1,9 +1,11 @@
 body{
     font-family: 'Roboto';  
-    background-color: #f5f5f5;
+    background-color: #DFDFDE;
     margin: auto;
     text-align: center;
   }
+
+
   
   /* Login form */
   .login-form, .contenedor {
@@ -113,13 +115,13 @@ body{
   .btn-cancel{
     width: 50%;
     padding: 15px;
-    background-color: #9CA3AF;
+    background-color: #f15f51;
     border: 0;
     box-sizing: border-box;
     cursor: pointer;
     font-weight: bold;
     font-size:medium;
-    color: #ffffff;
+    color: #1E3A8A;
     text-align: center;
     margin-top: 20px;
     /* Para dar la apariencia de un boton */
@@ -142,13 +144,13 @@ body{
   .btn-save{
     width: 50%;
     padding: 15px;
-    background-color: #1D4ED8;
+    background-color: #82A284;
     border: 0;
     box-sizing: border-box;
     cursor: pointer;
     font-weight: bold;
     font-size:medium;
-    color: #ffffff;
+    color:#1E3A8A;
     margin-top: 20px;
     /* Para dar la apariencia de un boton */
     -webkit-appearance: button;
@@ -177,10 +179,11 @@ body{
   }
   
   .register-form h1 {
-    text-align: left;
+    text-align: center;
     color:midnightblue ;
-    font-size: 22px;
+    font-size: 40px;
     padding: 70px 0 10px 0;
+
   }
   .register-form input[type="password"],
   .register-form input[type="text"],

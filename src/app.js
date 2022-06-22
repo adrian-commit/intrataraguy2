@@ -20,10 +20,14 @@ app.set('views', resolve(__dirname , './views'));
 
 //el directorio public
 app.use('/resources', express.static(resolve('public')));
+
+
 /* app.use('/resources', express.static(resolve(__dirname + 'public'))); */
 //seteamos urlencoded para CAPTURAR los datos del formulario
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+
+
 //Configuracion de las variables de session
 app.use(session({
     secret:'secret',

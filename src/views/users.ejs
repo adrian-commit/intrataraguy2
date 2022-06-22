@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="menu.css" content="width=device-width, initial-scale=1.0">
     <link href="resources/css/menuLateral.css" rel="stylesheet">
+    <link href="resources/css/tablas.css" rel="stylesheet">
     <link href="resources/css/formul.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
 </head>
 
 <!--Formuario Vertical-->
@@ -16,40 +18,56 @@
     
     <%- include("./includes/menu")%>
 
-
-
-
 <br>
 
+<!--Tabla de Usuarios-->
 
-<div class="container">
-    <table>
-        <thead>
-            <tr class="tabla-usuario">
-                <th>ID</th>
-                <th>USUARIO</th>
-                <th>ROL</th>
-            </tr>
-        </thead>
-        <tbody>
-        
-            <tr>
-                <td><% users.id %> </td>
-                <td><% users.userName %> </td>
-                <td><% users.is_admin %> </td>
-                <td>
-                    <a href="/edit" class="">EDITAR</a>
-                    <a href="/delete" class="">BORRAR</a>
-                </td>
-            </tr>
-            
-        </tbody>
-    </table>
-  
-</div>  
+        <div class="">
+            <h1>Listado de Usuarios</h1>
+            <br>
+            <br>
+            <div style="overflow-x:auto;">
+                <button class="bot-exportar" onclick="exportTableToExcel('tblData')">Exportar</button>
+
+            <table id="tblData">
+                <thead>
+                    <tr class="">
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>EMAIL</th>
+                        <th>EDITAR</th>
+                        <th>ELIMINAR</th>   
+                    </tr>
+                </thead>
+                <tbody>
+                        <% for (let i = 0;i < users.length; i++) { %>
+                        <tr>
+                        <td><%=users[i].id%> </td>
+                        <td><%=users[i].userName%> </td>
+                        <td><%=users[i].email%> </td>
+
+                        <td>
+                            <button class="boton-1">
+                            <a href="/datosPersonales"><i class="fa-regular fa-id-badge" style="color:darkgreen; opacity: 0.9; font-size: 30px;"></i></a>
+                            </button>
+                        </td>
+                        
+                        <form action="/index/delete/<%=users[i].id%>" method="POST">
+                        <td>
+                            <button class="boton-1" type="submit">
+                                <i class="fa-solid fa-skull-crossbones" style="color:red; opacity: 0.9; font-size: 30px;"></i>
+                            </button>
+                        </td>
+                        </form>
+                        <% } %>                 
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>  
 
 </body>
 
-<script src="./resources/js/cronometro.js" ></script>
 <script src="./resources/js/menulateral.js"></script>
+<script src="./resources/js/tabla.js"></script>
 </html>
