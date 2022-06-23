@@ -1,4 +1,4 @@
-const {index,login,register,storage,access,logout,usersList,calendario,datosPersonales,clientes,storageInfo,storageClient} = require('../controllers/index');
+const {index,login,register,storage,access,logout,usersList,clientsList,detalleList,calendario,datosPersonales,clientes,storageInfo,storageClient,detallePersonal,detalleCliente} = require('../controllers/index');
 const {Router} = require('express');
 const router = Router();
 
@@ -12,11 +12,16 @@ router.get('/login', loggedMiddleware, login);
 router.get('/register', loggedMiddleware, register);
 router.get("/logout", logout);
 router.get('/users',notLoggedMiddleware, usersList);
+router.get('/detalleCliente',notLoggedMiddleware, clientsList);
+router.get('/detallePersonal',notLoggedMiddleware, detalleList);
+
 
 router.get('/', notLoggedMiddleware, index);
 router.get('/calendario', notLoggedMiddleware, calendario);
 router.get('/datosPersonales', notLoggedMiddleware, datosPersonales);
 router.get('/clientes', notLoggedMiddleware, clientes);
+router.get('/detallePersonal', notLoggedMiddleware, detallePersonal);
+router.get('/detalleCliente', notLoggedMiddleware, detalleCliente);
 
 //--- Rutas POST ---//
 router.post('/create', storage);

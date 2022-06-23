@@ -43,7 +43,7 @@ module.exports = {
                     timeEnd:req.body.tiempoFin,
                     timePause:req.body.tiempoPausa,
                     timeContinue:req.body.tiempoContinuar,
-                    condition:'Pendiente'
+                    condition:'Pendiente',
                 });
                 return res.send(newTask);
             }
