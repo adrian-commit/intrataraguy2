@@ -30,6 +30,7 @@
     background-color: #45a049;
   }
   
+
  .hijo {
     border-radius: 10px;
     width: 35%;
@@ -76,7 +77,12 @@
    
    }
 
-   .columna{
+.btn-save{
+  background-color: brown;
+ }
+
+
+.columna{
      background-color:#82A284;
      color:#06283D;
      padding:20px;

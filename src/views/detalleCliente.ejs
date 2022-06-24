@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link href="resources/css/menuLateral.css" rel="stylesheet">
+    <link href="resources/css/tablas.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ab05c0d697.js" crossorigin="anonymous"></script>
+
+    <title>Detalle Clientes</title>
+</head>
+
+<body id="body">
+    
+<%- include("./includes/menu")%>
+
+<h1>Detalle / Clientes</h1>
+
+<br>
+<br>
+<a href="./clientes"><button class="boton-1"><i class="fa-solid fa-circle-plus" style="color:rgb(41, 151, 14); opacity: 0.9; 
+    font-size: 30px;text-align:center;position: relative;" ></i></button></a>
+  
+<table id="tblData">
+    <thead>
+        <tr class="">
+            <th>NOMBRE EMPRESA</th>
+            <th>CUIT</th>
+            <th>CANTIDAD DE EMPLEADOS</th>
+            <th>CANTIDAD DE SUCURSALES</th>
+            <th>ACTIVIDADES</th>
+            <th>FIN DE EJERCICIO</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <% for (let i = 0;i < clients.length; i++) { %>
+        <tr>
+            <td><%=clients[i].businessName%> </td>
+            <td><%=clients[i].cuit%> </td>
+            <td><%=clients[i].officesQuantity%> </td>
+            <td><%=clients[i].staffQuantity%> </td>
+            <td><%=clients[i].typeActivity%> </td>
+            <td><%=clients[i].timeExerciseEnd%> </td>
+
+        <% } %>                 
+        </tr>
+    </tbody>
+
+</table>
+
+
+</body>
+
+<script src="./resources/js/menulateral.js"></script>
+<script src="./resources/js/tabla.js"></script>
+
+
+</html>

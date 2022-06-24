@@ -51,7 +51,7 @@ table, th, td {
   padding: 2px;
   background-color: #90c2eb;
   color: rgb(0, 0, 0);
-  font-size: 15px;
+  font-size: 18px;
   clear:right;
   text-decoration: none;
   display: inline-block;
@@ -77,3 +77,5 @@ i {
     display: inline-block;
     font-size: 5px;
 }
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link href="resources/css/menuLateral.css" rel="stylesheet">
+    <link href="resources/css/tablas.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ab05c0d697.js" crossorigin="anonymous"></script>
+
+    <title>Detalle Personal</title>
+</head>
+
+<body id="body">
+    
+<%- include("./includes/menu")%>
+<br>
+<br>
+<h1>Detalle de Usuario</h1>
+
+<br>
+<br>
+
+<a href="./datosPersonales"><button class="boton-1"><i class="fa-solid fa-person-circle-plus" style="color:rgb(41, 151, 14); opacity: 0.9; 
+font-size: 30px;text-align:center;position: relative;" ></i></button></a>
+
+<table id="tblData">
+    <thead>
+        <tr class="">
+            <th>NOMBRE</th>
+            <th>APELLIDO</th>
+            <th>DNI</th>
+            <th>TELEFONO</th>
+            <th>NACIMIENTO</th>
+            <th>PROFESION</th>
+            <th>HOBBIE</th>
+            <th>EQUIPO</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <% for (let i = 0;i < datausers.length; i++) { %>
+        <tr>
+            <td><%=datausers[i].firstName%> </td>
+            <td><%=datausers[i].lastName%> </td>
+            <td><%=datausers[i].dni%> </td>
+            <td><%=datausers[i].telephone%> </td>
+            <td><%=datausers[i].birthDay%> </td>
+            <td><%=datausers[i].profession%> </td>
+            <td><%=datausers[i].hobbie%> </td>
+            <td><%=datausers[i].team%> </td>
+
+        <% } %>                 
+        </tr>
+    </tbody>
+
+</table>
+
+
+</body>
+
+<script src="./resources/js/menulateral.js"></script>
+<script src="./resources/js/tabla.js"></script>
+
+
+</html>

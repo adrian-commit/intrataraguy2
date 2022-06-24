@@ -109,6 +109,24 @@ module.exports = {
         }
     },
 
+    clientsList: async (req, res) => {
+        try {
+            let clients = await Client.findAll({include:{all:true}});
+            return res.render('detalleCliente', {clients: clients});
+        } catch (error) {
+            return res.render('error', {error});
+        }
+    },
+
+    detalleList: async (req, res) => {
+        try {
+            let datausers = await DataUser.findAll({include:{all:true}});
+            return res.render('detallePersonal', {datausers: datausers});
+        } catch (error) {
+            return res.render('error', {error});
+        }
+    },
+
 
     datosPersonales: (req, res)=>{
         res.render('datosPersonales');
@@ -160,6 +178,14 @@ module.exports = {
     calendario: (req, res)=>{
             res.render('calendario');
     },
+
+    detallePersonal: (req, res)=>{
+        res.render('detallePersonal');
+},
+
+detalleCliente: (req, res)=>{
+    res.render('detalleCliente');
+},
 
 }
     
