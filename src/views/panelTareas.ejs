@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TCE</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="menu.css" content="width=device-width, initial-scale=1.0">
+    <link href="../resources/css/menuLateral.css" rel="stylesheet">
+    <link href="../resources/css/tablas.css" rel="stylesheet">
+    <link href="../resources/css/formul.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+</head>
+
+<!--Formuario Vertical-->
+<body id="body">
+    
+    <%- include("./includes/menu")%>
+
+<br>
+
+<!--Tabla de Usuarios-->
+
+        <div class="">
+            <h1>Listado de Tareas</h1>
+            <div style="overflow-x:auto;">
+                <button class="bot-exportar" onclick="exportTableToExcel('tblData')">Exportar</button>
+
+            <table id="tblData">
+                <thead>
+                    <tr class="">
+                        <th>ID</th>
+                        <th>Estado</th>
+                        <th>Nombre</th>
+                        <th>Cliente</th>
+                        <th>Equipo</th>   
+                        <th>fecha</th>
+                        <th>Duración</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%= console.log(tasks) %> 
+                        <% for (let i = 0;i < tasks.length; i++) { %>
+                        <tr>
+                        <td><%=tasks[i].id%> </td>
+                        <td><%=tasks[i].condition%> </td>
+                        <td><%=tasks[i].name%> </td>
+                        <td><%=tasks[i].client.name%> </td>
+                        <td><%=tasks[i].team%> </td>
+                        <td><%=tasks[i].date%> </td>
+                        <td><%=tasks[i].totalTime%> </td>
+                        </tr>
+
+                        <% } %>      
+                        <button><a href="/tareas/formularioTarea">CargarTarea</a></button>
+                </tbody>
+            </table>
+        </div>
+        </div>  
+
+</body>
+
+<script src="../resources/js/menulateral.js"></script>
+<script src="../resources/js/tabla.js"></script>
+</html>

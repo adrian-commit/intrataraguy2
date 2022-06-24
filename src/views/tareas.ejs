@@ -6,9 +6,9 @@
     <title>TCE</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="menu.css" content="width=device-width, initial-scale=1.0">
-    <link href="resources/css/menuLateral.css" rel="stylesheet">
-    <link href="resources/css/formul.css" rel="stylesheet">
-    <link href="resources/css/cronometro.css" rel="stylesheet">
+    <link href="../resources/css/menuLateral.css" rel="stylesheet">
+    <link href="../resources/css/formul.css" rel="stylesheet">
+    <link href="../resources/css/cronometro.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ab05c0d697.js" crossorigin="anonymous"></script>
 </head>
 
@@ -68,17 +68,21 @@
     
     <!-- Cronometro-->
     <div id="contenedor">
-        <div class="reloj" id="Horas">00</div>
-        <div class="reloj" id="Minutos">:00</div>
-        <div class="reloj" id="Centesimas">:00</div>
-        <div class="reloj" id="Segundos">:00</div>
+        <section class="tempo">
+          <div class="reloj" id="Horas">00</div>
+          <div class="reloj" id="Minutos">:00</div>
+          <div class="reloj" id="Centesimas">:00</div>
+          <div class="reloj" id="Segundos">:00</div>
+        </section>
 
     <button class='btn btn-success btn-lg' type="button" name="start"></button>
 
-        <input type="button" class="boton" id="inicio" value="Inicio &#9658;" onclick="inicio();" >
-        <input type="button" class="boton" id="parar" value="Pausa &#8718;" onclick="parar();" disabled>
-        <input type="button" class="boton" id="continuar" value="Continuar &#8634;" onclick="inicio();" disabled>
-        <input type="button" class="boton" id="reinicio" value="Terminar" onclick="reinicio();" disabled>   
+        <section class="buttons">
+          <input type="button" class="boton" id="inicio" value="Inicio &#9658;" onclick="inicio();" >
+          <input type="button" class="boton" id="parar" value="Pausa &#8718;" onclick="parar();" disabled>
+          <input type="button" class="boton" id="continuar" value="Continuar &#8634;" onclick="inicio();" disabled>
+          <input type="button" class="boton" id="reinicio" value="Terminar" onclick="reinicio();" disabled>
+        </section>   
         
     </div>
      </div>
@@ -89,8 +93,8 @@
 </body>
 
 
-<script src="./resources/js/menulateral.js"></script>
+<script src="../resources/js/menulateral.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.3/dayjs.min.js"></script>
-<script src="./resources/js/cronometro.js" ></script>
+<script src="../resources/js/cronometro.js" ></script>
 
 </html>

@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
 
-    let alias = 'Work'
+    let alias = 'Task'
 
     let cols = {
         id: {
@@ -48,6 +48,10 @@ module.exports = (sequelize, DataTypes) => {
           type: DataTypes.TIME,
           allowNull: true
         },
+        totalTime: {
+          type: DataTypes.TIME,
+          allowNull:true
+        },
         condition: {
           type: DataTypes.STRING,
           allowNull: false,
@@ -56,25 +60,25 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     let config = {
-        tableName: 'works',
+        tableName: 'tasks',
         timestamps: false,
     }
 
-    const Work = sequelize.define(alias, cols, config);
+    const Task = sequelize.define(alias, cols, config);
 
-    Work.associate = function(models){
-      Work.hasOne(models.Service, {
+    Task.associate = function(models){
+      Task.hasOne(models.Service, {
         as: 'servicio',
         foreignKey: 'tarea_id'
       })
 
-      Work.belongsTo(models.Client, {
+      Task.belongsTo(models.Client, {
         as: 'cliente',
         foreignKey:'client'
       })
       
     }
    
-    return Work; 
+    return Task; 
 
 }

@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Service.associate = function(models){
 
-      Service.belongsTo(models.Work, {
+      Service.belongsTo(models.Task, {
         as:'tarea',
         foreignKey: 'tarea_id'
       });

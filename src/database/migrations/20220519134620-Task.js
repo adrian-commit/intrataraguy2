@@ -3,7 +3,7 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
 
-    await queryInterface.createTable('works', { 
+    await queryInterface.createTable('tasks', { 
       id: {
         type: Sequelize.INTEGER ,
         autoIncrement: true,
@@ -49,6 +49,10 @@ module.exports = {
         type: Sequelize.TIME,
         allowNull: true
       },
+      totalTime: {
+        type: Sequelize.TIME,
+        allowNull:true
+      },
       condition: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -60,7 +64,7 @@ module.exports = {
 
   async down (queryInterface, Sequelize) {
 
-    await queryInterface.dropTable('works');
+    await queryInterface.dropTable('tasks');
 
   }
 };

@@ -42,7 +42,7 @@ app.use(userLogged);
 //Estableciendo las rutas
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
-app.use('/tareas', require('./routes/works'));
+app.use('/tareas', require('./routes/tasks'));
 app.use('/clientes', require('./routes/clientes'));
 
 
