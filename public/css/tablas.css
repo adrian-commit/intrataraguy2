@@ -49,8 +49,8 @@ table, th, td {
 .bot-exportar{
   text-align: center;
   padding: 2px;
-  background-color: #90c2eb;
-  color: rgb(0, 0, 0);
+  background-color: #1874c0;
+  color: aliceblue;
   font-size: 18px;
   clear:right;
   text-decoration: none;
@@ -70,10 +70,6 @@ table, th, td {
 
 }
 
-h1{
-  text-align: center;
-}
-
 i {
  max-width:fit-content;
  max-height: auto;
@@ -88,6 +84,10 @@ i {
     text-decoration: none;
     display: inline-block;
     font-size: 5px;
+}
+
+.container h1{
+ text-align: center;
 }
 
 

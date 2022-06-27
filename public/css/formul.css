@@ -84,15 +84,39 @@
 
 .columna{
      background-color:#82A284;
+     opacity: 0.9;
      color:#06283D;
-     padding:20px;
+     padding:70px;
      width: 30%;
-     margin:10px;
+     margin:15px;
+     border-radius: 10px;
    }
+  
+   .columna2{
+    background-color:#82A284;
+    color:#06283D;
+    padding:70px;
+    width: 30%;
+    margin:15px;
+    border-radius: 10px;
+  }
 
    .grande{
      display: flex;
    }
+
+   b{
+    text-align: center;
+    padding: 20px;
+    color: #ccc;
+   }
+
+   .btn-servicio{
+    padding: 25px 50px 75px 100px;
+ 
+   }
+
+
 
 
 

@@ -131,7 +131,11 @@ module.exports = {
     datosPersonales: (req, res)=>{
         res.render('datosPersonales');
     },
-
+    
+    servicios: (req, res)=>{
+        res.render('servicios');
+    },
+    
     storageInfo: async (req,res) => {
         try {
             let newInfo = await DataUser.findByPk(req.body.id);
