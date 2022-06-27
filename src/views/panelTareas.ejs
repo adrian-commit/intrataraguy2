@@ -23,19 +23,22 @@
 <!--Tabla de Usuarios-->
 
         <div class="">
-            <h1>Listado de Tareas</h1>
+            <h1>Historial de Tareas</h1>
+            <br>
             <div style="overflow-x:auto;">
-                <button class="bot-exportar" onclick="exportTableToExcel('tblData')">Exportar</button>
+                <button class="bot-exportar" onclick="exportTableToExcel('tblData')"><b>Exportar</b></button>
 
             <table id="tblData">
                 <thead>
                     <tr class="">
                         <th>ID</th>
-                        <th>Estado</th>
-                        <th>Nombre</th>
+                        <th>Status</th>
+                        <th>Tarea</th>
                         <th>Cliente</th>
                         <th>Equipo</th>   
-                        <th>fecha</th>
+                        <th>Fecha</th>
+                        <th>Tiempo - Inicio</th>
+                        <th>Tiempo - Fin</th>
                         <th>Duración</th>
                     </tr>
                 </thead>
@@ -46,14 +49,16 @@
                         <td><%=tasks[i].id%> </td>
                         <td><%=tasks[i].condition%> </td>
                         <td><%=tasks[i].name%> </td>
-                        <td><%=tasks[i].client.name%> </td>
+                        <td><%=tasks[i].client%> </td>
                         <td><%=tasks[i].team%> </td>
                         <td><%=tasks[i].date%> </td>
+                        <td><%=tasks[i].timeBeginning%> </td>
+                        <td><%=tasks[i].timeEnd%> </td>
                         <td><%=tasks[i].totalTime%> </td>
                         </tr>
 
                         <% } %>      
-                        <button><a href="/tareas/formularioTarea">CargarTarea</a></button>
+                        <button class="btn-cargarTarea" ><a href="/tareas/formularioTarea"><b>Nueva Tarea</b></a></button>
                 </tbody>
             </table>
         </div>

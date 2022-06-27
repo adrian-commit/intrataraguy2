@@ -104,7 +104,7 @@ module.exports = {
                     timeEnd:req.body.tiempoFin,
                     timePause:req.body.tiempoPausa,
                     timeContinue:req.body.tiempoContinuar,
-                    totalTime:'00:50:00',
+                    totalTime:'',
                     condition:'Pendiente'
                 });
                 return res.redirect('panelTareas');

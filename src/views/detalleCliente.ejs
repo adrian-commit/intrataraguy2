@@ -26,18 +26,20 @@
 <table id="tblData">
     <thead>
         <tr class="">
+            <th>Id</th>
             <th>NOMBRE EMPRESA</th>
             <th>CUIT</th>
             <th>CANTIDAD DE EMPLEADOS</th>
             <th>CANTIDAD DE SUCURSALES</th>
             <th>ACTIVIDADES</th>
-            <th>FIN DE EJERCICIO</th>
+            <th>CIERRE DE EJERCICIO</th>
         </tr>
 
     </thead>
     <tbody>
         <% for (let i = 0;i < clients.length; i++) { %>
         <tr>
+            <td><%=clients[i].id%></td>
             <td><%=clients[i].businessName%> </td>
             <td><%=clients[i].cuit%> </td>
             <td><%=clients[i].officesQuantity%> </td>

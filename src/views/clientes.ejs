@@ -23,17 +23,21 @@
             <label for="cuit">CUIT</label>
                 <input type="number" name="cuit" required tabindex="3">
             
-            <label for="officesQuantity">Cantidad Sucursales</label>
-                <input type="number" name="officesQuantity" required tabindex="4">
-
             <label for="staffQuantity">Cantidad de Empleados</label>
                 <input type="number" name="staffQuantity" required tabindex="5">
             
             <label for="timeExerciseEnd">Fecha - Fin de Ejercicio</label>
                 <input type="date" name="timeExerciseEnd" required tabindex="6">
-                <br>
-                <br>
-                <label for="typeActivity">Tipo de Actividad</label>                          
+            <br>
+           
+            <label for="officesQuantity">Cantidad Sucursales</label>
+                <select id="rol" name="officesQuantity" class="select-css" tabindex="7">
+                    <option value="0 a 10" selected>0 a 5</option>
+                    <option value="10 a 50">5 a 10</option>
+                    <option value="50 a 100">50 a 100</option>      
+                </select>
+            <br>
+             <label for="typeActivity">Tipo de Actividad</label>                          
                 <select id="rol" name="typeActivity" class="select-css" tabindex="7">
                     <option value="Servicio" selected>Servicio</option>
                     <option value="Agropecuaria">Agropecuaria</option>

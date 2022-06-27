@@ -58,6 +58,18 @@ table, th, td {
 
 }
 
+.btn-cargarTarea{
+  text-align: center;
+  padding: 2px;
+  background-color: #06c720;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  clear:right;
+  text-decoration: none;
+  display: inline-block;
+
+}
+
 h1{
   text-align: center;
 }
