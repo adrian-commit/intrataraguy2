@@ -1,4 +1,4 @@
-const {index,login,register,storage,access,logout,usersList,clientsList,servicios,detalleList,calendario,datosPersonales,clientes,storageInfo,storageClient,detallePersonal,detalleCliente} = require('../controllers/index');
+const {index,login,register,storage,access,logout,usersList,formServicios,clientsList,servicios,detalleList,calendario,datosPersonales,clientes,storageInfo,storageClient,detallePersonal,detalleCliente} = require('../controllers/index');
 const {Router} = require('express');
 const router = Router();
 
@@ -21,6 +21,7 @@ router.get('/', notLoggedMiddleware, index);
 router.get('/calendario', notLoggedMiddleware, calendario);
 router.get('/datosPersonales', notLoggedMiddleware, datosPersonales);
 router.get('/clientes', notLoggedMiddleware, clientes);
+router.get('/formServicios', notLoggedMiddleware, formServicios);
 router.get('/detallePersonal', notLoggedMiddleware, detallePersonal);
 router.get('/detalleCliente', notLoggedMiddleware, detalleCliente);
 

@@ -135,7 +135,7 @@ module.exports = {
     servicios: (req, res)=>{
         res.render('servicios');
     },
-    
+
     storageInfo: async (req,res) => {
         try {
             let newInfo = await DataUser.findByPk(req.body.id);
@@ -160,6 +160,12 @@ module.exports = {
     clientes: (req, res)=>{
             res.render('clientes');
     },
+
+    formServicios: (req, res)=>{
+        res.render('formServicios');
+    },
+
+
 
     storageClient: async (req,res) => {
         try {
