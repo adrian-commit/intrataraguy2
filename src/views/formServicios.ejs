@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources/css/styles.css">
   
-    <title>Clientes</title>
+    <title>Servicios</title>
 </head>
 <body>
     
@@ -15,61 +15,94 @@
 		<form action="/createClient" method="POST">
             <label for="typeActivity">Area</label>                          
                 <select id="rol" name="typeActivity" class="select-css" tabindex="7">
-                    <option value="Servicio" selected>IMPUESTOS</option>
-                    <option value="Agropecuaria">LABORAL</option>
-                    <option value="Contruccion">CONTABILIDAD</option>
-                    <option value="Unipersonal">ADMINISTRACION</option>                    
+                    <option value="IMPUESTOS" selected>IMPUESTOS</option>
+                    <option value="LABORAL">LABORAL</option>
+                    <option value="CONTABILIDAD">CONTABILIDAD</option>
+                    <option value="ADMINISTRACION">ADMINISTRACION</option>                    
                 </select>
             <br>
         	<form action="/createClient" method="POST">
                     <label for="typeActivity">Tipo de Impuesto</label>                          
                         <select id="rol" name="typeActivity" class="select-css" tabindex="7">
-                            <option value="Servicio" selected>IVA</option>
-                            <option value="Agropecuaria">INGRESOS BRUTOS</option>
-                            <option value="Contruccion">IMPUESTO A LAS GANANCIAS</option>
-                            <option value="Unipersonal">CONVENIO MULTILATERAL</option>
-                            <option value="Unipersonal">TASAS Y SERVICIOS</option>
-                            <option value="Unipersonal">CONVENIO MULTILATERAL</option>
-                            <option value="Unipersonal">RETENCIONES Y PERCEPCIONES</option>
-                            <option value="Unipersonal">MONOTRIBUTO</option>
-                            <option value="Unipersonal">SEGURIDAD SOCIAL</option>  
-                            <option value="Unipersonal">REGIMEN INFORMATIVOS</option>  
-                            <option value="Unipersonal">OTROS REGIMENES INFORMATIVOS</option>                      
+                            <option value="IVA" selected>IVA</option>
+                            <option value="INGRESOS BRUTOS">INGRESOS BRUTOS</option>
+                            <option value="IMPUESTO A LAS GANANCIAS">IMPUESTO A LAS GANANCIAS</option>
+                            <option value="CONVENIO MULTILATERAL">CONVENIO MULTILATERAL</option>
+                            <option value="TASAS Y SERVICIOS">TASAS Y SERVICIOS</option>
+                            <option value="CONVENIO MULTILATERAL">CONVENIO MULTILATERAL</option>
+                            <option value="RETENCIONES Y PERCEPCIONES">RETENCIONES Y PERCEPCIONES</option>
+                            <option value="MONOTRIBUTO">MONOTRIBUTO</option>
+                            <option value="SEGURIDAD SOCIAL">SEGURIDAD SOCIAL</option>  
+                            <option value="REGIMEN INFORMATIVOS">REGIMEN INFORMATIVOS</option>  
+                            <option value="OTROS REGIMENES INFORMATIVOS">OTROS REGIMENES INFORMATIVOS</option>                      
                         </select>
             <br>
             <label for="typeActivity">Ambito de Aplicacion</label>                          
             <select id="rol" name="typeActivity" class="select-css" tabindex="7">
-                <option value="Servicio" selected>MUNICIPAL</option>
-                <option value="Agropecuaria">PROVINCIAL</option>
-                <option value="Contruccion">NACIONAL</option>                    
+                <option value="MUNICIPAL" selected>MUNICIPAL</option>
+                <option value="PROVINCIAL">PROVINCIAL</option>
+                <option value="NACIONAL">NACIONAL</option>                    
             </select>
             <br>
-            <label for="officesQuantity">Cantidad Sucursales</label>
-                <select id="rol" name="officesQuantity" class="select-css" tabindex="7">
-                    <option value="0 a 10" selected>0 a 5</option>
-                    <option value="10 a 50">5 a 100</option> 
-                </select>
+            <label for="typeActivity">Provincia</label>                          
+            <select id="rol" name="typeActivity" class="select-css" tabindex="7">
+                <option value="CORRIENTES" selected>CORRIENTES</option>
+                <option value="CHACO">CHACO</option>
+                <option value="MISIONES">MISIONES</option>
+                <option value="BUENOS AIRES"> BUENOS AIRES</option>
+                <option value="CORDOBA">CORDOBA</option>
+                <option value="ENTRE RIOS">ENTRE RIOS</option>
+                <option value="LA PAMPA">LA PAMPA</option>
+                <option value="SALTA">SALTA</option>
+                <option value="SANTA FE">SANTA FE</option>
+                <option value="SANTIAGO DEL ESTERO">SANTIAGO DEL ESTERO</option>
+                <option value="BUENOS AIRES">BUENOS AIRES</option>
+                <option value="OTRAS">OTRAS</option>
+            </select>
             <br>
-             <label for="typeActivity">Tipo de Actividad</label>                          
+            <label for="typeActivity">Tipo de Actividad</label>                          
                 <select id="rol" name="typeActivity" class="select-css" tabindex="7">
-                    <option value="Servicio" selected>Servicio</option>
-                    <option value="Agropecuaria">Agropecuaria</option>
-                    <option value="Contruccion">Contruccion</option>
-                    <option value="Unipersonal">Unipersonal</option>
-                    <option value="Comercial">Comercial</option>                    
+                    <option value="SERVICIO" selected>SERVICIO</option>
+                    <option value="AGROPECUARIA">AGROPECUARIA</option>
+                    <option value="CONTRUCCION">CONTRUCCION</option>
+                    <option value="UNIPERSONAL">UNIPERSONAL</option>
+                    <option value="COMERCIAL">COMERCIAL</option>                    
+                </select>
+              
+        
+                <br>
+                <label for="typeActivity">Registros</label>                          
+                <select id="rol" name="typeActivity" class="select-css" tabindex="7">
+                    <option value="SERVICIO" selected>COMPROBANTES</option>
+                    <option value="AGROPECUARIA">LEGAJOS</option>
+                    <option value="CONTRUCCION">RECIBOS</option>
+                    <option value="UNIPERSONAL">ASIENTOS</option>
+                    <option value="COMERCIAL">PLANES DE PAGOS</option>
+                    <option value="COMERCIAL">RESUMENES</option>
+                    <option value="COMERCIAL">BOLETAS</option>
+                    <option value="COMERCIAL">OTROS</option>                    
                 </select>
                 <br>
-                <br> 
-
+                <label for="typeActivity">Registros/Cantidad</label>                          
+                   <select id="rol" name="typeActivity" class="select-css" tabindex="7">
+                       <option value="SERVICIO" selected>1 a 10</option>
+                       <option value="AGROPECUARIA">10 a 50</option>
+                       <option value="CONTRUCCION">10 a 100</option>
+                       <option value="UNIPERSONAL">mas de 100</option>                  
+                   </select>
+                <br>
+                <label for="officesQuantity">Cantidad Sucursales</label>
+                    <select id="rol" name="officesQuantity" class="select-css" tabindex="7">
+                        <option value="0 a 10" selected>0 a 5</option>
+                        <option value="10 a 50">5 a 100</option> 
+                    </select>
+                    <br>
                 <label for="rol">Tipo de Persona</label>                          
                 <select id="rol" name="typePerson" class="select-css" tabindex="7">
-                    <option value="Fisica" selected>Fisica</option>
-                    <option value="Juridica">Juridica</option>                    
+                    <option value="FISICA" selected>FISICA</option>
+                    <option value="JURIDICA">JURIDICA</option>                    
                 </select>
              <br>
-             <br> 
-             <br>  
-        
             <div style="display: inline;">             
             <a href="/servicios" class="btn-cancel">Cancelar</a><input type="submit" class="btn-save" value="Cargar">           
             </div>

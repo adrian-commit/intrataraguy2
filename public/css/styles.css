@@ -1,6 +1,9 @@
 body{
     font-family: 'Roboto';  
-    background-color: #DFDFDE;
+    background-image: url("../img/imag-9.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: auto;
     text-align: center;
   }
@@ -14,7 +17,7 @@ body{
   }
   .login-form h1 {
     text-align: center;
-    color:midnightblue ;
+    color:rgb(255, 255, 255) ;
     font-size: 28px;
     padding: 70px 0 10px 0;
   }
@@ -82,7 +85,7 @@ body{
   /* Estilos de link para ir a LOGIN*/
   .a-login:link, .a-login:visited {
     background-color: white;
-    color: black;
+    color: rgb(247, 247, 247);
     border: 2px solid #10B981;
     padding: 10px 20px;
     text-align: center;
@@ -98,7 +101,7 @@ body{
   /* Estilos de link para realizar el LOGOUT*/
   .a-logout:link, .a-logout:visited {
     background-color: white;
-    color: black;
+    color: rgb(255, 255, 255);
     border: 2px solid #F87171;
     padding: 10px 20px;
     text-align: center;
@@ -177,10 +180,10 @@ body{
     text-align: left !important;
    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); 
   }
-  
+  /* ESTE ES EL STYLO QUE MODIFICA EL FORMULARIO PRINCIPAL*/
   .register-form h1 {
     text-align: center;
-    color:midnightblue ;
+    color:rgb(255, 255, 255) ;
     font-size: 40px;
     padding: 70px 0 10px 0;
 
@@ -226,6 +229,8 @@ body{
    .select-css option {
     font-weight:normal;
    }
+
+
 
 
    
