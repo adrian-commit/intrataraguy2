@@ -183,7 +183,7 @@ body{
   /* ESTE ES EL STYLO QUE MODIFICA EL FORMULARIO PRINCIPAL*/
   .register-form h1 {
     text-align: center;
-    color:rgb(255, 255, 255) ;
+    color:rgb(0, 0, 0) ;
     font-size: 40px;
     padding: 70px 0 10px 0;
 
