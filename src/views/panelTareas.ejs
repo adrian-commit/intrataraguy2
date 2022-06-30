@@ -49,7 +49,7 @@
                         <td><%=tasks[i].id%> </td>
                         <td><%=tasks[i].condition%> </td>
                         <td><%=tasks[i].name%> </td>
-                        <td><%=tasks[i].client%> </td>
+                        <td><%=tasks[i].cliente.name%> </td>
                         <td><%=tasks[i].team%> </td>
                         <td><%=tasks[i].date%> </td>
                         <td><%=tasks[i].timeBeginning%> </td>
@@ -58,7 +58,7 @@
                         </tr>
 
                         <% } %>      
-                        <button class="btn-cargarTarea" ><a href="/tareas/formularioTarea"><b>Nueva Tarea</b></a></button>
+                        <button class="btn-cargarTarea" ><a href="/tareas/elegirServicios"><b>Nueva Tarea</b></a></button>
                 </tbody>
             </table>
         </div>

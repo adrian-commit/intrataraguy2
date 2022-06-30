@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+                   
+<head>
+	<meta charset="UTF-8">
+	<title>TCE</title>
+    <link href="../resources/css/menuLateral.css" rel="stylesheet">
+    <link href="../resources/css/servicios.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+</head>
+
+
+<!--Menu Vertical-->
+<body id="body"> 
+    <%- include("./includes/menu")%>
+    <!--Inicio de parte General-->
+    <h1>Seleccione el servicio</h1>
+    <div class="container">
+        <section class="grande">
+            <p class=columna><i class="fa-solid fa-person-chalkboard"></i>
+                <a class="btn-servicio" href="/tareas/formularioTarea/1"><button>Laboral</button></a>
+            </p> 
+            <p class=columna>
+                <i class="fa-solid fa-calculator"></i>
+                <a class="btn-servicio" href="/tareas/formularioTarea/2"><button>Impuestos</button></a>
+            </p>
+            <p class=columna>
+                <i class="fa-solid fa-chart-pie"></i>
+                <a class="btn-servicio" href="/tareas/formularioTarea/3"><button>Administración</button></a>
+            </p>
+            <p class=columna>
+             <i class="fa-solid fa-chart-line"></i>
+             <a class="btn-servicio" href="/tareas/formularioTarea/4"><button>Contabilidad</button></a>
+            </p>
+            
+        </section>   
+    </div>
+    </body>
+
+        <script src="./resources/js/menulateral.js"></script>
+
+</html>

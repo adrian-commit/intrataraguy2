@@ -15,8 +15,8 @@ module.exports = {
      {
       id: 2,
       userName:'PedroRios',
+      email: 'pedrorios@gmail.com',
       password:'pedrorios',
-      password: 'pedrorios@gmail.com',
       team_id: 2,
       is_admin: false
      }

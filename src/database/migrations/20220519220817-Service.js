@@ -13,9 +13,21 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      tarea_id: {
-        type: Sequelize.INTEGER,
+      typeActivity: {
+        type: Sequelize.STRING,
         allowNull: false
+      },
+      contributionType: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      aplication: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      province: {
+        type: Sequelize.STRING,
+        allowNull: true
       }
 
     });

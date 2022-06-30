@@ -25,7 +25,19 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false
       },
+      service_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
       team: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      records: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      recordsQuantity: {
         type: Sequelize.STRING,
         allowNull: false
       },
