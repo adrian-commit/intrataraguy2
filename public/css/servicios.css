@@ -143,18 +143,32 @@ body{
      }
   
   .columna{
-       background-color:#82A284;
+     
        opacity: 0.9;
        color:#06283D;
        padding:70px;
        width: 15%;
        height: 50px;
        margin: auto;
+       font-size: 120px;
        border-radius: 10px;
        display: flex;
        flex-direction: column;
+       margin: auto;
+ 
      }
   
+button{
+      float: right;
+      width: 120px;
+      height: 25px;
+      border: 3px solid #73AD21;
+      padding: 2px;
+      border-radius: 5px;
+      font-size: 12px;
+      margin-top: 1%;
+
+}
      .grande{
        display: flex;
        flex-wrap: wrap;
