@@ -28,33 +28,33 @@
             <div style="overflow-x:auto;">
                 <button class="bot-exportar" onclick="exportTableToExcel('tblData')"><b>Exportar</b></button>
 
-            <table id="tblData">
+            <table id="tblData" >
                 <thead>
                     <tr class="">
-                        <th>ID</th>
-                        <th>Status</th>
-                        <th>Tarea</th>
-                        <th>Cliente</th>
-                        <th>Equipo</th>   
-                        <th>Fecha</th>
-                        <th>Tiempo - Inicio</th>
-                        <th>Tiempo - Fin</th>
-                        <th>Duración</th>
+                        <th >ID</th>
+                        <th >Status</th>
+                        <th >Tarea</th>
+                        <th >Cliente</th>
+                        <th >Equipo</th>   
+                        <th >Fecha</th>
+                        <th >Tiempo - Inicio</th>
+                        <th >Tiempo - Fin</th>
+                        <th >Duración</th>
                     </tr>
                 </thead>
                 <tbody>
                     <%= console.log(tasks) %> 
                         <% for (let i = 0;i < tasks.length; i++) { %>
                         <tr>
-                        <td><%=tasks[i].id%> </td>
-                        <td><%=tasks[i].condition%> </td>
-                        <td><%=tasks[i].name%> </td>
-                        <td><%=tasks[i].client%> </td>
-                        <td><%=tasks[i].team%> </td>
-                        <td><%=tasks[i].date%> </td>
-                        <td><%=tasks[i].timeBeginning%> </td>
-                        <td><%=tasks[i].timeEnd%> </td>
-                        <td><%=tasks[i].totalTime%> </td>
+                        <td ><%=tasks[i].id%> </td>
+                        <td ><%=tasks[i].condition%> </td>
+                        <td ><%=tasks[i].name%> </td>
+                        <td ><%=tasks[i].client%> </td>
+                        <td ><%=tasks[i].team%> </td>
+                        <td ><%=tasks[i].date%> </td>
+                        <td ><%=tasks[i].timeBeginning%> </td>
+                        <td ><%=tasks[i].timeEnd%> </td>
+                        <td ><%=tasks[i].totalTime%> </td>
                         </tr>
 
                         <% } %>      
@@ -68,4 +68,5 @@
 
 <script src="../resources/js/menulateral.js"></script>
 <script src="../resources/js/tabla.js"></script>
+
 </html>
