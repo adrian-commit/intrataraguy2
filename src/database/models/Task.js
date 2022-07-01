@@ -24,7 +24,19 @@ module.exports = (sequelize, DataTypes) => {
           type: DataTypes.INTEGER,
           allowNull: false
         },
+        service_id: {
+          type: DataTypes.INTEGER,
+          allowNull: false
+        },
         team: {
+          type: DataTypes.STRING,
+          allowNull: false
+        },
+        records: {
+          type: DataTypes.STRING,
+          allowNull: false
+        },
+        recordsQuantity: {
           type: DataTypes.STRING,
           allowNull: false
         },
@@ -67,9 +79,9 @@ module.exports = (sequelize, DataTypes) => {
     const Task = sequelize.define(alias, cols, config);
 
     Task.associate = function(models){
-      Task.hasOne(models.Service, {
+      Task.belongsTo(models.Service, {
         as: 'servicio',
-        foreignKey: 'tarea_id'
+        foreignKey: 'service_id'
       })
 
       Task.belongsTo(models.Client, {

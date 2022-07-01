@@ -39,6 +39,10 @@ module.exports = (sequelize, DataTypes) => {
         timeExerciseEnd: {
           type: DataTypes.DATEONLY,
           allowNull: true
+        },
+        user_id: {
+          type: DataTypes.INTEGER,
+          allowNull: false
         }
     }
 
@@ -51,16 +55,13 @@ module.exports = (sequelize, DataTypes) => {
 
     Client.associate = function(models){
 
-      Client.belongsToMany(models.Service, {
-        as: 'servicios',
-        through: 'clients_services',
-        foreignKey: 'client_id',
-        otherKey: 'service_id',
-        timestamps: false
-      });
+      Client.belongsTo(models.User, {
+        as:'usuario',
+        foreignKey:'user_id'
+      })
 
       Client.hasMany(models.Task, {
-        as:'tarea',
+        as:'tareas',
         foreignKey: 'client'
       })
 

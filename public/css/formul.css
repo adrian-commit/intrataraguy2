@@ -10,7 +10,8 @@ body{
  input[type=text],
  input[type=time],
  input[type=date],
- select {
+ select,
+ textarea {
     width: 100%;
     padding: 12px 20px;
     margin: 12px 0;
@@ -19,12 +20,13 @@ body{
     border-radius: 4px;
     box-sizing: border-box;
   }
+
+/*   
  input[type=submit],
  .btn-cancel {
   outline: none;
 	border: 1px solid #363431;
 	color: white;
-	width: 200px;
 	height: 30px;
 	text-shadow: 0px -1px 1px black;
 	font-size: 20px;
@@ -32,19 +34,76 @@ body{
 	font-family: Helvetica;
 	cursor: pointer;
 	background-image: linear-gradient(#3aad02,#2c6f05);
-  }
-  
-   input[type=submit]:hover {
+  } */
+
+   /* input[type=submit]:hover {
     background-color: #45a049;
   }
+   */ 
+   
+  /* Estilos boton CANCELAR*/
+  .btn-cancel{
+    width: 50%;
+    padding: 10px 5px;
+    background-color: #6B7280;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    font-size:medium;
+    color: #fffdfd;
+    text-align: center;
+    margin-top: 20px;
+    /* Para dar la apariencia de un boton */
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;  
+  }
+  .btn-cancel:hover,.btn-cancel:active{
+    color:#fff;
+    background-color: #f15f51;
+    border-color:#f15f51
+  ;
+  }
+  .btn-cancel:focus{
+    box-shadow:0 0 0 3px #6B7280;
+  }
   
+  /* Estilos boton GUARDAR*/
+  .btn-save{
+    width: 50%;
+    padding: 10px 5px;
+    background-color: #6B7295;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    font-size:medium;
+    color:#fffdfd;
+    margin-top: 20px;
+    /* Para dar la apariencia de un boton */
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;  
+  }
+  .btn-save:hover,.btn-save:active{
+    color:#fff;
+    background-color: #45a049;
+    border-color:#45a049;
+  }
+  .btn-save:focus{
+    box-shadow:0 0 0 3px #1E3A8A;
+  }
 
  .hijo {
     border-radius: 10px;
-    width: 35%;
+    width: 65%;
     background-color: #f2f2f2;
     padding: 20px;
     margin: 0 auto;
+    margin-top: 10%;
     font-family: Helvetica;
   }
 
@@ -84,11 +143,6 @@ body{
     float: right;
    
    }
-
-.btn-save{
-  background-color: brown;
- }
-
 
 .columna{
      background-color:#82A284;

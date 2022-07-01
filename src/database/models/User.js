@@ -20,6 +20,10 @@ module.exports = (sequelize, DataTypes) => {
           type: DataTypes.TEXT,
           allowNull: false
         },
+        team_id: {
+          type: DataTypes.INTEGER,
+          allowNull: false
+        },
         is_admin: {
           type: DataTypes.BOOLEAN,
           allowNull:false,
@@ -40,12 +44,9 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'user_id'
       });
 
-      User.belongsToMany(models.Service, {
-        as: 'servicios',
-        through: 'users_services',
-        foreignKey: 'user_id',
-        otherKey: 'service_id',
-        timestamps: false
+      User.hasMany(models.Client, {
+        as: 'clientes',
+        foreignKey: 'user_id'
       });
 
       User.belongsTo(models.Team, {

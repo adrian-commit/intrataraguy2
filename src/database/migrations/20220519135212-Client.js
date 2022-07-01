@@ -40,8 +40,11 @@ module.exports = {
       timeExerciseEnd: {
         type: Sequelize.DATEONLY,
         allowNull: true
+      },
+      user_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false
       }
-
     });
 
   },

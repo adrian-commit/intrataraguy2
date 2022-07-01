@@ -12,9 +12,21 @@ module.exports = (sequelize, DataTypes) => {
           type: DataTypes.STRING,
           allowNull: false
         },
-        tarea_id: {
-          type: DataTypes.INTEGER,
+        typeActivity: {
+          type: DataTypes.STRING,
           allowNull: false
+        },
+        contributionType: {
+          type: DataTypes.STRING,
+          allowNull: true
+        },
+        aplication: {
+          type: DataTypes.STRING,
+          allowNull: true
+        },
+        province: {
+          type: DataTypes.STRING,
+          allowNull: true
         }
     }
 
@@ -27,25 +39,9 @@ module.exports = (sequelize, DataTypes) => {
 
     Service.associate = function(models){
 
-      Service.belongsTo(models.Task, {
+      Service.hasOne(models.Task, {
         as:'tarea',
-        foreignKey: 'tarea_id'
-      });
-      
-      Service.belongsToMany(models.User, {
-        as: 'usuarios',
-        through: 'users_services',
-        foreignKey: 'service_id',
-        otherKey: 'user_id',
-        timestamps: false
-      });
-
-      Service.belongsToMany(models.Client, {
-        as: 'clientes',
-        through: 'clients_services',
-        foreignKey: 'service_id',
-        otherKey: 'client_id',
-        timestamps: false
+        foreignKey: 'service_id'
       });
 
     }

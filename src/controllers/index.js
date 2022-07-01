@@ -1,7 +1,8 @@
-const {User,DataUser,Client,Team} = require('../database/models');
+const {User,DataUser,Client,Team,Service} = require('../database/models');
 const {hashSync, compareSync} = require('bcryptjs');
 const session = require('express-session');
 const db = require('../database/models');
+
 
 module.exports = {
     
@@ -63,6 +64,7 @@ module.exports = {
                     delete userLogin.password;
                     req.session.userLogged = userLogin;
                     return res.redirect('/');
+                    
                     
                 }
                 return res.render('login',{
@@ -132,8 +134,13 @@ module.exports = {
         res.render('datosPersonales');
     },
     
-    servicios: (req, res)=>{
-        res.render('servicios');
+    servicios: async (req, res)=>{
+        try {
+            let services = await Service.findAll();
+            return res.render('servicios', {servicios: services});
+        } catch (error) {
+            return res.render('error', {error});
+        }
     },
 
     storageInfo: async (req,res) => {

@@ -14,6 +14,7 @@ module.exports = {
        staffQuantity: 300,
        typeActivity:'supermercados/retail',
        timeExerciseEnd:'2020-03-31',
+       user_id: 3
      },
      {
       id: 2,
@@ -25,6 +26,7 @@ module.exports = {
       staffQuantity: 25,
       typeActivity:'construcción',
       timeExerciseEnd:'2020-03-15',
+      user_id: 3
     }
     ], {});
   },

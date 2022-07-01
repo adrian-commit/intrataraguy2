@@ -6,9 +6,9 @@
     <title>TCE</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="menu.css" content="width=device-width, initial-scale=1.0">
-    <link href="../resources/css/menuLateral.css" rel="stylesheet">
-    <link href="../resources/css/formul.css" rel="stylesheet">
-    <link href="../resources/css/cronometro.css" rel="stylesheet">
+    <link href="../../resources/css/menuLateral.css" rel="stylesheet">
+    <link href="../../resources/css/formul.css" rel="stylesheet">
+    <link href="../../resources/css/cronometro.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ab05c0d697.js" crossorigin="anonymous"></script>
 </head>
 
@@ -16,14 +16,63 @@
 <body id="body">
     
     <%- include("./includes/menu")%>
-<br>
+
 
 <!--Formulario -->
 
 <div class="contenedor">
-    <div class="hijo">
+  <div class="hijo">
     <form action="/tareas/create" method="POST">
-      <h2>Mis   Tareas</h2>
+      <h2>Servicio</h2>
+      <label for="type">Tipo</label>
+      <input type="text" class="select-css" name="type" id="type" value="<%= servicio %>" readonly>                          
+    <% if (servicio == "Impuestos") { %> 
+      <label for="contributionType">Tipo de Impuesto</label>                          
+      <select id="rol" name="contributionType" id="contributionType" class="select-css" >
+        <option value="IVA" selected>IVA</option>
+        <option value="INGRESOS BRUTOS">INGRESOS BRUTOS</option>
+        <option value="IMPUESTO A LAS GANANCIAS">IMPUESTO A LAS GANANCIAS</option>
+        <option value="CONVENIO MULTILATERAL">CONVENIO MULTILATERAL</option>
+        <option value="TASAS Y SERVICIOS">TASAS Y SERVICIOS</option>
+        <option value="CONVENIO MULTILATERAL">CONVENIO MULTILATERAL</option>
+        <option value="RETENCIONES Y PERCEPCIONES">RETENCIONES Y PERCEPCIONES</option>
+        <option value="MONOTRIBUTO">MONOTRIBUTO</option>
+        <option value="SEGURIDAD SOCIAL">SEGURIDAD SOCIAL</option>  
+        <option value="REGIMEN INFORMATIVOS">REGIMEN INFORMATIVOS</option>  
+        <option value="OTROS REGIMENES INFORMATIVOS">OTROS REGIMENES INFORMATIVOS</option>                      
+      </select>
+      <label for="aplication">Ambito de Aplicacion</label>                          
+      <select id="rol" name="aplication" id="aplication" class="select-css" >
+        <option value="MUNICIPAL" selected>MUNICIPAL</option>
+        <option value="PROVINCIAL">PROVINCIAL</option>
+        <option value="NACIONAL">NACIONAL</option>                    
+      </select>
+      <label for="province">Provincia</label>                          
+      <select id="rol" name="province" id="province" class="select-css" >
+        <option value="CORRIENTES" selected>CORRIENTES</option>
+        <option value="CHACO">CHACO</option>
+        <option value="MISIONES">MISIONES</option>
+        <option value="BUENOS AIRES"> BUENOS AIRES</option>
+        <option value="CORDOBA">CORDOBA</option>
+        <option value="ENTRE RIOS">ENTRE RIOS</option>
+        <option value="LA PAMPA">LA PAMPA</option>
+        <option value="SALTA">SALTA</option>
+        <option value="SANTA FE">SANTA FE</option>
+        <option value="SANTIAGO DEL ESTERO">SANTIAGO DEL ESTERO</option>
+        <option value="BUENOS AIRES">BUENOS AIRES</option>
+        <option value="OTRAS">OTRAS</option>
+      </select>
+    <% } %> 
+      <label for="typeActivity">Tipo de Actividad</label>                          
+      <select id="rol" name="typeActivity" id="typeActivity"  class="select-css" >
+        <option value="SERVICIO" selected>SERVICIO</option>
+        <option value="AGROPECUARIA">AGROPECUARIA</option>
+        <option value="CONTRUCCION">CONTRUCCION</option>
+        <option value="UNIPERSONAL">UNIPERSONAL</option>
+        <option value="COMERCIAL">COMERCIAL</option>                    
+      </select>
+
+      <h2>Tarea</h2>
 
       <label for="name">Tarea</label>
       <select id="name" name="name">
@@ -32,74 +81,84 @@
         <option value="Ganancias - Impuestos">Ganancias - Impuestos</option>
       </select>
 
-      <label for="area">Area</label>
-      <select id="area" name="area">
-        <option value="Laboral">Laboral</option>
-        <option value="Impositivo">Impositivo</option>
-        <option value="Contabilidad y Auditoria">Contabilidad y Auditoria</option>
-      </select>
+      <input type="hidden" name="area" id="area" value="<%= servicio %>">
 
       <label for="cliente">Cliente</label>
       <select id="cliente" name="cliente">
         <% clientes.forEach(cliente => { %>
-           <option value="<%= cliente.name %> "><%= cliente.name %></option>
+            <option value="<%= cliente.id %> "><%= cliente.name %></option>
         <% }) %>
       </select>
-  
+
       <label for="equipo">Equipo</label>
-      <select id="equipo" name="equipo">
-        <% equipos.forEach(equipo => { %>
-          <option value="<%= equipo.name %> "><%= equipo.name %></option>
-        <% }) %>
+      <input type="text" name="equipo" id="equipo" value="<%= locals.user.equipo.name %>" readonly>
+      
+      <label for="records">Registros</label>                          
+      <select id="rol" name="records" id="records" class="select-css">
+        <option value="COMPROBANTES" selected>COMPROBANTES</option>
+        <option value="LEGAJOS">LEGAJOS</option>
+        <option value="RECIBOS">RECIBOS</option>
+        <option value="ASIENTOS">ASIENTOS</option>
+        <option value="PLANES DE PAGOS">PLANES DE PAGOS</option>
+        <option value="RESUMENES">RESUMENES</option>
+        <option value="BOLETAS">BOLETAS</option>
+        <option value="OTROS">OTROS</option>                    
       </select>
+      <label for="recordsQuantity">Registros/Cantidad</label>                          
+      <select id="rol" name="recordsQuantity" id="recordsQuantity" class="select-css">
+        <option value="1 a 10" selected>1 a 10</option>
+        <option value="10 a 50">10 a 50</option>
+        <option value="10 a 100">10 a 100</option>
+        <option value="mas de 100">mas de 100</option>                  
+      </select>
+
+      <section id="fecha"></section> 
 
       <label for="comment">Observaciones</label>
-      <input type="text" id="comment" name="comment">
+      <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
 
-     <section id="fecha"></section> 
-     <section id="displayInicio"></section>
-     <section id="displayPausa"></section>
-     <section id="displayContinuar"></section>
-     <section id="displayFin"></section> 
+      <section id="displayInicio">
+        <label for="tiempoInicio">Inicio: </label>
+        <input id="tiempoInicio" type="time" name="tiempoInicio" readonly>
+      </section>
+      <section id="displayPausa">
+        <label for="tiempoPausa">Pausa: </label>
+        <input id="tiempoPausa" type="time" name="tiempoPausa" readonly>
+      </section>
+      <section id="displayContinuar">
+        <label for="tiempoContinuar">Continuar: </label>
+        <input id="tiempoContinuar" type="time" name="tiempoContinuar" readonly>
+      </section>
+      <section id="displayFin">
+        <label for="tiempoFin">Terminar: </label>
+        <input id="tiempoFin" type="time" name="tiempoFin" readonly>
+      </section> 
 
-     <a href="/" class="btn-cancel">Cancelar</a>
-     <input type="submit" value="Cargar">
+      <a href="/" class="btn-cancel">Cancelar</a><input type="submit" class="btn-save" value="Cargar">
     </form>
-    
-    <!-- Cronometro-->
-    <div id="contenedor">
-        <section class="tempo">
-          <div class="reloj" id="Horas">00</div>
-          <div class="reloj" id="Minutos">:00</div>
-          <div class="reloj" id="Centesimas">:00</div>
-          <div class="reloj" id="Segundos">:00</div>
-        </section>
-        <div class="reloj" id="Horas">00</div>
-        <div class="reloj" id="Minutos">:00</div>
-        <div class="reloj" id="Segundos">:00</div>
-        <div class="reloj" id="Centesimas">:00</div>
-    
-
-    <button class='btn btn-success btn-lg' type="button" name="start"></button>
-
-        <section class="buttons">
-          <input type="button" class="boton" id="inicio" value="Inicio &#9658;" onclick="inicio();" >
-          <input type="button" class="boton" id="parar" value="Pausa &#8718;" onclick="parar();" disabled>
-          <input type="button" class="boton" id="continuar" value="Continuar &#8634;" onclick="inicio();" disabled>
-          <input type="button" class="boton" id="reinicio" value="Terminar" onclick="reinicio();" disabled>
-        </section>   
-        
-    </div>
-     </div>
-      
+  </div>
 </div>  
-
+<!-- Cronometro-->
+<div id="cronometro">
+    <section class="tempo">
+      <div class="reloj" id="Horas">00</div>
+      <div class="reloj" id="Minutos">:00</div>
+      <div class="reloj" id="Centesimas">:00</div>
+      <div class="reloj" id="Segundos">:00</div>
+    </section>
+    <section class="buttons">
+      <input type="button" class="boton" id="inicio" value="Inicio &#9658;" onclick="inicio();" >
+      <input type="button" class="boton" id="parar" value="Pausa &#8718;" onclick="parar();" disabled>
+      <input type="button" class="boton" id="continuar" value="Continuar &#8634;" onclick="inicio();" disabled>
+      <input type="button" class="boton" id="reinicio" value="Terminar" onclick="reinicio();" disabled>
+    </section>  
+</div>    
 
 </body>
 
 
-<script src="../resources/js/menulateral.js"></script>
+<script src="../../resources/js/menulateral.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.3/dayjs.min.js"></script>
-<script src="../resources/js/cronometro.js" ></script>
+<script src="../../resources/js/cronometro.js" ></script>
 
 </html>
