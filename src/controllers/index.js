@@ -129,6 +129,15 @@ module.exports = {
         }
     },
 
+    detalleServ: async (req, res) => {
+        try {
+            let services = await Service.findAll({include:{all:true}});
+            return res.render('detalleServicio', {services: services});
+        } catch (error) {
+            return res.render('error', {error});
+        }
+    },
+
 
     datosPersonales: (req, res)=>{
         res.render('datosPersonales');
@@ -202,6 +211,10 @@ module.exports = {
 
 detalleCliente: (req, res)=>{
     res.render('detalleCliente');
+},
+
+detalleServicio: (req, res)=>{
+    res.render('detalleServicio');
 },
 
 }

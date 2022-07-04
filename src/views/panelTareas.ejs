@@ -30,24 +30,23 @@
 
             <table id="tblData" >
                 <thead>
-                    <tr class="">
-                        <th >ID</th>
-                        <th >Status</th>
+                    <tr class="panelTar">
                         <th >Tarea</th>
                         <th >Cliente</th>
                         <th >Equipo</th>   
-                        <th >Fecha</th>
-                        <th >Tiempo - Inicio</th>
-                        <th >Tiempo - Fin</th>
-                        <th >Duración</th>
+                        <th >Fecha Tarea </th>
+                        <th >Inicio Tarea</th>
+                        <th >Fin Tarea</th>
+                        <th >Duración Tarea</th>
+                        <th >Tipo de Registro</th>
+                        <th >Cantidad Registros</th>
+                        <th >Observaciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <%= console.log(tasks) %> 
                         <% for (let i = 0;i < tasks.length; i++) { %>
                         <tr>
-                        <td><%=tasks[i].id%> </td>
-                        <td><%=tasks[i].condition%> </td>
                         <td><%=tasks[i].name%> </td>
                         <td><%=tasks[i].cliente.name%> </td>
                         <td><%=tasks[i].team%> </td>
@@ -55,6 +54,9 @@
                         <td><%=tasks[i].timeBeginning%> </td>
                         <td><%=tasks[i].timeEnd%> </td>
                         <td><%=tasks[i].totalTime%> </td>
+                        <td><%=tasks[i].records%> </td>
+                        <td><%=tasks[i].recordsQuantity%> </td>
+                        <td><%=tasks[i].observations%> </td>
                         </tr>
 
                         <% } %>      

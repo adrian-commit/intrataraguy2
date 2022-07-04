@@ -22,12 +22,42 @@ table, th, td {
 
   tr:hover {background-color: #90c2eb;}
 
-  th {
+  .detServ th  {
     text-align: center;
-    background-color: #1874c0;
+    background-color: #f56b66;
     color: aliceblue;
  
   }
+
+.panelTar th  {
+  text-align: center;
+  background-color: #b9b9b9;
+  color: rgb(0, 0, 0);
+
+}
+
+.panelUser th  {
+  text-align: center;
+  background-color: #666ff5;
+  color: rgb(255, 255, 255);
+
+}
+
+.detClient th  {
+  text-align: center;
+  background-color: #66f5e2;
+  color: rgb(0, 0, 0);
+
+}
+
+.detPers th  {
+  text-align: center;
+  background-color: #b9b9b9;
+  color: rgb(0, 0, 0);
+
+}
+
+
 
 .bot-1{
     color:green;
@@ -49,7 +79,7 @@ table, th, td {
 .bot-exportar{
   text-align: center;
   padding: 2px;
-  background-color: #1874c0;
+  background-color: #f56b66;
   color: aliceblue;
   font-size: 18px;
   clear:right;
