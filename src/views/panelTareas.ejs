@@ -41,22 +41,24 @@
                         <th >Tipo de Registro</th>
                         <th >Cantidad Registros</th>
                         <th >Observaciones</th>
+                        <th >Estado</th>
                     </tr>
                 </thead>
                 <tbody>
                     <%= console.log(tasks) %> 
                         <% for (let i = 0;i < tasks.length; i++) { %>
-                        <tr>
-                        <td><%=tasks[i].name%> </td>
-                        <td><%=tasks[i].cliente.name%> </td>
-                        <td><%=tasks[i].team%> </td>
-                        <td><%=tasks[i].date%> </td>
-                        <td><%=tasks[i].timeBeginning%> </td>
-                        <td><%=tasks[i].timeEnd%> </td>
-                        <td><%=tasks[i].totalTime%> </td>
-                        <td><%=tasks[i].records%> </td>
-                        <td><%=tasks[i].recordsQuantity%> </td>
-                        <td><%=tasks[i].observations%> </td>
+                        <tr class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>">  
+                        <td class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>"> <%=tasks[i].name%> </td>
+                        <td class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>"> <%=tasks[i].cliente.name%> </td>
+                        <td class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>"> <%=tasks[i].team%> </td>
+                        <td class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>"> <%=tasks[i].date%> </td>
+                        <td class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>"> <%=tasks[i].timeBeginning%> </td>
+                        <td class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>"> <%=tasks[i].timeEnd%> </td>
+                        <td class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>"> <%=tasks[i].totalTime%> </td>
+                        <td class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>"> <%=tasks[i].records%> </td>
+                        <td class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>"> <%=tasks[i].recordsQuantity%> </td>
+                        <td class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>"> <%=tasks[i].observations%> </td>
+                        <td class="<%= tasks[i].condition == "Pendiente" ? "text-red cdtr" : "text-green cdtg" %>"> <%=tasks[i].condition%> </td>
                         </tr>
 
                         <% } %>      

@@ -29,7 +29,6 @@ module.exports = {
                 })
             } else {
                 let team = await Team.findOne({where:{name:req.body.team}});
-                console.log(team);
                 let newUser = await User.create({
                     userName: req.body.userName,
                     email: req.body.email,

@@ -1,9 +1,30 @@
+table {
+  scroll-behavior: smooth
+  ;
+}
 table, th, td {
-    border: 1px solid;
-    padding: 15px;
-    text-align: left;
-   
-  }
+  border: 1px solid;
+  padding: 15px;
+  text-align: left;
+}
+
+.text-red { 
+  border: 1px solid red;
+}
+
+.text-green {
+  border: 1px solid green;
+}
+
+.cdtr {
+background-color: #f56b66;
+color: white;
+}
+
+.cdtg {
+background-color: #06c720;
+color: white;
+}
 
   table {
     width: 100%;
@@ -119,6 +140,7 @@ i {
 .container h1{
  text-align: center;
 }
+
 
 
 

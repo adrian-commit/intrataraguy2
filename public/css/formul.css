@@ -4,7 +4,10 @@ body{
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+}
 
+.content {
+  display: none;
 }
 
  input[type=text],
@@ -186,6 +189,30 @@ body{
   
    }
 
+   .spinner{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin:auto;
+    background: conic-gradient(
+      #0000 10%,
+      #8f44fd
+    );
+    -webkit-mask-: 
+    radial-gradient(
+      farhest-side,
+      #0000 calc(100% - px),
+      #000
+      0
+    );
+    animation: spin 0.8s infinite linear;
+   }
+
+   @keyframes spin {
+    to {
+      transform: rotate(1turn);
+    }
+   }
 
 
 

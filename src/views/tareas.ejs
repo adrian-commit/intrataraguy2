@@ -22,7 +22,7 @@
 
 <div class="contenedor">
   <div class="hijo">
-    <form action="/tareas/create" method="POST">
+    <form action="/tareas/create" id="formulario" method="POST">
       <h2>Servicio</h2>
       <label for="type">Tipo</label>
       <input type="text" class="select-css" name="type" id="type" value="<%= servicio %>" readonly>                          
@@ -41,6 +41,7 @@
         <option value="REGIMEN INFORMATIVOS">REGIMEN INFORMATIVOS</option>  
         <option value="OTROS REGIMENES INFORMATIVOS">OTROS REGIMENES INFORMATIVOS</option>                      
       </select>
+      <input type="hidden" name="ids" id="ids" value="<%= ids %>">
       <label for="aplication">Ambito de Aplicacion</label>                          
       <select id="rol" name="aplication" id="aplication" class="select-css" >
         <option value="MUNICIPAL" selected>MUNICIPAL</option>
@@ -132,7 +133,11 @@
       <section id="displayFin">
         <label for="tiempoFin">Terminar: </label>
         <input id="tiempoFin" type="time" name="tiempoFin" readonly>
-      </section> 
+      </section>  
+      <section id="displayTotal">
+        <label for="total">Total: </label> 
+        <input type="time" id="total" name="total" value="" readonly>
+      </section>
 
       <a href="/" class="btn-cancel">Cancelar</a><input type="submit" class="btn-save" value="Cargar">
     </form>
@@ -143,8 +148,8 @@
     <section class="tempo">
       <div class="reloj" id="Horas">00</div>
       <div class="reloj" id="Minutos">:00</div>
-      <div class="reloj" id="Centesimas">:00</div>
       <div class="reloj" id="Segundos">:00</div>
+      <div class="reloj" id="Centesimas">:00</div>
     </section>
     <section class="buttons">
       <input type="button" class="boton" id="inicio" value="Inicio &#9658;" onclick="inicio();" >
@@ -159,6 +164,7 @@
 
 <script src="../../resources/js/menulateral.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.3/dayjs.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../../resources/js/cronometro.js" ></script>
 
 </html>
