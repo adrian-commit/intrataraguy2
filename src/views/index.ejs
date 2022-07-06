@@ -6,88 +6,89 @@
 	<title>TCE</title>
     <link href="resources/css/menuLateral.css" rel="stylesheet">
     <link href="resources/css/formul.css" rel="stylesheet">
+    <link href="resources/css/graficos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <script src="../../resources/js/spinner.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300" rel="stylesheet" />
 </head>
 
 
 
 <!--Menu Vertical-->
 <body id="body">
-    <section class="spinner"></section> 
-    <section class="content">
-        <%- include("./includes/menu")%>
-        <canvas id="myChart" style="position: relative; height: 40vh; width: 80vw"></canvas>
-        
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        
-        <script>
-            var ctx = document.getElementById('myChart');
-            var myChart = new Chart(ctx, {
-               type: 'bar',
-               data:{
-                datasets: [{
-                    level: 'title',
-                    backgroundColor: ['#6bf1ab', '#63d69f', '#438c6c', '#509c7f', '#1f794e', '#34444c', '#90CAF9', '#64B5F6', '#64B5F6', '#42A5F5', '#2196F3', '#0D47A1'],
-                    boderColor: ['black'],
-                    borderWidth:1
-                }]
-               },
-               options:{
-                scales:{
-                    y:{
-                        beginAtZero:true
-                    }
-                }
-               } 
-            })
-        
-            let url = 'https://jsonplaceholder.typicode.com/albums'
-            fetch(url)
-                .then( response => response.json() )
-                .then( datos => mostrar(datos) )
-                .catch( error => console.log(error) )
-        
-            const mostrar = (data) => {
-                data.forEach(element => {
-                    myChart.data['labels'].push(element.title)
-                    myChart.data['datasets'][0].data.push(element.userId)
-            });
-            console.log(myChart.data)
-            }
-        
-        
-        </script>
-        
-        <div class="">
-            <h1>Generalidades</h1>
-            <section class="grande">
-                <p class=columna> 
-                  
-                  
-                    Tiempos Generales por Servicios</p>
-                <p class=columna>Tiempos Generales por Equipos</p>
-                <p class=columna>Tiempos generales tareas</p>
-            </section>   
-        </div>
-        <br>
-        
-        <div class="">
-            <h1>Estadisticas Individuales</h1>
-            <section class="grande">
-                <p class=columna>Cantidad de tareas realizadas</p>
-                <p class=columna>Tiempo aplicado por servicios</p>
-                <p class=columna>Tiempo del ultimo mes</p>
-            </section>
-        </div>
-        <br>
-        <br>
-    </section>
+
+    <section class="spinner"></section>
+
+    <%- include("./includes/menu")%>
+
+    <main >
+
+        <h1>Actividades TCE</h1>
+        <h3>Visualización de estadísticas globales</h3>
+
+        <hr>
+
+        <section class="cols-3">
+            <figure>
+                <h2>Cantidad Servicios</h2>
+                <canvas id="modelsChart"></canvas>
+            </figure>
+
+            <figure>
+                <h2>Cantidad de Tareas</h2>
+                <canvas id="modelsChart"></canvas>
+            </figure>
+            
+            <figure>
+                <h2>Cantidad Clientes</h2>
+                <canvas id="modelsChart"></canvas>
+            </figure>
+
+        </section> 
+
+        <section class="cols-2">
+
+            <figure>
+                <h2>Comparativo de Servicios</h2>
+                <canvas id="modelsChart"></canvas>
+            </figure>
+
+            <figure>
+                <h2>Comparativo de Tareas:
+                    <select id="featuresOptions">
+                        <option value="height">Servicios</option>
+                        <option value="length">Clientes</option>
+                        <option value="speed">Equipos</option>
+                        <option value="speed">Registros</option>
+                    </select>
+                </h2>
+                <canvas id="featuresChart"></canvas>
+            </figure>
+
+        </section>
+
+        <section class="cols-1">
+            <figure>
+                <h2>Actividades por mes</h2>
+                <canvas id="yearsChart" height="300px"></canvas>
+            </figure>
+        </section>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+
+
+    <script src="./resources/js/helpers.js"></script>
+    <script src="./resources/js/handlers.js"></script>
+    <script src="./resources/js/app2.js"></script>
+    <script src="./resources/js/spinner.js"></script>
+</body>
+
+
+
 
     
-
-    
-    </body>
 
         <script src="./resources/js/menulateral.js"></script>
 
