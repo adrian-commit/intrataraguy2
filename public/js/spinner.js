@@ -3,7 +3,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
     setTimeout(() => {
       document.querySelector(".spinner").style.display = "none";
       document.querySelector(".content").style.display = "inline-block";  
-    }, 5000);
+    }, 2000);
 
     
 })

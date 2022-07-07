@@ -12,13 +12,10 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300" rel="stylesheet" />
 </head>
 
-
-
 <!--Menu Vertical-->
 <body id="body">
-
     <section class="spinner"></section>
-
+    <section class="content"></section>
     <%- include("./includes/menu")%>
 
     <main >
@@ -31,7 +28,15 @@
         <section class="cols-3">
             <figure>
                 <h2>Cantidad Servicios</h2>
-                <canvas id="modelsChart"></canvas>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div>
+                    <H2>321321</H2>
+                </div>
+                
+              
             </figure>
 
             <figure>
@@ -50,16 +55,16 @@
 
             <figure>
                 <h2>Comparativo de Servicios</h2>
-                <canvas id="modelsChart"></canvas>
+                <canvas id="TypesCharts"></canvas>
             </figure>
 
             <figure>
-                <h2>Comparativo de Tareas:
+                <h2>Comparativo de Tareas/Tiempos:
                     <select id="featuresOptions">
-                        <option value="height">Servicios</option>
-                        <option value="length">Clientes</option>
-                        <option value="speed">Equipos</option>
-                        <option value="speed">Registros</option>
+                        <option value="totalTime">client (hs)</option>
+                        <option value="length">Clientes (hs)</option>
+                        <option value="speed">Equipos (hs)</option>
+                        <option value="speed">Registros (hs)</option>
                     </select>
                 </h2>
                 <canvas id="featuresChart"></canvas>

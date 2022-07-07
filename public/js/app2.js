@@ -2,37 +2,29 @@ Chart.defaults.color = '#fff'
 Chart.defaults.borderColor = '#444'
 
 
-
 const printCharts = () => {
+    
+    fetchCoastersData('http://localhost:3030/api/services', 'http://localhost:3030/api/clients', 'http://localhost:3030/api/tasks/')
+    .then(([allservices, alltasks]) => {
 
-    fetchCoastersData('http://localhost:3030/api/tasks/', 'http://localhost:3030/api/clients/', 'http://localhost:3030/api/services/' ,)
-        .then(([allclients, allservices, alltasks]) => {
-            console.log(allclients, allservices, alltasks)
-
-            renderModelsChart(allCoasters)
-            renderFeaturesChart(nationalCoasters)
-            renderYearsChart(allCoasters)
-            enableEventHandlers(nationalCoasters)
+        renderTypesChart(allservices)
+        renderTasksChart(alltasks)
         })
+    } 
 
-}
+/**SERVICIOS Y GRAFICOS DE DONA */
+    const renderTypesChart = services => {
 
+        const uniqueTypes = [...new Set(services.map(services => services.type))]
 
-
-const renderModelsChart = coasters => {
-
-    const uniqueModels = [...new Set(coasters.map(coaster => coaster.model))]
-
-    const data = {
-        labels: uniqueModels,
+        const data = { 
+        labels: uniqueTypes,
         datasets: [{
-            data: uniqueModels.map(currentModel => coasters.filter(coaster => coaster.model === currentModel).length),
+            data:uniqueTypes.map(currentType => services.filter(service => service.type === currentType).length),
             borderColor: getDataColors(),
-            backgroundColor: getDataColors(20)
+            backgroundColor: getDataColors(20),
         }]
     }
-
-    //Sirve para acomodar las leyendas//
 
     const options = {
         plugins: {
@@ -40,64 +32,26 @@ const renderModelsChart = coasters => {
         }
     }
 
-    new Chart('modelsChart', { type: 'doughnut', data, options })
-}
+    new Chart('TypesCharts',{ type: 'doughnut', data, options })
+ }
 
+ 
+ //**TAREAS Y GRAFICO DE MAPAS*//
 
-
-
-const renderFeaturesChart = coasters => {
+const renderTasksChart = tasks => {
 
     const data = {
-        labels: coasters.map(coaster => coaster.name),
+        labels: tasks.map(tasks => tasks.type),
         datasets: [{
-            label: 'Altura (m)',
-            data: coasters.map(coaster => coaster.height),
+            label: 'client (hs)',
+            data: tasks.map(tasks => tasks.name),
             borderColor: getDataColors()[0],
-            backgroundColor: getDataColors(20)[0]
-        }]
+            backgroundColor: getDataColors(20)[0],
+        }] 
     }
 
-    const options = {
-        plugins: {
-            legend: { display: false }
-        },
-        scales: {
-            r: {
-                ticks: { display: false }
-            }
-        }
-    }
+    new Chart('featuresChart',{ type: 'radar', data })
 
-    new Chart('featuresChart', { type: 'radar', data, options })
-}
-
-
-
-
-const renderYearsChart = coasters => {
-
-    const years = ['1998-2000', '2001-2003', '2004-2006', '2007-2009', '2013-2015', '2016-2018', '2019-2021']
-
-    const data = {
-        labels: years,
-        datasets: [{
-            data: getCoastersByYear(coasters, years),
-            tension: .5,
-            borderColor: getDataColors()[1],
-            backgroundColor: getDataColors(20)[1],
-            fill: true,
-            pointBorderWidth: 5
-        }]
-    }
-
-    const options = {
-        plugins: {
-            legend: { display: false }
-        }
-    }
-
-    new Chart('yearsChart', { type: 'line', data, options })
 }
 
 
