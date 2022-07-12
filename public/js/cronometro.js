@@ -61,6 +61,21 @@ function cronometro () {
 	}
 }
 
+//-- seteando para que el cronómetro siga funcionando en segundo plano --//
+document.addEventListener('visibilitychange', (e) => {
+	if (e.target.visibilityState != "visible") {
+		document.getElementById("inicio").disabled = true;
+		function inicio () {
+			control = setInterval(cronometro,10);
+			document.getElementById("inicio").disabled = true;
+			document.getElementById("parar").disabled = false;
+			document.getElementById("continuar").disabled = true;
+			document.getElementById("reinicio").disabled = false;
+		}
+		console.log("te fuiste, no?");
+	};
+})
+
 //-- capturar los lugares donde van los inputs --//
 const displayInicio = document.getElementById('displayInicio');
 const displayPausa = document.getElementById('displayPausa');
@@ -149,6 +164,7 @@ const tiempoFin = fin.addEventListener('click', () => {
 
 //calculo del tiempo total-//
 const tiempoTotal = fin.addEventListener('click', () => {
+
 	//-- creo un objeto en base a la hora que capture del cronometro --//
 	const milisegundosI = Date.parse(fechaActual + " " + tiempoI);
 	const fechaI = dayjs(new Date(milisegundosI));
@@ -166,9 +182,11 @@ const tiempoTotal = fin.addEventListener('click', () => {
 	const milisegundosTotal = fechaF.diff(fechaI);
 	const fechaTotal = dayjs(new Date(milisegundosTotal));
 
+	//-- Defino las variables en esta parte, porque no puedo ejecutarlas adentro de la función --/
+
 	//-- cuando se pausa el cronometro y se tiene en cuenta la hora de descanso --//
 	let milisegundosTotalConDescanso = 0;
-	if ((milisegundosP != milisegundosC) != 0) {
+	if (milisegundosC && milisegundosP != NaN) {
 		const milisegundosDescanso = fechaC.diff(fechaP);
 		const fechaDescanso = dayjs(new Date(milisegundosDescanso));
 		milisegundosTotalConDescanso = fechaTotal.diff(fechaDescanso);
@@ -189,15 +207,15 @@ const tiempoTotal = fin.addEventListener('click', () => {
 			horas = 0 + horaDeMas;
 		}
 
-		const fechaDefinitiva = dayjs(fechaTotalConDescanso + " " + horas + ":" + minutos + ":" + segundos);
-		const horaDefinitiva = fechaDefinitiva.format("HH:mm:ss");
-
-		const agregarTiempoTotal = displayTotal.innerHTML = `
+		let fechaDefinitivaCD = dayjs(fechaTotalConDescanso + " " + horas + ":" + minutos + ":" + segundos);
+		let horaDefinitivaCD = fechaDefinitivaCD.format("HH:mm:ss");
+		let agregarTiempoCD = displayTotal.innerHTML = `
 		<label for="total">Total: </label> 
-		<input type="time" id="total" name="total" value="${horaDefinitiva}" readonly> 
+		<input type="time" id="total" name="total" value="${horaDefinitivaCD}" readonly> 
 		` ;
+		
 	} else {
-			//-- obtengo por separado las unidades para trabajar con la hora --//	
+		//-- obtengo por separado las unidades para trabajar con la hora --//	
 		let horas = fechaTotal.hour();
 		let minutos = fechaTotal.minute();
 		let segundos = fechaTotal.second();
@@ -208,35 +226,32 @@ const tiempoTotal = fin.addEventListener('click', () => {
 			horas = 0 + horaDeMas;
 		}
 
-		const fechaDefinitiva = dayjs(fechaTotal + " " + horas + ":" + minutos + ":" + segundos);
-		const horaDefinitiva = fechaDefinitiva.format("HH:mm:ss");
-		
-		const agregarTiempoTotal = displayTotal.innerHTML = `
+		let fechaDefinitivaSD = dayjs(fechaTotal + " " + horas + ":" + minutos + ":" + segundos);
+		let horaDefinitivaSD = fechaDefinitivaSD.format("HH:mm:ss");
+		let agregarTiempoTotal = displayTotal.innerHTML = `
 		<label for="total">Total: </label> 
-		<input type="time" id="total" name="total" value="${horaDefinitiva}" readonly> 
+		<input type="time" id="total" name="total" value="${horaDefinitivaSD}" readonly> 
 		` ;
-	};
-	
+	};	
 });
 
 let formularioTarea = document.forms.formulario;
-let servicio = formularioTarea.type;
-let tarea = formularioTarea.name;
-let cliente = formularioTarea.client;
-let horaDefinitiva = formularioTarea.total;
-console.log(formularioTarea);
 formularioTarea.addEventListener('submit', (e) => {
 	e.preventDefault();
+	let formulario = document.forms.formulario;
+	let tarea = formulario.name.value;
+	let tiempo = formulario.total.value;
 	Swal.fire({
-		titleText: "Completado",
-		text:"Servicio :" + servicio +
-		"Tarea: " + tarea +
-		"cliente: " + cliente +
-		"Duración: " + horaDefinitiva,
+		title: "Completado",
+		titleText: tarea,
+		text:"Duración: " + tiempo,
 		icon: 'success',
 		showConfirmButton: false,
-		timer:2500
+		timer:5000
 	});
-	formularioTarea.submit();
+	setTimeout(() => {
+	formularioTarea.submit()
+	},2000);
+	
 })
 

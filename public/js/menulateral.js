@@ -1,4 +1,4 @@
-console.log("adrian")
+
 //Ejecutar función en el evento click
 document.getElementById("btn_open").addEventListener("click", open_close_menu);
 
