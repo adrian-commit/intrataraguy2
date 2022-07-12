@@ -128,6 +128,26 @@ module.exports = {
         }
     },
 
+/** CONTAR SERVICIOS*/
+    contarServicios: async (req, res) => {
+        try {
+            let services = await Service.findAll({include:{all:true}});
+            return res.render('index',{service:services.length});
+        } catch (error) {
+            return res.render('error', {error});
+        }
+    },
+
+/** CONTAR CLIENTES*/
+    contarClientes: async (req, res) => {
+        try {
+            let clients = await Client.findAll({include:{all:true}});
+            return res.send(clients);
+    } catch (error) {
+            return res.render('error', {error});
+    }
+},
+
     detalleServ: async (req, res) => {
         try {
             let services = await Service.findAll({include:{all:true}});

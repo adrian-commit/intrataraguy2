@@ -48,6 +48,20 @@ figure, canvas {
     padding: 10px 10px 30px;
 }
 
+figure, article {
+    background-color: rgba(255,255,255,.03);
+    padding: 10px 10px 20px;
+}
+
+figure, article .Kpis{
+    font-size: 15px;
+    font-weight: 100;
+    width: 100%;
+    text-align: center;
+  
+
+}
+
 canvas {
     width: 100%;
 }
@@ -67,7 +81,6 @@ canvas {
 }
 
 .cols-3 > * {
-    width: 100%;
     margin: 10px;
 }
 

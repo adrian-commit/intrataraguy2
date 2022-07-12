@@ -4,7 +4,7 @@ const enableEventHandlers = tasks => {
 
         const { value: property, text: label } = e.target.selectedOptions[0]
 
-        const newData = tasks.map(tasks => tasks[property])
+        const newData = tasks.map(coaster => coaster[property])
 
         updateChartData('featuresChart', newData, label)
     }
