@@ -14,11 +14,8 @@
 <!--Menu Vertical-->
 <body id="body">
     <section class="spinner"></section>
-    <section class="content"></section>
-    <%- include("./includes/menu")%>
-
-    <main >
-
+    <main class="content">
+        <%- include("./includes/menu")%>
         <h1>Actividades TCE</h1>
         <h3>Visualización de estadísticas globales</h3>
 
@@ -29,7 +26,7 @@
                 <h2>Cantidad Servicios</h2>
                 <article id="Kpis"> 
                 <br> 
-                <h1><%=service %></h1>
+                <h1><%= services.length %></h1>
                 <br>
                 <br>
                 </article>          
@@ -39,7 +36,7 @@
                 <h2>Cantidad Clientes</h2>
                 <article>
                 <br> 
-                <h1><%=clients %></h1>
+                <h1><%= clients.length %></h1>
                 <br>
                 <br>
                 </article>

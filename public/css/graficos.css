@@ -14,12 +14,12 @@ body {
 }
 
 html {
-  padding: 20px;
+  /* padding: 00px; */
   font-weight: 300;
 }
 
 main {
-    padding: 60px;
+    padding: 0px;
 }
 
 section {

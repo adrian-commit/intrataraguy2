@@ -9,5 +9,13 @@ module.exports = {
 
   clientes: (req, res)=>{
     res.render('clientes');
+  },
+
+  createClient: async (req,res) => {
+    try {
+      
+    } catch (error) {
+      
+    }
   }
 }

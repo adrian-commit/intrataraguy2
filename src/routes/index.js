@@ -8,6 +8,7 @@ const loggedMiddleware = require('../middlewares/loggedMiddleware');
 
 
 //--- Rutas GET ---//
+router.get('/',notLoggedMiddleware, index);
 router.get('/login', loggedMiddleware, login);
 router.get('/register', loggedMiddleware, register);
 router.get("/logout", logout);
@@ -16,8 +17,8 @@ router.get('/servicios',notLoggedMiddleware, servicios);
 router.get('/detalleCliente',notLoggedMiddleware, clientsList);
 router.get('/detallePersonal',notLoggedMiddleware, detalleList);
 router.get('/detalleServicio',notLoggedMiddleware, detalleServ);
-router.get('/',notLoggedMiddleware, contarServicios);
-router.get('/',notLoggedMiddleware, contarClientes);
+
+
 
 
 router.get('/', notLoggedMiddleware, index);

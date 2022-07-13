@@ -55,12 +55,6 @@ header{
     position: absolute;
 }
 
-.burguer {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
 
 .menu__side{
     width: 80px;

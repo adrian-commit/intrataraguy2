@@ -91,9 +91,17 @@ module.exports = {
         }
     },
 
-    index: (req,res) => {
-        res.render('index', {user:req.session.userLogged}); 
-            
+    index: async (req,res) => {
+        try {
+            let services = await Service.findAll({include:{all:true}});
+            let clients = await Client.findAll({include:{all:true}});
+            res.render('index', {user:req.session.userLogged,
+            clients,
+            services
+            }); 
+        } catch (error) {
+            return res.render('error', {error});
+        }    
     },
 
     logout: (req, res) => {
@@ -127,26 +135,6 @@ module.exports = {
             return res.render('error', {error});
         }
     },
-
-/** CONTAR SERVICIOS*/
-    contarServicios: async (req, res) => {
-        try {
-            let services = await Service.findAll({include:{all:true}});
-            return res.render('index',{service:services.length});
-        } catch (error) {
-            return res.render('error', {error});
-        }
-    },
-
-/** CONTAR CLIENTES*/
-    contarClientes: async (req, res) => {
-        try {
-            let clients = await Client.findAll({include:{all:true}});
-            return res.send(clients);
-    } catch (error) {
-            return res.render('error', {error});
-    }
-},
 
     detalleServ: async (req, res) => {
         try {
