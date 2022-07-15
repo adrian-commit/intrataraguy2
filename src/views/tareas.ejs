@@ -87,12 +87,12 @@
       <label for="cliente">Cliente</label>
       <select id="cliente" name="cliente">
         <% clientes.forEach(cliente => { %>
-            <option value="<%= cliente.id %> "><%= cliente.name %></option>
+            <option value="<%= cliente.name %> "><%= cliente.name %></option>
         <% }) %>
       </select>
 
       <label for="equipo">Equipo</label>
-      <input type="text" name="equipo" id="equipo" value="" readonly>
+      <input type="text" name="equipo" id="equipo" value="<%= locals.user.equipo.name %> " readonly>
       
       <label for="records">Registros</label>                          
       <select id="rol" name="records" id="records" class="select-css">

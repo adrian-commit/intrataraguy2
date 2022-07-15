@@ -36,11 +36,12 @@ module.exports = {
                     aplication:req.body.type == "Impuestos" ? req.body.aplication : null,
                     province:req.body.type == "Impuestos" ? req.body.province : null,
 
-                })
+                });
+                let clientAssociate = await Client.findOne({where:{name:req.body.cliente}})
                 let newTask = await Task.create({
                     name: req.body.name,
                     type: req.body.area,
-                    client: req.body.cliente,
+                    client: clientAssociate.id,
                     service_id: newService.id,
                     team: req.body.equipo,
                     records:req.body.records,

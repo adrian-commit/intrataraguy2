@@ -239,12 +239,13 @@ let formularioTarea = document.forms.formulario;
 formularioTarea.addEventListener('submit', (e) => {
 	e.preventDefault();
 	let formulario = document.forms.formulario;
-	let tarea = formulario.name.value;
+	console.log(formulario);
+	let servicio = formulario.type.value;
+	let cliente = formulario.cliente.value;
 	let tiempo = formulario.total.value;
 	Swal.fire({
 		title: "Completado",
-		titleText: tarea,
-		text:"Duración: " + tiempo,
+		titleText: "Le dedicaste al cliente " + cliente + " ," + tiempo + " tiempo",
 		icon: 'success',
 		showConfirmButton: false,
 		timer:5000
