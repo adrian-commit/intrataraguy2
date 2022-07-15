@@ -5,7 +5,7 @@ const router = Router();
 
 router.get('/', clientes);
 
-// router.post('/createClient', createClient)
+router.post('/createClient', createClient)
 
 
 

@@ -1,3 +1,5 @@
+const {Client} = require("../database/models");
+
 module.exports = {
   login: (req, res)=>{
     res.render('login'); 
@@ -13,9 +15,20 @@ module.exports = {
 
   createClient: async (req,res) => {
     try {
-      
+      let newClient = await Client.create({
+        name: req.body.name,
+        businessName: req.body.businessName,
+        typePerson: req.body.typePerson,
+        cuit: req.body.cuit,
+        officesQuantity: req.body.officesQuantity,
+        staffQuantity: req.body.staffQuantity,
+        typeActivity: req.body.typeActivity,
+        timeExerciseEnd: req.body.timeExerciseEnd,
+        user_id: req.body.user
+      });
+      return res.redirect('/detalleCliente');
     } catch (error) {
-      
+      return res.render('error', {error});
     }
   }
 }

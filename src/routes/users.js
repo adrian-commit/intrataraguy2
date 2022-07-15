@@ -1,12 +1,11 @@
+const {users,storagePersonalInfo} = require('../controllers/users');
 const {Router} = require('express');
 const router = Router();
 
 
 
-router.get('/', (req, res)=>{
-    res.render('users')
-
-});
+router.get('/', users);
+router.post('/createPersonalInfo', storagePersonalInfo);
 
 
 

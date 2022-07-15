@@ -21,7 +21,6 @@ router.get('/detalleServicio',notLoggedMiddleware, detalleServ);
 
 
 
-router.get('/', notLoggedMiddleware, index);
 router.get('/calendario', notLoggedMiddleware, calendario);
 router.get('/datosPersonales', notLoggedMiddleware, datosPersonales);
 router.get('/clientes', notLoggedMiddleware, clientes);
