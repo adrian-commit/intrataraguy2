@@ -110,4 +110,17 @@ canvas {
     .cols-2 > * {
         width: 100%;
     }
+
+    .running section {
+        opacity: 1
+    }
+    
+    .loading {
+        position: absolute;
+        border: none;
+    }
+    
+    .running .loading {
+        display: none;
+    }
 }

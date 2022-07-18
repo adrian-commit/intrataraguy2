@@ -245,14 +245,14 @@ formularioTarea.addEventListener('submit', (e) => {
 	let tiempo = formulario.total.value;
 	Swal.fire({
 		title: "Completado",
-		titleText: "Le dedicaste al cliente " + cliente + " ," + tiempo + " tiempo",
+		titleText: "La TAREA con el cliente  " + cliente +  " te demando el tiempo de:   " + tiempo ,
 		icon: 'success',
 		showConfirmButton: false,
-		timer:5000
+		timer:10000
 	});
 	setTimeout(() => {
 	formularioTarea.submit()
-	},2000);
+	},4000);
 	
 })
 

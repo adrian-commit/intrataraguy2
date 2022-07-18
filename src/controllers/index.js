@@ -1,4 +1,4 @@
-const {User,DataUser,Client,Team,Service} = require('../database/models');
+const {User,DataUser,Client,Team,Service,Task} = require('../database/models');
 const {hashSync, compareSync} = require('bcryptjs');
 const session = require('express-session');
 const db = require('../database/models');
@@ -95,9 +95,11 @@ module.exports = {
         try {
             let services = await Service.findAll({include:{all:true}});
             let clients = await Client.findAll({include:{all:true}});
+            let tasks = await Task.findAll({include:{all:true}});
             res.render('index', {user:req.session.userLogged,
             clients,
-            services
+            services,
+            tasks
             }); 
         } catch (error) {
             return res.render('error', {error});

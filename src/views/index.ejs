@@ -26,66 +26,81 @@
             <figure>
                 <h2>Cantidad Servicios</h2>
                 <article id="Kpis"> 
-                <br> 
                 <h1><%= services.length %></h1>
-                <br>
-                <br>
                 </article>          
             </figure>
 
             <figure>
                 <h2>Cantidad Clientes</h2>
                 <article>
-                <br> 
                 <h1><%= clients.length %></h1>
-                <br>
-                <br>
                 </article>
             </figure>
             
             <figure>
-                <h2>Cantidad Clientes</h2>
-                <canvas id="modelsChart"></canvas>
+                <h2>Cantidad Tareas</h2>
+                <article>
+                    <h1><%= tasks.length %></h1>
+                    </article>
             </figure>
 
         </section> 
 
         <section class="cols-2">
-
             <figure>
-                <h2>Comparativo de Servicios</h2>
-                <canvas id="TypesCharts"></canvas>
+                <p>Comparativa Tareas</p>
+                <h3>Registros Utilizados</h3>
+                <canvas id="chartTareas"></canvas>
             </figure>
 
             <figure>
-                <h2>Comparativo de Tareas/Tiempos:
-                    <select id="featuresOptions">
-                        <option value="name">client (hs)</option>
-                        <option value="length">Clientes (hs)</option>
-                        <option value="speed">Equipos (hs)</option>
-                        <option value="speed">Registros (hs)</option>
-                    </select>
-                </h2>
-                <canvas id="featuresChart"></canvas>
+                <p>Comparativo General</p>
+                <h3>Servicios</h3>
+                <canvas id="chartServicios"></canvas>
+            </figure>
+        </section>
+
+        <section class="cols-3">
+            <figure>
+                <p>Comparativo de Servicios</p>
+                <h3>Tipo de Acividad</h3>
+                <canvas id="chart3"></canvas>
             </figure>
 
+            <figure>
+                <p>Comparativo de clientes</p>
+                <h3>Clientes</h3>
+                <canvas id="chart4"></canvas>
+            </figure>
+
+            <figure>
+                <p>Comparativo de Tareas</p>
+                <h3>Tareas por Cliente</h3>
+                <canvas id="chart5"></canvas>
+            </figure>
         </section>
 
         <section class="cols-1">
             <figure>
-                <h2>Actividades por mes</h2>
-                <canvas id="yearsChart" height="300px"></canvas>
+                <p>Evolutivo Anual</p>
+                <h3>Comportamiento Tareas</h3>
+                <canvas id="chartTareas**"></canvas>
             </figure>
         </section>
 
+       
+
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <!-- ChartJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
-
+    <!-- Styles for charts -->
     <script src="./resources/js/helpers.js"></script>
-    <script src="./resources/js/handlers.js"></script>
+
+    <!-- DCharts development -->
     <script src="./resources/js/app2.js"></script>
+    <script src="./resources/js/app3.js"></script>
     <script src="./resources/js/spinner.js"></script>
 </body>
 
