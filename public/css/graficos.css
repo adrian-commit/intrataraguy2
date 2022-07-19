@@ -84,7 +84,7 @@ canvas {
     margin: 10px;
 }
 
-.cols-4 > * {
+.cols-4 > * h1 {
     margin: 30px;
     color:rgb(240, 203, 111); 
     width: 100%;
