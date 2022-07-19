@@ -84,10 +84,11 @@ canvas {
     margin: 10px;
 }
 
-.cols-4 > * h1 {
-    margin: 30px;
+.cols-4 > * h2 {
+    margin: 3px;
     color:rgb(240, 203, 111); 
     width: 100%;
+    font-size: 220%
 }
 
 .cols-2 > * {
