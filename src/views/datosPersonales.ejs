@@ -3,16 +3,14 @@
 <head>
     <%- include("./includes/head") %> 
     <title>Datos Personales/Profesionales</title> 
-    <link rel="stylesheet" href="resources/css/styles.css">
+    <link href="resources/css/tablas.css" rel="stylesheet">
 </head>
 <body>
     
     <div class="register-form">
 		<h1>Datos Personales Profesionales-TCE </h1>
 		<form action="users/createPersonalInfo" method="POST">
-
-        <br>
-        <br>
+            
             <input type="hidden" name="id" id="id" value="<%= locals.user.id %>">
             <label for="firstname">Nombre</label>
                 <input type="text" name="firstName" required tabindex="1" autofocus>

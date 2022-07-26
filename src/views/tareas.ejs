@@ -7,6 +7,7 @@
     <link href="../../resources/css/menuLateral.css" rel="stylesheet">
     <link href="../../resources/css/formul.css" rel="stylesheet">
     <link href="../../resources/css/cronometro.css" rel="stylesheet">
+        <link href="resources/css/tablas.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ab05c0d697.js" crossorigin="anonymous"></script>
 </head>
 
@@ -21,7 +22,9 @@
 <div class="contenedor">
   <div class="hijo">
     <form action="/tareas/create" id="formulario" method="POST">
-      <h2>Tarea</h2>
+      <h2>TAREAS</h2>
+      <br>
+      <br>
       <label for="type">Tipo de Servicio</label>
       <input type="text" class="select-css" name="type" id="type" value="<%= servicio %>" readonly>                          
     <% if (servicio == "Impuestos") { %> 
@@ -238,7 +241,7 @@
       <label for="comment">Observaciones</label>
       <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
 
-      <a href="/" class="btn-cancel">Cancelar</a><input type="submit" class="btn-save" value="Cargar">
+      <a href="/" class="btn-cancel">Cancelar</a> <input type="submit" class="btn-save" value="Cargar">
     </form>
   </div>
 </div>  

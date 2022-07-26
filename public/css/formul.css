@@ -19,9 +19,11 @@ body{
     padding: 12px 20px;
     margin: 12px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid #6B7280;
     border-radius: 4px;
     box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
   }
 
 /*   
@@ -46,7 +48,7 @@ body{
    
   /* Estilos boton CANCELAR*/
   .btn-cancel{
-    width: 50%;
+    width: 49.5%;
     padding: 10px 5px;
     background-color: #6B7280;
     border: 0;
@@ -61,7 +63,8 @@ body{
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
-    text-decoration: none;  
+    text-decoration: none;
+    border-radius: 5%;  
   }
   .btn-cancel:hover,.btn-cancel:active{
     color:#fff;
@@ -75,9 +78,9 @@ body{
   
   /* Estilos boton GUARDAR*/
   .btn-save{
-    width: 50%;
+    width: 49.5%;
     padding: 10px 5px;
-    background-color: #6B7295;
+    background-color: #6B7280;
     border: 0;
     box-sizing: border-box;
     cursor: pointer;
@@ -89,7 +92,8 @@ body{
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
-    text-decoration: none;  
+    text-decoration: none;
+    border-radius: 5%;  
   }
   .btn-save:hover,.btn-save:active{
     color:#fff;
@@ -102,7 +106,7 @@ body{
 
  .hijo {
     border-radius: 10px;
-    width: 65%;
+    width: 48%;
     background-color: #f2f2f2;
     padding: 20px;
     margin: 0 auto;
@@ -115,13 +119,16 @@ body{
   }
 
   .hijo h2{
-      margin:5%;
+      margin: 0 1 1 1% ;
       height: 20px;
+      padding: 3%;
+      width: 30%;
       text-align: center;
-      font-size: 45px;
+      font-size: 40px;
       color:#fffdfd; 
-      background-color: #82A284;height: max-content; border-radius: 10px; opacity: 0.8;
+      background-color: #6B7280;height: max-content; border-radius: 10px; opacity: 0.8;
       font-family: Helvetica;
+      background: linear-gradient(#bdbbb9, #636a6d);
   
   }
 

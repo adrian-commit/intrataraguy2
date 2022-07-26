@@ -245,7 +245,7 @@ formularioTarea.addEventListener('submit', (e) => {
 	let tiempo = formulario.total.value;
 	Swal.fire({
 		title: "Completado",
-		titleText: "La TAREA con el cliente  " + cliente +  " te demando el tiempo de:   " + tiempo ,
+		titleText: "La TAREA con el cliente  " + cliente +  " te demando el tiempo de:   " + tiempo + "  hs",
 		icon: 'success',
 		showConfirmButton: false,
 		timer:10000

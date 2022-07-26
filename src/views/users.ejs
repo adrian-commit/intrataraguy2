@@ -7,7 +7,6 @@
     
     <link href="resources/css/menuLateral.css" rel="stylesheet">
     <link href="resources/css/tablas.css" rel="stylesheet">
-    <link href="resources/css/formul.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 
 </head>
@@ -33,7 +32,6 @@
             <table id="tblData">
                 <thead>
                     <tr class="panelUser">
-                        <th>ID</th>
                         <th>NOMBRE</th>
                         <th>EMAIL</th>
                         <th>EDITAR</th>
@@ -43,7 +41,7 @@
                 <tbody>
                         <% for (let i = 0;i < users.length; i++) { %>
                         <tr>
-                        <td><%=users[i].id%> </td>
+                       
                         <td><%=users[i].userName%> </td>
                         <td><%=users[i].email%> </td>
 
