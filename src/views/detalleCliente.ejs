@@ -20,6 +20,17 @@
 
 <br>
 <br>
+
+<section class="selectClients">
+    <article class="clientView">
+        <% clients.forEach(client => { %> 
+            <a href="/clientes/perfilCliente/<%= client.id %>"> 
+                <img src="/resources/img/no-img.jpg" alt="imagen" srcset="">
+                <h3><%= client.businessName %></h3>       
+            </a>
+        <% }) %> 
+    </article>
+</section>
 <a href="./clientes"><button class="boton-1"><i class="fa-solid fa-circle-plus" style="color:rgb(41, 151, 14); opacity: 0.7; 
     font-size: 40px;text-align:center;position: relative;" ></i></button></a>
 

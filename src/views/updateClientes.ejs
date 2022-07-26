@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./includes/head") %> 
+    <title>Actualizando</title> 
+    <link rel="stylesheet" href="/resources/css/styles.css">
+</head>
+<body>
+    
+    <div class="register-form">
+		<h1>Clientes TCE </h1>
+		<form action="/clientes/updateClient/<%= cliente.id %>?m=PUT" method="POST">
+
+            <label for="name">Nombre</label>
+                <input type="text" name="name" required tabindex="1" value="<%= cliente.name %> " autofocus>
+
+            <label for="businessName">Razon Social</label>
+                <input type="text" name="businessName" required tabindex="2" value="<%= cliente.businessName %> ">
+
+            <label for="cuit">CUIT</label>
+                <input type="number" name="cuit" tabindex="3" value="<%= cliente.cuit%>">
+            
+            <label for="staffQuantity">Cantidad de Empleados</label>
+                <input type="number" name="staffQuantity" tabindex="5" value="<%= cliente.staffQuantity%>">
+            
+            <label for="timeExerciseEnd">Fecha - Cierre de Ejercicio</label>
+                <input type="date" name="timeExerciseEnd" required tabindex="6" value="<%= cliente.timeExerciseEnd%>"">
+            <br>
+           
+            <label for="officesQuantity">Cantidad Sucursales</label>
+                <select id="rol" name="officesQuantity" class="select-css" tabindex="7">
+                    <option value="0 a 10" <%= cliente.officesQuantity == "0 a 10" ? selected : null %>>0 a 5</option>
+                    <option value="10 a 50" <%= cliente.officesQuantity == "10 a 50" ? selected : null %>>5 a 100</option> 
+                </select>
+            <br>
+             <label for="typeActivity">Tipo de Actividad</label>                          
+                <select id="rol" name="typeActivity" class="select-css" tabindex="7">
+                    <option value="servicio" <%= cliente.typeActivity == "servicio" ? "selected" : " " %> >Servicio</option>
+                    <option value="agropecuaria" <%= cliente.typeActivity == "agropecuaria" ? "selected" : " " %> >Agropecuaria</option>
+                    <option value="construccion" <%= cliente.typeActivity == "construcción" ? "selected" : " " %> >Construccion</option>
+                    <option value="unipersonal" <%= cliente.typeActivity == "unipersonal" ? "selected" : " " %> >Unipersonal</option>
+                    <option value="comercial" <%= cliente.typeActivity == "comercial" ? "selected" : " " %> >Comercial</option>                    
+                </select>
+
+                <label for="rol">Tipo de Persona</label>                          
+                <select id="rol" name="typePerson" class="select-css" tabindex="7">
+                    <option value="Fisica" <%= cliente.typePerson == "Fisica" ? "selected" : " " %>>Fisica</option>
+                    <option value="Juridica" <%= cliente.typePerson == "Juridica" ? "selected" : " " %>>Juridica</option>                    
+                </select>
+        
+            <div style="display: inline;">             
+            <a href="/clientes/perfilCliente/<%= cliente.id %>" class="btn-cancel">Cancelar</a><input type="submit" class="btn-save" value="Cargar">           
+            </div>
+		</form>		
+	</div>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <% if(typeof alert != "undefined") {  %>
+        <script>
+            Swal.fire({
+                title:'<%= alertTitle%>',
+                text:'<%= alertMassage%>',
+                icon:'<%= alertIcon%>',
+                icon:'<%= %>',
+                showConfirmButton:'<%= showConfirmButton%>',
+                timer:'<%= timer%>',
+            }).then(()=>{
+                window.location='/<%= ruta %>'
+            })
+
+        </script>    
+
+    <%  } %> 
+
+</body>
+</html>

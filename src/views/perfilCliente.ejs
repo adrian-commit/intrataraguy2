@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./includes/head") %> 
+    <title>Perfil <%= cliente.name %></title>  
+  
+    <link href="/resources/css/menuLateral.css" rel="stylesheet">
+    <link href="/resources/css/client.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ab05c0d697.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="body">
+    
+<%- include("./includes/menu")%>
+
+<section class="perfil">
+    <article class="face">
+        <img src="/resources/img/no-img.jpg" alt="imagen" srcset="">
+        <h2><%= cliente.businessName %></h2>
+        <button class="edit"><a href="/clientes/editarCliente/<%= cliente.id %>"> Editar Cliente</a></button> 
+        <form action="/clientes/borrarCliente?m=DELETE" method="post" class="destroy">
+            <input type="hidden" name="id" id="id" value="<%= cliente.id %>">
+            <button type="submit">Eliminar Cliente</button>
+        </form>
+    </article>
+    <article class="datos">
+        <input type="text" value="Tipo de Persona: <%= cliente.typePerson %>" readonly>
+        <input type="text" value="CUIT: <%= cliente.cuit %>" readonly>
+        <input type="text" value="Tipo de Actividad: <%= cliente.typeActivity %>" readonly>
+        <input type="text" value="Cantidad de Sucursales: <%= cliente.officesQuantity %>" readonly>
+        <input type="text" value="Cantidad de Personal: <%= cliente.staffQuantity %>" readonly>
+        <input type="text" value="Tiempo de Cierre de Ejercicio: <%= cliente.timeExerciseEnd %>" readonly>
+    </article>
+</section>
+</body>
+
+<script src="./resources/js/menulateral.js"></script>
+<script src="./resources/js/tabla.js"></script>
+
+
+</html>

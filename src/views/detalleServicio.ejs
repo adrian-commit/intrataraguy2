@@ -9,7 +9,6 @@
     <link href="resources/css/formul.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ab05c0d697.js" crossorigin="anonymous"></script>
 
-    <title>Detalle Servicio</title>
 </head>
 
 <body id="body">
@@ -43,9 +42,9 @@
             <td><%=services[i].id%></td>
             <td><%=services[i].type%> </td>
             <td><%=services[i].typeActivity%> </td>
-            <td><%=services[i].contributionType%> </td>
-            <td><%=services[i].aplication%> </td>
-            <td><%=services[i].province%> </td>
+            <td><%=services[i].contributionType == null ? "------" : services[i].contributionType%></td>
+            <td><%=services[i].aplication == null ? "------" : services[i].aplication%></td>
+            <td><%=services[i].province == null ? "------" : services[i].province%></td>
 
         <% } %>                 
         </tr>

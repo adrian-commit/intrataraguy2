@@ -5,9 +5,12 @@ const app = express();
 const {resolve} = require("path");
 //Requerimiento de session
 const session = require('express-session');
+//requerimiento de method para metodos HTTP
+const method = require('method-override');
 
 //llamado middlewares
 const userLogged = require('./middlewares/userLogged');
+
 
 //Se corre el puerto
 app.listen(5000, (req, res)=>{
@@ -19,13 +22,15 @@ app.set('views', resolve(__dirname , './views'));
 
 
 //el directorio public
-app.use('/resources', express.static(resolve('public')));
+// app.use('/resources', express.static(resolve('public')));
+app.use('/resources', express.static(resolve(__dirname , '../public')));
 
 
 /* app.use('/resources', express.static(resolve(__dirname + 'public'))); */
 //seteamos urlencoded para CAPTURAR los datos del formulario
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+app.use(method("m"));
 
 
 //Configuracion de las variables de session
@@ -37,6 +42,7 @@ app.use(session({
 
 //middlewares aplicacion
 app.use(userLogged);
+
 
 
 //Estableciendo las rutas

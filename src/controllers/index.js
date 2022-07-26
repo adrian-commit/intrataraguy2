@@ -216,15 +216,14 @@ module.exports = {
 
     detallePersonal: (req, res)=>{
         res.render('detallePersonal');
-},
+    },
 
-detalleCliente: (req, res)=>{
-    res.render('detalleCliente');
-},
+    // detalleCliente: (req, res)=>{
+    //     res.render('detalleCliente');
+    // },
 
-detalleServicio: (req, res)=>{
-    res.render('detalleServicio');
-},
-
+    detalleServicio: (req, res)=>{
+        res.render('detalleServicio');
+    }
 }
     
