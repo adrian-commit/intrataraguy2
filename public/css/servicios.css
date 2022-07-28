@@ -125,6 +125,13 @@ body{
         background-color:#ccc;
         height: 100px;
     }
+
+    .container{
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 40px;
+    }
   
     nav img{
       float: right;
@@ -146,36 +153,82 @@ body{
   .columna{
      
        opacity: 0.9;
-       color:#06283D;
-       padding:150px;
-       width: 200px;
-       height: 50px;
+       color:hsl(203, 92%, 19%);
+       padding:25px;
+       width: 80px;
        margin: auto;
        font-size: 120px;
-       border-radius: 10px;
        display: flex;
        flex-direction: column;
-       margin: auto;
        display: block;
-       margin-left: auto;
-       margin-right: auto;
        justify-content: center;
      
  
      }
   
 button{
-      float: right;
       width: 150px;
       height: 30px;
       border: 3px solid #73AD21;
       padding: 5px;
-      border-radius: 5px;
+      border-radius: 10px;
       font-size: 12px;
-      margin-top: 1%;
+      margin-top: 0%;
       flex-wrap: wrap;
+      font-weight: bolder
      
 }
+
+.btn-servicio button{
+  display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 120px;
+	height: 45px;
+	background: #141414;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	border: none;
+	cursor: pointer;
+	text-transform: uppercase;
+	transition: .3s ease all;
+  border-radius: 8px;
+  
+}
+
+.btn-historial button{
+      float:left;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 40px;
+      border: 3px solid #06283D;
+      padding: 5px;
+      border-radius: 10px;
+      font-weight: bolder;
+      font-size: 15px;
+      margin-top: 1%;
+      flex-wrap: wrap;
+      cursor: pointer;
+      transition: .3s ease all;
+      background-image: linear-gradient(#d7dad6,#9b9999);
+}
+
+ span {
+	position: relative;
+	z-index: 2;
+	transition: .3s ease all;
+}
+
+.btn-servicio button:hover{
+  background-image: linear-gradient(#f7a151,#917045);
+  
+}
+
+
+
      .grande{
        display: flex;
        flex-wrap: wrap;
@@ -191,6 +244,8 @@ button{
         margin: auto;
         text-align: center;
         margin: 5px;
+        text-decoration: underline;
+
      }
   
      /* .btn-servicio{
