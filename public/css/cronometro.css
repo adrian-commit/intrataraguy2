@@ -35,10 +35,10 @@
     outline: none;
     border: 1px solid #363431;
     color: white;
-    width: 15%;
-    height: 30px;
+    width: 10%;
+    height: 50px;
     text-shadow: 0px -1px 1px black;
-    font-size: 15px;
+    font-size: 17px;
     border-radius: 5px;
     font-family: Helvetica;
     cursor: pointer;

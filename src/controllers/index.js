@@ -96,15 +96,22 @@ module.exports = {
             let services = await Service.findAll({include:{all:true}});
             let clients = await Client.findAll({include:{all:true}});
             let tasks = await Task.findAll({include:{all:true}});
+            let totalTimetasks = await Task.findAll({include:{all:true}});
+                if (totalTimetasks){
+                    let time = tasks.filter(eachtask => eachtask.officesQuantity)
+                }
             res.render('index', {user:req.session.userLogged,
             clients,
             services,
-            tasks
+            tasks,
+            totalTimetasks,
             }); 
         } catch (error) {
             return res.render('error', {error});
         }    
     },
+
+    
 
     logout: (req, res) => {
         req.session.destroy();
@@ -113,12 +120,17 @@ module.exports = {
 
     usersList: async (req, res) => {
         try {
-            let users = await User.findAll({include:{all:true}});
+            let users = await User.findAll({
+                include:{all:true}
+            });
             return res.render('users', {users: users});
         } catch (error) {
             return res.render('error', {error});
         }
     },
+
+    
+
 
     clientsList: async (req, res) => {
         try {
@@ -147,6 +159,7 @@ module.exports = {
         }
     },
 
+    
 
     datosPersonales: (req, res)=>{
         res.render('datosPersonales');

@@ -7,6 +7,7 @@
     <link href="../../resources/css/menuLateral.css" rel="stylesheet">
     <link href="../../resources/css/formul.css" rel="stylesheet">
     <link href="../../resources/css/cronometro.css" rel="stylesheet">
+        <link href="resources/css/tablas.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ab05c0d697.js" crossorigin="anonymous"></script>
 </head>
 
@@ -21,8 +22,10 @@
 <div class="contenedor">
   <div class="hijo">
     <form action="/tareas/create" id="formulario" method="POST">
-      <h2>Servicio</h2>
-      <label for="type">Tipo</label>
+      <h2>TAREAS</h2>
+      <br>
+      <br>
+      <label for="type">Tipo de Servicio</label>
       <input type="text" class="select-css" name="type" id="type" value="<%= servicio %>" readonly>                          
     <% if (servicio == "Impuestos") { %> 
       <label for="contributionType">Tipo de Impuesto</label>                          
@@ -37,7 +40,8 @@
         <option value="MONOTRIBUTO">MONOTRIBUTO</option>
         <option value="SEGURIDAD SOCIAL">SEGURIDAD SOCIAL</option>  
         <option value="REGIMEN INFORMATIVOS">REGIMEN INFORMATIVOS</option>  
-        <option value="OTROS REGIMENES INFORMATIVOS">OTROS REGIMENES INFORMATIVOS</option>                      
+        <option value="OTROS REGIMENES INFORMATIVOS">OTROS REGIMENES INFORMATIVOS</option> 
+
       </select>
       <input type="hidden" name="ids" id="ids" value="<%= ids %>">
       <label for="aplication">Ambito de Aplicacion</label>                          
@@ -46,6 +50,7 @@
         <option value="PROVINCIAL">PROVINCIAL</option>
         <option value="NACIONAL">NACIONAL</option>                    
       </select>
+
       <label for="province">Provincia</label>                          
       <select id="rol" name="province" id="province" class="select-css" >
         <option value="CORRIENTES" selected>CORRIENTES</option>
@@ -61,7 +66,113 @@
         <option value="BUENOS AIRES">BUENOS AIRES</option>
         <option value="OTRAS">OTRAS</option>
       </select>
-    <% } %> 
+
+      <label for="name">Tipo de Tarea</label>
+      <select id="name" name="name">
+          <option value="Armado de papeles de trabajo DDJJ Anuales">Armado de papeles de trabajo DDJJ Anuales</option>
+          <option value="Atencion consultas -  email">Atencion consultas -  email </option>
+          <option value="Atencion consultas Telefonicas">Atencion consultas Telefonicas </option>
+          <option value="Capacitación">Capacitación</option>
+          <option value="Conciliación de Créditos Impositivos">Conciliación de Créditos Impositivos</option>
+          <option value="Conciliación IVA Compras con Mis Comprobantes">Conciliación IVA Compras con Mis Comprobantes</option>
+          <option value="Confección de DDJJ Anuales">Confección de DDJJ Anuales</option>
+          <option value="Confección de DDJJ  - Presentación">Confección de DDJJ  - Presentación</option>
+          <option value="Confección de DDJJ Libro IVA Digital">Confección de DDJJ Libro IVA Digital</option>
+          <option value="Confección y Envio de VEPs">Confección y Envio de VEPs</option>
+          <option value="Control Global Libros IVA Compras/Ventas">Control Global Libros IVA Compras/Ventas</option>
+          <option value="Descargo a Requerimientos">Descargo a Requerimientos</option>
+          <option value="Fiscalizacion ACOR">Fiscalizacion ACOR</option>
+          <option value="Gestión ante Boletas de Deuda">Gestión ante Boletas de Deuda</option>
+          <option value="Recategorizacion">Recategorizacion</option>
+          <option value="Reunión con el Cliente">Reunión con el Cliente</option>
+          <option value="Revisión de normativa, leyes, etc">Revisión de normativa, leyes, etc</option>
+          <option value="SIRADIG">SIRADIG</option>
+        
+      </select>
+
+      <% } %>
+      <% if (servicio == "Laboral") { %> 
+
+        <label for="name">Tipo de Tarea</label>
+        <select id="name" name="name">
+          <option value="Altas, Carga y Actualización de Legajos">Altas, Carga y Actualización de Legajos</option>
+          <option value="Auditoría Laboral">Auditoría Laboral</option>
+          <option value="Bajas-Presupuestos-Liquidaciones Finales">Bajas-Presupuestos-Liquidaciones Finales</option>
+          <option value="Calculo de Embargos">Calculo de Embargos</option>
+          <option value="Cálculo Retenciones 4º">Cálculo Retenciones 4º</option>
+          <option value="Certificaciones de Servicios">Certificaciones de Servicios</option>
+          <option value="Confección del Centro de Costo">Confección del Centro de Costo</option>
+          <option value="Confección del Control de Liquidación">Confección del Control de Liquidación</option>
+          <option value="Confeccion del LSD">Confeccion del LSD</option>
+          <option value="Confección y Envio de Boletas Sindicales">Confección y Envio de Boletas Sindicales</option>
+          <option value="Control y Carga de Novedades">Control y Carga de Novedades</option>
+          <option value="DDJJ Conceptos No Remunerativos">DDJJ Conceptos No Remunerativos</option>
+          <option value="DDJJ F.931-Conciliación DDJJ con Centro de Costos">DDJJ F.931-Conciliación DDJJ con Centro de Costos</option>
+          <option value="Descargos a Requerimientos">Descargos a Requerimientos</option>
+          <option value="Emision de Informes">Emision de Informes</option>
+          <option value="Emisión de Recibos">Emisión de Recibos</option>
+          <option value="Emision Libro Ley">Emision Libro Ley</option>
+          <option value="Gestion de deudas sindicales">Gestion de deudas sindicales</option>
+          <option value="Liquidaciones de Sueldos">Liquidaciones de Sueldos</option>
+          <option value="Requerimientos">Requerimientos</option>
+          <option value="Reunión con el Cliente">Reunión con el Cliente</option>
+          <option value="Revision-Ajustes Formulas y Parametrizacion Tango">Revision-Ajustes Formulas y Parametrizacion Tango</option>
+          <option value="Revison de Normativa, CCT y Escalas">Revison de Normativa, CCT y Escalas</option>
+          <option value="Rubrica de Libro Sueldos">Rubrica de Libro Sueldos</option>
+          <option value="Servicio Domestico">Servicio Domestico</option>
+
+        </select>
+    
+    <% } %>
+
+    <% if (servicio == "Contabilidad") { %> 
+      <label for="name">Tipo de Tarea</label>
+      <select id="name" name="name">
+        <option value="Actas Societarias-Libros Obligatorios">Actas Societarias-Libros Obligatorios</option>
+        <option value="Ajuste por Inflacion Contable">Ajuste por Inflacion Contable</option>
+        <option value="Apertura y Cierre de Ejercicios">Apertura y Cierre de Ejercicios</option>
+        <option value="Conciliaciones">Conciliaciones</option>
+        <option value="Confección de EECC">Confección de EECC</option>
+        <option value="Control Razonabilidad de Saldos">Control Razonabilidad de Saldos</option>
+        <option value="Otras Certificaciones CPCE">Otras Certificaciones CPCE</option>
+        <option value="Registración de Ajustes">Registración de Ajustes</option>
+        <option value="Registración de Devengamientos">Registración de Devengamientos</option>
+        <option value="Visitas de Auditoría">Visitas de Auditoría</option>
+      </select>
+
+      <% } %> 
+      
+      <% if (servicio == "Administración") { %> 
+        <label for="name">Tipo de Tarea</label>
+        <select id="name" name="name">
+          <option value="Alta - Sociedades Inscripciones">Alta - Sociedades Inscripciones</option>
+          <option value="Archivo de Documentación">Archivo de Documentación</option>
+          <option value="Carga de Comprobantes">Carga de Comprobantes</option>
+          <option value="Carpetas Bancarias">Carpetas Bancarias</option>
+          <option value="Confección de Flujo de Fondos">Confección de Flujo de Fondos</option>
+          <option value="Confección de Ordenes de Pago">Confección de Ordenes de Pago</option>
+          <option value="Confección de Planes de Pago">Confección de Planes de Pago</option>
+          <option value="Control de Comprobantes">Control de Comprobantes</option>
+          <option value="Control de Pagos-Informe deudas al Cliente (AFIP-DGR-ACOR)">Control de Pagos-Informe deudas al Cliente (AFIP-DGR-ACOR)</option>
+          <option value="Control de Posiciones Mensuales">Control de Posiciones Mensuales</option>
+          <option value="Emisión Certificados de Retención AFIP-DGR">Emisión Certificados de Retención AFIP-DGR</option>
+          <option value="Memos-Control-Informe de Vencimientos al Cliente">Memos-Control-Informe de Vencimientos al Cliente</option>
+          <option value="Otros Trámites">Otros Trámites</option>
+          <option value="Pagos de Cargas Sindicales">Pagos de Cargas Sindicales</option>
+          <option value="Planilla de Resúmenes de Tarjetas">Planilla de Resúmenes de Tarjetas</option>
+          <option value="Planilla Ventas con descuento">Planilla Ventas con descuento</option>
+          <option value="Retiro de Documentación">Retiro de Documentación</option>
+          <option value="Reunión con el Clientes">Reunión con el Clientes</option>
+          <option value="Reunión del Area">Reunión del Area</option>
+          <option value="Revision Sistema de Cuentas Tributarias-Compensaciones">Revision Sistema de Cuentas Tributarias-Compensaciones</option>
+          <option value="Revision-Ajustes Formulas y Parametrizacion Tango">Revision-Ajustes Formulas y Parametrizacion Tango</option>
+          <option value="Seguimiento de Deudas (AFIP-RENTAS-MUNI)">Seguimiento de Deudas (AFIP-RENTAS-MUNI)</option>
+          <option value="Solicitud de Comprobantes">Solicitud de Comprobantes</option>
+          <option value="Solicitud Pyme">Solicitud Pyme</option>
+
+        </select>
+  
+        <% } %> 
       <label for="typeActivity">Actividad</label>                          
       <select id="rol" name="typeActivity" id="typeActivity"  class="select-css" >
         <option value="SERVICIO" selected>SERVICIO</option>
@@ -69,15 +180,6 @@
         <option value="CONTRUCCION">CONTRUCCION</option>
         <option value="UNIPERSONAL">UNIPERSONAL</option>
         <option value="COMERCIAL">COMERCIAL</option>                    
-      </select>
-
-      <h2>Tarea</h2>
-
-      <label for="name">Tarea</label>
-      <select id="name" name="name">
-        <option value="Sueldos">Sueldos</option>
-        <option value="Iva - Impuestos">Iva - Impuestos</option>
-        <option value="Ganancias - Impuestos">Ganancias - Impuestos</option>
       </select>
 
       <input type="hidden" name="area" id="area" value="<%= servicio %>">
@@ -113,8 +215,7 @@
 
       <section id="fecha"></section> 
 
-      <label for="comment">Observaciones</label>
-      <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+      
 
       <section id="displayInicio">
         <label for="tiempoInicio">Inicio: </label>
@@ -137,7 +238,10 @@
         <input type="time" id="total" name="total" value="" readonly>
       </section>
 
-      <a href="/" class="btn-cancel">Cancelar</a><input type="submit" class="btn-save" value="Cargar">
+      <label for="comment">Observaciones</label>
+      <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+
+      <a href="/" class="btn-cancel">Cancelar</a> <input type="submit" class="btn-save" value="Cargar">
     </form>
   </div>
 </div>  
@@ -160,9 +264,9 @@
 </body>
 
 
-<script src="../../resources/js/menulateral.js"></script>
+<script src="/resources/js/menulateral.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.3/dayjs.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="../../resources/js/cronometro.js" ></script>
+<script src="/resources/js/cronometro.js" ></script>
 
 </html>

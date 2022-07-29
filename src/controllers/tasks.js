@@ -72,5 +72,57 @@ module.exports = {
 
     servicios: (req,res) => {
             return res.render('elegirServicios');
+    },
+
+    showTask: async (req,res) => {
+        try {
+            let task = await Task.findByPk(req.params.id,{include:{all:true}});
+            return res.render('perfilTareas', {tarea:task});
+        } catch (error) {
+            return res.render('error', {error}); 
+        }
+    },
+
+    updateTask: async (req,res) => {
+        try {
+            let task = await Task.findByPk(req.params.id,{include:{all:true}});
+            return res.render('updateTareas', {tarea:task});
+        } catch (error) {
+            return res.render('error', {error}); 
+        }
+    },
+    
+    modifyTask: async (req,res) => {
+        try {
+                let service = await Service.findByPk(req.body.ids);
+                await service.update({
+                    type:req.body.type,
+                    typeActivity:req.body.typeActivity,
+                    contributionType:req.body.type == "Impuestos" ? req.body.contributionType : null,
+                    aplication:req.body.type == "Impuestos" ? req.body.aplication : null,
+                    province:req.body.type == "Impuestos" ? req.body.province : null,
+                });
+                let task = await Task.findByPk(req.params.id);
+                await task.update({
+                    name: req.body.name,
+                    client: req.body.cliente.id,
+                    records:req.body.records,
+                    recordsQuantity:req.body.recordsQuantity,
+                    observations: req.body.comment
+                });
+                return res.redirect('/tareas/panelTareas');   
+        } catch (error) {
+            return res.render('error', {error}); 
+        }
+    },
+
+    destroyTask: async (req,res) => {
+        try {
+            let task = await Task.findByPk(req.body.id);
+            await task.destroy();
+            return res.redirect('/tareas/panelTareas');   
+        } catch (error) {
+            return res.render('error', {error}); 
+        }
     }
 }

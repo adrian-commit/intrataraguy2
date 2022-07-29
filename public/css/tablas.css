@@ -26,29 +26,37 @@ background-color: #06c720;
 color: white;
 }
 
-  table {
-    width: 100%;
-  }
-  
-  th {
-    height: 70px;
-    text-align: left;
-  }
+table {
+  width: 100%;
+}
 
-  td {
-    text-align: center;
-    height: 50px;
-    vertical-align: bottom;
-  }
+th {
+  height: 10px;
+  text-align: left;
+}
 
-  tr:hover {background-color: #90c2eb;}
+td {
+  text-align: center;
+  height: 10px;
+  vertical-align: bottom;
+}
 
-  .detServ th  {
-    text-align: center;
-    background-color: #f56b66;
-    color: aliceblue;
- 
-  }
+td a {
+  color: black
+}
+
+td a:hover {
+  color: blue
+}
+
+tr:hover {background-color: #90c2eb;}
+
+.detServ th  {
+  text-align: center;
+  background-color: #f56b66;
+  color: aliceblue;
+
+}
 
 .panelTar th  {
   text-align: center;
@@ -86,6 +94,7 @@ color: white;
     text-align: right;
     vertical-align:auto;
     line-height:10px;
+    border-radius: 1%;
 
 }
 
@@ -94,7 +103,8 @@ color: white;
     clear:right;
     text-align: right;
     vertical-align:auto;
-    line-height:10px;      
+    line-height:10px;
+    border-radius: 1%;      
 }
 
 .bot-exportar{

@@ -5,7 +5,8 @@
     <title>Perfil <%= cliente.name %></title>  
   
     <link href="/resources/css/menuLateral.css" rel="stylesheet">
-    <link href="/resources/css/client.css" rel="stylesheet">
+    <link href="/resources/css/showCI.css" rel="stylesheet">
+    <link href="/resources/css/admin.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ab05c0d697.js" crossorigin="anonymous"></script>
 </head>
 
@@ -18,7 +19,7 @@
         <img src="/resources/img/no-img.jpg" alt="imagen" srcset="">
         <h2><%= cliente.businessName %></h2>
         <button class="edit"><a href="/clientes/editarCliente/<%= cliente.id %>"> Editar Cliente</a></button> 
-        <form action="/clientes/borrarCliente?m=DELETE" method="post" class="destroy">
+        <form action="/clientes/borrarCliente?m=DELETE" method="post" class="destroy <%= locals.user.is_admin === false ? "notAdmin" : null %>">
             <input type="hidden" name="id" id="id" value="<%= cliente.id %>">
             <button type="submit">Eliminar Cliente</button>
         </form>
@@ -35,7 +36,7 @@
 </body>
 
 <script src="./resources/js/menulateral.js"></script>
-<script src="./resources/js/tabla.js"></script>
+
 
 
 </html>

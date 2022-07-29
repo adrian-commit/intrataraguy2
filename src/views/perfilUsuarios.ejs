@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./includes/head") %> 
+    <title>Perfil <%= usuario.userName %></title>  
+  
+    <link href="/resources/css/menuLateral.css" rel="stylesheet">
+    <link href="/resources/css/showCI.css" rel="stylesheet">
+    <link href="/resources/css/admin.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ab05c0d697.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="body">
+    
+<%- include("./includes/menu")%>
+
+<section class="perfil">
+    <article class="face">
+        <img src="/resources/img/no-img.jpg" alt="imagen" srcset="">
+        <h2><%= usuario.userName %></h2>
+        
+        <form action="/users/borrarUsuario?m=DELETE" method="post" class="destroy <%= locals.user.is_admin === false ? "notAdmin" : null %></form>">
+            <input type="hidden" name="idUser" id="idUser" value="<%= usuario.id %>">
+            <input type="hidden" name="idData" id="idData" value="<%= usuario.data.id %>">
+            <button type="submit">Eliminar Usuario</button>
+        </form>
+    </article>
+    <article class="datos">
+        <section class="datosUsuario">
+            <input type="text" value="Email: <%= usuario.email %>" readonly>
+            <input type="text" value="Equipo: <%= usuario.equipo.name %>" readonly>
+            <input type="text" value="Rol: <%= usuario.is_admin == true ? "Administrador" : "Personal" %>" readonly>
+        </section>
+        <button class="editU"><a href="/users/editarUsuarios/<%= usuario.id %>"> Editar Datos de Usuario</a></button> 
+        <section class="datosPersonales">
+            <input type="text" value="Nombre: <%= usuario.data.firstName %> " readonly> 
+            <input type="text" value="Apellido: <%= usuario.data.lastName %> " readonly> 
+            <input type="text" value="DNI: <%= usuario.data.dni %> " readonly> 
+            <input type="text" value="Teléfono: <%= usuario.data.telephone %> " readonly> 
+            <input type="text" value="Cumpleaños: <%= usuario.data.birthDay %> " readonly> 
+            <input type="text" value="Profesión: <%= usuario.data.profession %> " readonly> 
+            <input type="text" value="Hobbie: <%= usuario.data.hobbie %> " readonly> 
+        </section>
+        <button class="editU"><a href="/users/editarPersonal/<%= usuario.data.id %>"> Editar Datos Personales</a></button> 
+    </article>
+</section>
+</body>
+
+<script src="./resources/js/menulateral.js"></script>
+
+
+
+</html>

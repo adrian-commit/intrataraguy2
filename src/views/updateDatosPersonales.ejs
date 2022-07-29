@@ -3,44 +3,55 @@
 <head>
     <%- include("./includes/head") %> 
     <title>Datos Personales/Profesionales</title> 
-    <link rel="stylesheet" href="resources/css/styles.css">
+    <link href="/resources/css/styles.css" rel="stylesheet">
 </head>
 <body>
     
     <div class="register-form">
 		<h1>Datos Personales Profesionales-TCE </h1>
-		<form action="users/createPersonalInfo" method="POST">
-
-        <br>
-        <br>
-            <input type="hidden" name="id" id="id" value="<%= locals.user.id %>">
+		<form action="/users/modifyDataUser/<%= data.id %>?m=PUT" method="POST">
+            
             <label for="firstname">Nombre</label>
-                <input type="text" name="firstName" required tabindex="1" autofocus>
+                <input type="text" name="firstName" required tabindex="1" autofocus 
+                value="<%= data.firstName == null ? " " : data.firstName%>"
+                > 
 
             <label for="LastName">Apellido</label>
-                <input type="text" name="lastName" required tabindex="2" autofocus>
+                <input type="text" name="lastName" required tabindex="2" autofocus
+                value="<%= data.lastName == null ? " " : data.lastName%>"
+                >
 
             <label for="dni">DNI</label>
-                <input type="text" name="dni" required tabindex="3">
+                <input type="text" name="dni" required tabindex="3"
+                value="<%= data.dni == null ? " " : data.dni%>"
+                >
 
             <label for="telephone">Telefono</label>
-                <input type="text" name="telephone" required tabindex="4">
+                <input type="text" name="telephone" required tabindex="4"
+                value="<%= data.telephone == null ? " " : data.telephone%>"
+                >
             
             <label for="birthDay">Cumpleaños</label>
-                <input type="date" name="birthDay" required tabindex="5">
+                <input type="date" name="birthDay" required tabindex="5"
+                value="<%= data.birthDay == null ? " " : data.birthDay%>"
+                >
 
             <label for="profession">Profesion</label>
-                <input type="text" name="profession" required tabindex="6">
+                <input type="text" name="profession" required tabindex="6"
+                value="<%= data.profession == null ? " " : data.profession%>"
+                >
             
             <label for="hobbie">Hobbie</label>
-                <input type="text" name="hobbie" required tabindex="7">
-            
-            <label for="childrens">Hijos: </label>
-                <input type="radio" id="Si" name="childrens" value="si" required tabindex="8"><label for="Si">Si</label>
-                <input type="radio" id="No" name="childrens" value="no" required tabindex="8" checked><label for="No">No</label>
+                <input type="text" name="hobbie" required tabindex="7"
+                value="<%= data.hobbie == null ? " " : data.hobbie%>"
+                >
 
-        <br>
-        <br>
+            <label for="childrens">Hijos: </label>
+                <input type="radio" id="Si" name="childrens" value="si" required tabindex="8" <%= data.childrens == "true" ? "checked" : null %>><label for="Si">Si</label>
+                <input type="radio" id="No" name="childrens" value="no" required tabindex="8" <%= data.childrens == "false" ? null : "checked" %>><label for="No">No</label>
+
+            <br>
+            <br>
             <label for="teams">Equipo de Trabajo</label>                          
                 <select id="rol" name="teams" class="select-css" tabindex="9">
                 <option value="Info 1" selected>Info 1</option>
@@ -49,9 +60,7 @@
                 <option value="Info 4">Info 4</option>
                 <option value="Laboral">Laboral</option>                    
                 </select>
-        <br>
-        <br> 
-        <br> 
+      
                  <div style="display: inline;">             
                 <a href="/" class="btn-cancel">Cancelar</a><input type="submit" class="btn-save" value="Cargar">           
             </div>

@@ -6,7 +6,6 @@
   
     <link href="resources/css/menuLateral.css" rel="stylesheet">
     <link href="resources/css/tablas.css" rel="stylesheet">
-    <link href="resources/css/formul.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ab05c0d697.js" crossorigin="anonymous"></script>
 
     <title>Detalle Clientes</title>
@@ -18,19 +17,6 @@
 
 <h1>Detalle / Clientes</h1>
 
-<br>
-<br>
-
-<section class="selectClients">
-    <article class="clientView">
-        <% clients.forEach(client => { %> 
-            <a href="/clientes/perfilCliente/<%= client.id %>"> 
-                <img src="/resources/img/no-img.jpg" alt="imagen" srcset="">
-                <h3><%= client.businessName %></h3>       
-            </a>
-        <% }) %> 
-    </article>
-</section>
 <a href="./clientes"><button class="boton-1"><i class="fa-solid fa-circle-plus" style="color:rgb(41, 151, 14); opacity: 0.7; 
     font-size: 40px;text-align:center;position: relative;" ></i></button></a>
 
@@ -39,12 +25,12 @@
 <table id="tblData">
     <thead>
         <tr class="detClient">
-            <th>Id</th>
             <th>NOMBRE EMPRESA</th>
             <th>CUIT</th>
-            <th>CANTIDAD DE EMPLEADOS</th>
             <th>CANTIDAD DE SUCURSALES</th>
+            <th>CANTIDAD DE EMPLEADOS</th>
             <th>ACTIVIDADES</th>
+            <th>TIPO DE PERSONA</th>
             <th>CIERRE DE EJERCICIO</th>
         </tr>
 
@@ -52,16 +38,15 @@
     <tbody>
         <% for (let i = 0;i < clients.length; i++) { %>
         <tr>
-            <td><%=clients[i].id%></td>
-            <td><%=clients[i].businessName%> </td>
+            <td><a href="/clientes/perfilCliente/<%= clients[i].id %>"><%=clients[i].businessName%></a></td>
             <td><%=clients[i].cuit%> </td>
             <td><%=clients[i].officesQuantity%> </td>
             <td><%=clients[i].staffQuantity%> </td>
             <td><%=clients[i].typeActivity%> </td>
-            <td><%=clients[i].timeExerciseEnd%> </td>
-
-        <% } %>                 
+            <td><%=clients[i].typePerson%> </td>
+            <td><%=clients[i].timeExerciseEnd%> </td>       
         </tr>
+        <% } %>  
     </tbody>
 
 </table>

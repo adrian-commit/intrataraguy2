@@ -7,7 +7,8 @@
     
     <link href="resources/css/menuLateral.css" rel="stylesheet">
     <link href="resources/css/tablas.css" rel="stylesheet">
-    <link href="resources/css/formul.css" rel="stylesheet">
+    <link href="resources/css/showCI.css" rel="stylesheet">
+    <link href="resources/css/admin.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 
 </head>
@@ -18,55 +19,99 @@
     <%- include("./includes/menu")%>
 
 <br>
-
+<!--Perfil Personal-->
+<section class="perfil">
+    <article class="face">
+        <img src="/resources/img/no-img.jpg" alt="imagen" srcset="">
+        <h2><%= locals.user.userName %></h2>
+        
+        <form action="/users/borrarUsuario?m=DELETE" method="post" class="destroy <%= locals.user.is_admin === false ? "notAdmin" : null %>">
+            <input type="hidden" name="idUser" id="idUser" value="<%= locals.user.id %>">
+            <input type="hidden" name="idData" id="idData" value="<%= locals.user.data.id %>">
+            <button type="submit">Eliminar Usuario</button>
+        </form>
+    </article>
+    <article class="datos">
+        <section class="datosUsuario">
+            <input type="text" value="Email: <%= locals.user.email %>" readonly>
+            <input type="text" value="Equipo: <%= locals.user.equipo.name %>" readonly>
+            <input type="text" value="Rol: <%= locals.user.is_admin == true ? "Administrador" : "Personal" %>" readonly>
+        </section>
+        <button class="editU"><a href="/users/editarUsuarios/<%= locals.user.id %>"> Editar Datos de Usuario</a></button> 
+        <section class="datosPersonales">
+            <input type="text" value="Nombre: <%= locals.user.data.firstName %> " readonly> 
+            <input type="text" value="Apellido: <%= locals.user.data.lastName %> " readonly> 
+            <input type="text" value="DNI: <%= locals.user.data.dni %> " readonly> 
+            <input type="text" value="Teléfono: <%= locals.user.data.telephone %> " readonly> 
+            <input type="text" value="Cumpleaños: <%= locals.user.data.birthDay %> " readonly> 
+            <input type="text" value="Profesión: <%= locals.user.data.profession %> " readonly> 
+            <input type="text" value="Hobbie: <%= locals.user.data.hobbie %> " readonly> 
+        </section>
+        <button class="editU"><a href="/users/editarPersonal/<%= locals.user.data.id %>"> Editar Datos Personales</a></button> 
+    </article>
+</section>
 <!--Tabla de Usuarios-->
 
-        <div class="">
+        <div class=" <%= locals.user.is_admin === false ? "notAdmin" : null %>">
             <h1>Panel de Usuarios</h1>
-            <br>
-            <br>
+            
+            
             <div style="overflow-x:auto;">
-                
-
-             
-
             <table id="tblData">
                 <thead>
                     <tr class="panelUser">
-                        <th>ID</th>
-                        <th>NOMBRE</th>
+                        <th>USUARIO</th>
                         <th>EMAIL</th>
-                        <th>EDITAR</th>
-                        <th>ELIMINAR</th>   
+                        <th>NOMBRE</th>
+                        <th>APELLIDO</th>
+                        <th>DNI</th>
+                        <th>TELEFONO</th>
+                        <th>NACIMIENTO</th>
+                        <th>PROFESION</th>
+                        <th>HOBBIE</th>
+                        <th>EQUIPO</th>
                     </tr>
                 </thead>
                 <tbody>
-                        <% for (let i = 0;i < users.length; i++) { %>
+                    <% users.forEach(user => { %>
                         <tr>
-                        <td><%=users[i].id%> </td>
-                        <td><%=users[i].userName%> </td>
-                        <td><%=users[i].email%> </td>
-
                         <td>
+                        <a href="/users/perfilUsuarios/<%= user.id %> ">
+                            <%=user.userName%> 
+                        </a>
+                        </td>
+                        <td><%=user.email%> </td>
+                        <td><%=user.data.firstName%> </td>
+                        <td><%=user.data.lastName%> </td> 
+                        <td><%=user.data.dni%> </td> 
+                        <td><%=user.data.telephone%> </td> 
+                        <td><%=user.data.birthDay%> </td> 
+                        <td><%=user.data.profession%> </td> 
+                        <td><%=user.data.hobbie%> </td> 
+                        <td><%=user.equipo.name%> </td>                   
+                        </tr>
+                    <% }) %> 
+                        <!-- <td>
                             <button class="boton-1">
                             <a href="/datosPersonales"><i class="fa-regular fa-id-badge" style="color:darkgreen; opacity: 0.9; font-size: 30px;"></i></a>
                             </button>
                         </td>
                         
-                        <form action="/index/delete/<%=users[i].id%>" method="POST">
+                        <form action="/index/delete/" method="POST">
                         <td>
                             <button class="boton-1" type="submit">
                                 <i class="fa-solid fa-skull-crossbones" style="color:red; opacity: 0.9; font-size: 30px;"></i>
                             </button>
                         </td>
-                        </form>
-                        <% } %>                 
-                    </tr>
+                        </form> -->
+                    
                 </tbody>
             </table>
-        </div>
+            </div>
         </div>  
-
+       <section class="register">
+         <a href="/register" class="btn-register <%= locals.user.is_admin === false ? "notAdmin" : null %> ">Registrar un nuevo Usuario</a> 
+       </section>
 </body>
 
 <script src="./resources/js/menulateral.js"></script>

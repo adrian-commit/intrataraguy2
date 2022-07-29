@@ -7,7 +7,6 @@
     
     <link href="../resources/css/menuLateral.css" rel="stylesheet">
     <link href="../resources/css/tablas.css" rel="stylesheet">
-    <link href="../resources/css/formul.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 
 </head>
@@ -46,8 +45,8 @@
                 <tbody>
                     <%= console.log(tasks) %> 
                         <% for (let i = 0;i < tasks.length; i++) { %>
-                        <tr class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>">  
-                        <td class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>"> <%=tasks[i].name%> </td>
+                        <tr>  
+                        <td class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>"><a href="/tareas/perfilTarea/<%=tasks[i].id%>"><%=tasks[i].name%></a></td>
                         <td class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>"> <%=tasks[i].cliente.name%> </td>
                         <td class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>"> <%=tasks[i].team%> </td>
                         <td class="<%= tasks[i].condition == "Pendiente" ? "text-red " : "text-green" %>"> <%=tasks[i].date%> </td>

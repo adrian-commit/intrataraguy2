@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+  
+<head>
+  <%- include("./includes/head") %> 
+  <title>Actualizando <%= tarea.name %></title>  
+    <link href="../../resources/css/menuLateral.css" rel="stylesheet">
+    <link href="../../resources/css/formul.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ab05c0d697.js" crossorigin="anonymous"></script>
+</head>
+
+<!--Formuario Vertical-->
+<body id="body">
+    
+    <%- include("./includes/menu")%>
+
+
+<!--Formulario -->
+
+<div class="contenedor">
+  <div class="hijo">
+    <form action="/tareas/updateTask/<%= tarea.id %>?m=PUT" id="formulario" method="POST">
+      <h2>TAREAS</h2>
+      <input type="hidden" name="ids" id="ids" value="<%= tarea.servicio.id %>">
+      <label for="type">Tipo de Servicio</label>
+      <input type="text" class="select-css" name="type" id="type" value="<%= tarea.servicio.type %>">                          
+    <% if (tarea.servicio.type == "Impuestos") { %> 
+      <label for="contributionType">Tipo de Impuesto</label>                          
+      <select id="rol" name="contributionType" id="contributionType" class="select-css" >
+        <option value="IVA" <%= tarea.servicio.contributionType == "IVA" ? "selected" : null %>>IVA</option>
+        <option value="INGRESOS BRUTOS" <%= tarea.servicio.contributionType == "INGRESOS BRUTOS" ? "selected" : null %>>INGRESOS BRUTOS</option>
+        <option value="IMPUESTO A LAS GANANCIAS" <%= tarea.servicio.contributionType == "IMPUESTO A LAS GANANCIAS" ? "selected" : null %>>IMPUESTO A LAS GANANCIAS</option>
+        <option value="CONVENIO MULTILATERAL" <%= tarea.servicio.contributionType == "CONVENIO MULTILATERAL" ? "selected" : null %>>CONVENIO MULTILATERAL</option>
+        <option value="TASAS Y SERVICIOS" <%= tarea.servicio.contributionType == "TASAS Y SERVICIOS" ? "selected" : null %>>TASAS Y SERVICIOS</option>
+        <option value="CONVENIO MULTILATERAL" <%= tarea.servicio.contributionType == "CONVENIO MULTILATERAL" ? "selected" : null %>>CONVENIO MULTILATERAL</option>
+        <option value="RETENCIONES Y PERCEPCIONES" <%= tarea.servicio.contributionType == "RETENCIONES Y PERCEPCIONES" ? "selected" : null %>>RETENCIONES Y PERCEPCIONES</option>
+        <option value="MONOTRIBUTO" <%= tarea.servicio.contributionType == "MONOTRIBUTO" ? "selected" : null %>>MONOTRIBUTO</option>
+        <option value="SEGURIDAD SOCIAL" <%= tarea.servicio.contributionType == "SEGURIDAD SOCIAL" ? "selected" : null %>>SEGURIDAD SOCIAL</option>  
+        <option value="REGIMEN INFORMATIVOS" <%= tarea.servicio.contributionType == "REGIMEN INFORMATIVOS" ? "selected" : null %>>REGIMEN INFORMATIVOS</option>  
+        <option value="OTROS REGIMENES INFORMATIVOS" <%= tarea.servicio.contributionType == "OTROS REGIMENES INFORMATIVOS" ? "selected" : null %>>OTROS REGIMENES INFORMATIVOS</option> 
+      </select>
+
+      <label for="aplication">Ambito de Aplicacion</label>                          
+      <select id="rol" name="aplication" id="aplication" class="select-css" >
+        <option value="MUNICIPAL" <%= tarea.servicio.aplication == "MUNICIPAL" ? "selected" : null %>>MUNICIPAL</option>
+        <option value="PROVINCIAL" <%= tarea.servicio.aplication == "PROVINCIAL" ? "selected" : null %>>PROVINCIAL</option>
+        <option value="NACIONAL" <%= tarea.servicio.aplication == "NACIONAL" ? "selected" : null %>>NACIONAL</option>                    
+      </select>
+
+      <label for="province">Provincia</label>                          
+      <select id="rol" name="province" id="province" class="select-css" >
+        <option value="CORRIENTES" <%= tarea.servicio.province == "CORRIENTES" ? "selected" : null %>>CORRIENTES</option>
+        <option value="CHACO" <%= tarea.servicio.province == "CHACO" ? "selected" : null %>>CHACO</option>
+        <option value="MISIONES" <%= tarea.servicio.province == "MISIONES" ? "selected" : null %>>MISIONES</option>
+        <option value="BUENOS AIRES" <%= tarea.servicio.province == "BUENOS AIRES" ? "selected" : null %>> BUENOS AIRES</option>
+        <option value="CORDOBA" <%= tarea.servicio.province == "CORDOBA" ? "selected" : null %>>CORDOBA</option>
+        <option value="ENTRE RIOS" <%= tarea.servicio.province == "ENTRE RIOS" ? "selected" : null %>>ENTRE RIOS</option>
+        <option value="LA PAMPA" <%= tarea.servicio.province == "LA PAMPA" ? "selected" : null %>>LA PAMPA</option>
+        <option value="SALTA" <%= tarea.servicio.province == "SALTA" ? "selected" : null %>>SALTA</option>
+        <option value="SANTA FE" <%= tarea.servicio.province == "SANTA FE" ? "selected" : null %>>SANTA FE</option>
+        <option value="SANTIAGO DEL ESTERO" <%= tarea.servicio.province == "SANTIAGO DEL ESTERO" ? "selected" : null %>>SANTIAGO DEL ESTERO</option>
+        <option value="BUENOS AIRES" <%= tarea.servicio.province == "BUENOS AIRES" ? "selected" : null %>>BUENOS AIRES</option>
+        <option value="OTRAS" <%= tarea.servicio.province == "OTRAS" ? "selected" : null %>>OTRAS</option>
+      </select>
+
+      <label for="name">Tipo de Tarea</label>
+      <select id="name" name="name">
+          <option value="Armado de papeles de trabajo DDJJ Anuales" <%= tarea.name == "Armado de papeles de trabajo DDJJ Anuales" ? "selected" : null %>>Armado de papeles de trabajo DDJJ Anuales</option>
+          <option value="Atencion consultas -  email" <%= tarea.name == "Atencion consultas -  email" ? "selected" : null %>>Atencion consultas -  email </option>
+          <option value="Atencion consultas Telefonicas" <%= tarea.name == "Atencion consultas Telefonicas" ? "selected" : null %>>Atencion consultas Telefonicas </option>
+          <option value="Capacitación" <%= tarea.name == "Capacitación" ? "selected" : null %>>Capacitación</option>
+          <option value="Conciliación de Créditos Impositivos" <%= tarea.name == "Conciliación de Créditos Impositivos" ? "selected" : null %>>Conciliación de Créditos Impositivos</option>
+          <option value="Conciliación IVA Compras con Mis Comprobantes" <%= tarea.name == "Conciliación IVA Compras con Mis Comprobantes" ? "selected" : null %>>Conciliación IVA Compras con Mis Comprobantes</option>
+          <option value="Confección de DDJJ Anuales" <%= tarea.name== "Confección de DDJJ Anuales" ? "selected" : null %>>Confección de DDJJ Anuales</option>
+          <option value="Confección de DDJJ  - Presentación" <%= tarea.name == "Confección de DDJJ  - Presentación" ? "selected" : null %>>Confección de DDJJ  - Presentación</option>
+          <option value="Confección de DDJJ Libro IVA Digital" <%= tarea.name == "Confección de DDJJ Libro IVA Digital" ? "selected" : null %>>Confección de DDJJ Libro IVA Digital</option>
+          <option value="Confección y Envio de VEPs" <%= tarea.name == "Confección y Envio de VEPs" ? "selected" : null %>>Confección y Envio de VEPs</option>
+          <option value="Control Global Libros IVA Compras/Ventas" <%= tarea.name == "Control Global Libros IVA Compras/Ventas" ? "selected" : null %>>Control Global Libros IVA Compras/Ventas</option>
+          <option value="Descargo a Requerimientos" <%= tarea.name == "Descargo a Requerimientos" ? "selected" : null %>>Descargo a Requerimientos</option>
+          <option value="Fiscalizacion ACOR" <%= tarea.name == "Fiscalizacion ACOR" ? "selected" : null %>>Fiscalizacion ACOR</option>
+          <option value="Gestión ante Boletas de Deuda" <%= tarea.name == "Gestión ante Boletas de Deuda" ? "selected" : null %>>Gestión ante Boletas de Deuda</option>
+          <option value="Recategorizacion" <%= tarea.name == "Recategorizacion" ? "selected" : null %>>Recategorizacion</option>
+          <option value="Reunión con el Cliente" <%= tarea.name == "Reunión con el Cliente" ? "selected" : null %>>Reunión con el Cliente</option>
+          <option value="Revisión de normativa, leyes, etc" <%= tarea.name == "Revisión de normativa, leyes, etc" ? "selected" : null %>>Revisión de normativa, leyes, etc</option>
+          <option value="SIRADIG" <%= tarea.name == "SIRADIG" ? "selected" : null %>>SIRADIG</option>
+        
+      </select>
+
+      <% } %>
+      <% if (tarea.servicio.type == "Laboral") { %> 
+
+        <label for="name">Tipo de Tarea</label>
+        <select id="name" name="name">
+          <option value="Altas, Carga y Actualización de Legajos" <%= tarea.name == "Altas, Carga y Actualización de Legajos" ? "selected" : null %>>Altas, Carga y Actualización de Legajos</option>
+          <option value="Auditoría Laboral" <%= tarea.name == "Auditoría Laboral" ? "selected" : null %>>Auditoría Laboral</option>
+          <option value="Bajas-Presupuestos-Liquidaciones Finales" <%= tarea.name == "Bajas-Presupuestos-Liquidaciones Finales" ? "selected" : null %>>Bajas-Presupuestos-Liquidaciones Finales</option>
+          <option value="Calculo de Embargos" <%= tarea.name == "Calculo de Embargos" ? "selected" : null %>>Calculo de Embargos</option>
+          <option value="Cálculo Retenciones 4º" <%= tarea.name == "Cálculo Retenciones 4º" ? "selected" : null %>>Cálculo Retenciones 4º</option>
+          <option value="Certificaciones de Servicios" <%= tarea.name == "Certificaciones de Servicios" ? "selected" : null %>>Certificaciones de Servicios</option>
+          <option value="Confección del Centro de Costo" <%= tarea.name == "Confección del Centro de Costo" ? "selected" : null %>>Confección del Centro de Costo</option>
+          <option value="Confección del Control de Liquidación" <%= tarea.name == "Confección del Control de Liquidación" ? "selected" : null %>>Confección del Control de Liquidación</option>
+          <option value="Confeccion del LSD" <%= tarea.name == "Confeccion del LSD" ? "selected" : null %>>Confeccion del LSD</option>
+          <option value="Confección y Envio de Boletas Sindicales" <%= tarea.name == "Confección y Envio de Boletas Sindicales" ? "selected" : null %>>Confección y Envio de Boletas Sindicales</option>
+          <option value="Control y Carga de Novedades" <%= tarea.name == "Control y Carga de Novedades" ? "selected" : null %>>Control y Carga de Novedades</option>
+          <option value="DDJJ Conceptos No Remunerativos" <%= tarea.name == "DDJJ Conceptos No Remunerativos" ? "selected" : null %>>DDJJ Conceptos No Remunerativos</option>
+          <option value="DDJJ F.931-Conciliación DDJJ con Centro de Costos" <%= tarea.name == "DDJJ F.931-Conciliación DDJJ con Centro de Costos" ? selected : null %>>DDJJ F.931-Conciliación DDJJ con Centro de Costos</option>
+          <option value="Descargos a Requerimientos" <%= tarea.name == "Descargos a Requerimientos" ? "selected" : null %>>Descargos a Requerimientos</option>
+          <option value="Emision de Informes" <%= tarea.name == "Emision de Informes" ? "selected" : null %>>Emision de Informes</option>
+          <option value="Emisión de Recibos" <%= tarea.name == "Emisión de Recibos" ? "selected" : null %>>Emisión de Recibos</option>
+          <option value="Emision Libro Ley" <%= tarea.name == "Emision Libro Ley" ? "selected" : null %>>Emision Libro Ley</option>
+          <option value="Gestion de deudas sindicales" <%= tarea.name == "Gestion de deudas sindicales" ? "selected" : null %>>Gestion de deudas sindicales</option>
+          <option value="Liquidaciones de Sueldos" <%= tarea.name == "Liquidaciones de Sueldos" ? "selected" : null %>>Liquidaciones de Sueldos</option>
+          <option value="Requerimientos" <%= tarea.name == "Requerimientos" ? "selected" : null %>>Requerimientos</option>
+          <option value="Reunión con el Cliente" <%= tarea.name == "Reunión con el Cliente" ? "selected" : null %>>Reunión con el Cliente</option>
+          <option value="Revision-Ajustes Formulas y Parametrizacion Tango" <%= tarea.name == "Revision-Ajustes Formulas y Parametrizacion Tango" ? selected : null %>>Revision-Ajustes Formulas y Parametrizacion Tango</option>
+          <option value="Revison de Normativa, CCT y Escalas" <%= tarea.name == "Revison de Normativa, CCT y Escalas" ? "selected" : null %>>Revison de Normativa, CCT y Escalas</option>
+          <option value="Rubrica de Libro Sueldos" <%= tarea.name == "Rubrica de Libro Sueldos" ? "selected" : null %>>Rubrica de Libro Sueldos</option>
+          <option value="Servicio Domestico" <%= tarea.name == "Servicio Domestico" ? "selected" : null %>>Servicio Domestico</option>
+
+        </select>
+    
+    <% } %>
+
+    <% if (tarea.servicio.type == "Contabilidad") { %> 
+      <label for="name">Tipo de Tarea</label>
+      <select id="name" name="name">
+        <option value="Actas Societarias-Libros Obligatorios" <%= tarea.name == "Actas Societarias-Libros Obligatorios" ? "selected" : null %>>Actas Societarias-Libros Obligatorios</option>
+        <option value="Ajuste por Inflacion Contable" <%= tarea.name == "Ajuste por Inflacion Contable" ? "selected" : null %>>Ajuste por Inflacion Contable</option>
+        <option value="Apertura y Cierre de Ejercicios" <%= tarea.name == "Apertura y Cierre de Ejercicios" ? "selected" : null %>>Apertura y Cierre de Ejercicios</option>
+        <option value="Conciliaciones" <%= tarea.name == "Conciliaciones" ? "selected" : null %>>Conciliaciones</option>
+        <option value="Confección de EECC" <%= tarea.name == "Confección de EECC" ? "selected" : null %>>Confección de EECC</option>
+        <option value="Control Razonabilidad de Saldos" <%= tarea.name == "Control Razonabilidad de Saldos" ? "selected" : null %>>Control Razonabilidad de Saldos</option>
+        <option value="Otras Certificaciones CPCE" <%= tarea.name == "Otras Certificaciones CPCE" ? "selected" : null %>>Otras Certificaciones CPCE</option>
+        <option value="Registración de Ajustes" <%= tarea.name == "Registración de Ajustes" ? "selected" : null %>>Registración de Ajustes</option>
+        <option value="Registración de Devengamientos" <%= tarea.name == "Registración de Devengamientos" ? "selected" : null %>>Registración de Devengamientos</option>
+        <option value="Visitas de Auditoría" <%= tarea.name == "Visitas de Auditoría" ? "selected" : null %>>Visitas de Auditoría</option>
+      </select>
+
+      <% } %> 
+      
+      <% if (tarea.servicio.type == "Administración") { %> 
+        <label for="name">Tipo de Tarea</label>
+        <select id="name" name="name">
+          <option value="Alta - Sociedades Inscripciones" <%= tarea.name == "Alta - Sociedades Inscripciones" ? "selected" : null %>>Alta - Sociedades Inscripciones</option>
+          <option value="Archivo de Documentación" <%= tarea.name == "Archivo de Documentación" ? "selected" : null %>>Archivo de Documentación</option>
+          <option value="Carga de Comprobantes" <%= tarea.name == "Carga de Comprobantes" ? "selected" : null %>>Carga de Comprobantes</option>
+          <option value="Carpetas Bancarias" <%= tarea.name == "Carpetas Bancarias" ? "selected" : null %>>Carpetas Bancarias</option>
+          <option value="Confección de Flujo de Fondos" <%= tarea.name == "Confección de Flujo de Fondos" ? "selected" : null %>>Confección de Flujo de Fondos</option>
+          <option value="Confección de Ordenes de Pago" <%= tarea.name == "Confección de Ordenes de Pago" ? "selected" : null %>>Confección de Ordenes de Pago</option>
+          <option value="Confección de Planes de Pago" <%= tarea.name == "Confección de Planes de Pago" ? "selected" : null %>>Confección de Planes de Pago</option>
+          <option value="Control de Comprobantes" <%= tarea.name == "Control de Comprobantes" ? "selected" : null %>>Control de Comprobantes</option>
+          <option value="Control de Pagos-Informe deudas al Cliente (AFIP-DGR-ACOR)" <%= tarea.servicio.name == "Control de Pagos-Informe deudas al Cliente (AFIP-DGR-ACOR)" ? selected : null %>>Control de Pagos-Informe deudas al Cliente (AFIP-DGR-ACOR)</option>
+          <option value="Control de Posiciones Mensuales" <%= tarea.name == "Control de Posiciones Mensuales" ? "selected" : null %>>Control de Posiciones Mensuales</option>
+          <option value="Emisión Certificados de Retención AFIP-DGR" <%= tarea.name == "Emisión Certificados de Retención AFIP-DGR" ? "selected" : null %>>Emisión Certificados de Retención AFIP-DGR</option>
+          <option value="Memos-Control-Informe de Vencimientos al Cliente" <%= tarea.name == "Memos-Control-Informe de Vencimientos al Cliente" ? "selected" : null %>>Memos-Control-Informe de Vencimientos al Cliente</option>
+          <option value="Otros Trámites" <%= tarea.name == "Otros Trámites" ? "selected" : null %>>Otros Trámites</option>
+          <option value="Pagos de Cargas Sindicales" <%= tarea.name == "Pagos de Cargas Sindicales" ? "selected" : null %>>Pagos de Cargas Sindicales</option>
+          <option value="Planilla de Resúmenes de Tarjetas" <%= tarea.name == "Planilla de Resúmenes de Tarjetas" ? "selected" : null %>>Planilla de Resúmenes de Tarjetas</option>
+          <option value="Planilla Ventas con descuento" <%= tarea.name == "Planilla Ventas con descuento" ? "selected" : null %>>Planilla Ventas con descuento</option>
+          <option value="Retiro de Documentación" <%= tarea.name == "Retiro de Documentación" ? "selected" : null %>>Retiro de Documentación</option>
+          <option value="Reunión con el Clientes" <%= tarea.name == "Reunión con el Clientes" ? "selected" : null %>>Reunión con el Clientes</option>
+          <option value="Reunión del Area" <%= tarea.name == "Reunión del Area" ? "selected" : null %>>Reunión del Area</option>
+          <option value="Revision Sistema de Cuentas Tributarias-Compensaciones" <%= tarea.name == "Revision Sistema de Cuentas Tributarias-Compensaciones" ? "selected" : null %>>Revision Sistema de Cuentas Tributarias-Compensaciones</option>
+          <option value="Revision-Ajustes Formulas y Parametrizacion Tango" <%= tarea.name== "Revision-Ajustes Formulas y Parametrizacion Tango" ? "selected" : null %>>Revision-Ajustes Formulas y Parametrizacion Tango</option>
+          <option value="Seguimiento de Deudas (AFIP-RENTAS-MUNI)" <%= tarea.name == "Seguimiento de Deudas (AFIP-RENTAS-MUNI)" ? "selected" : null %>>Seguimiento de Deudas (AFIP-RENTAS-MUNI)</option>
+          <option value="Solicitud de Comprobantes" <%= tarea.name == "Solicitud de Comprobantes" ? "selected" : null %>>Solicitud de Comprobantes</option>
+          <option value="Solicitud Pyme" <%= tarea.name == "Solicitud Pyme" ? "selected" : null %>>Solicitud Pyme</option>
+
+        </select>
+  
+        <% } %> 
+      <label for="typeActivity">Actividad</label>                          
+      <select id="rol" name="typeActivity" id="typeActivity"  class="select-css" >
+        <option value="SERVICIO" <%= tarea.servicio.typeActivity == "SERVICIO" ? "selected" : null %>>SERVICIO</option>
+        <option value="AGROPECUARIA" <%= tarea.servicio.typeActivity == "AGROPECUARIA" ? "selected" : null %>>AGROPECUARIA</option>
+        <option value="CONTRUCCION" <%= tarea.servicio.typeActivity == "CONTRUCCION" ? "selected" : null %>>CONTRUCCION</option>
+        <option value="UNIPERSONAL" <%= tarea.servicio.typeActivity == "UNIPERSONAL" ? "selected" : null %>>UNIPERSONAL</option>
+        <option value="COMERCIAL" <%= tarea.servicio.typeActivity == "COMERCIAL" ? "selected" : null %>>COMERCIAL</option>                    
+      </select>
+
+      <label for="cliente">Cliente</label>
+      <input type="text" class="cliente" name="cliente" value="<%= tarea.cliente.name %>"> 
+
+      <label for="equipo">Equipo</label>
+      <input type="text" name="equipo" id="equipo" value="<%= tarea.team %> " readonly>
+      
+      <label for="records">Registros</label>                          
+      <select id="rol" name="records" id="records" class="select-css">
+        <option value="COMPROBANTES" <%= tarea.records == "COMPROBANTES" ? "selected" : null %>>COMPROBANTES</option>
+        <option value="LEGAJOS" <%= tarea.records == "LEGAJOS" ? "selected" : null %>>LEGAJOS</option>
+        <option value="RECIBOS" <%= tarea.records == "RECIBOS" ? "selected" : null %>>RECIBOS</option>
+        <option value="ASIENTOS" <%= tarea.records == "ASIENTOS" ? "selected" : null %>>ASIENTOS</option>
+        <option value="PLANES DE PAGOS" <%= tarea.records == "PLANES DE PAGOS" ? "selected" : null %>>PLANES DE PAGOS</option>
+        <option value="RESUMENES" <%= tarea.records == "RESUMENES" ? "selected" : null %>>RESUMENES</option>
+        <option value="BOLETAS" <%= tarea.records == "BOLETAS" ? "selected" : null %>>BOLETAS</option>
+        <option value="OTROS" <%= tarea.records == "OTROS" ? "selected" : null %>>OTROS</option>                    
+      </select>
+      <label for="recordsQuantity">Registros/Cantidad</label>                          
+      <select id="rol" name="recordsQuantity" id="recordsQuantity" class="select-css">
+        <option value="1 a 10" <%= tarea.recordsQuantity == "1 a 10" ? "selected" : null %>>1 a 10</option>
+        <option value="10 a 50" <%= tarea.recordsQuantity == "10 a 50" ? "selected" : null %>>10 a 50</option>
+        <option value="50 a 100" <%= tarea.recordsQuantity == "50 a 100" ? "selected" : null %>>10 a 100</option>
+        <option value="mas de 100" <%= tarea.recordsQuantity == "mas de 100" ? "selected" : null %>>mas de 100</option>                  
+      </select>
+
+      <section id="fecha">
+        <label for="fecha">Fecha:</label>
+        <input type="date" value="<%= tarea.date %>" readonly> 
+      </section> 
+
+      <label for="comment">Observaciones</label>
+      <textarea name="comment" id="comment" cols="30" rows="10" placeholder="<%= tarea.comment %>"></textarea>
+
+      <a href="panelTareas" class="btn-cancel">Cancelar</a> <input type="submit" class="btn-save" value="Cargar">
+    </form>
+  </div>
+</div>  
+
+</body>
+
+
+<script src="/resources/js/menulateral.js"></script>
+
+</html>

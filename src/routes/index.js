@@ -12,15 +12,14 @@ const loggedMiddleware = require('../middlewares/loggedMiddleware');
 //--- Rutas GET ---//
 router.get('/',notLoggedMiddleware, index);
 router.get('/login', loggedMiddleware, login);
-router.get('/register', loggedMiddleware, register);
+router.get('/register', register);
 router.get("/logout", logout);
 router.get('/users',notLoggedMiddleware, usersList);
 router.get('/servicios',notLoggedMiddleware, servicios);
 
 router.get('/detallePersonal',notLoggedMiddleware, detalleList);
 router.get('/detalleServicio',notLoggedMiddleware, detalleServ);
-
-router.get('/detalleCliente',/**notLoggedMiddleware, */ clientsList);
+router.get('/detalleCliente',notLoggedMiddleware,  clientsList);
 
 
 
@@ -29,7 +28,6 @@ router.get('/datosPersonales', notLoggedMiddleware, datosPersonales);
 router.get('/clientes', notLoggedMiddleware, clientes);
 router.get('/formServicios', notLoggedMiddleware, formServicios);
 router.get('/detallePersonal', notLoggedMiddleware, detallePersonal);
-// router.get('/detalleCliente', notLoggedMiddleware, detalleCliente);
 router.get('/detalleServicio', notLoggedMiddleware, detalleServicio);
 
 //--- Rutas POST ---//

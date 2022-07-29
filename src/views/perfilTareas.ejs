@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./includes/head") %> 
+    <title><%= tarea.name %></title>  
+  
+    <link href="/resources/css/menuLateral.css" rel="stylesheet">
+    <link href="/resources/css/showSI.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ab05c0d697.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="body">
+    
+<%- include("./includes/menu")%>
+
+<section class="perfil">
+    <article class="title">
+        <h2><%= tarea.name %></h2>
+    </article>
+    <article class="datos">
+        <input type="text" value="Tipo: <%= tarea.type %>" readonly>
+        <input type="text" value="Cliente: <%= tarea.cliente.businessName %>" readonly>
+        <input type="text" value="Servicio: <%= tarea.servicio.type %>" readonly>
+        <input type="text" value="Fecha: <%= tarea.date %>" readonly>
+        <input type="text" value="Equipo: <%= tarea.team %>" readonly>
+        <input type="text" value="registros: <%= tarea.records %>, cantidad: <%= tarea.recordsQuantity %>" readonly>
+        <input type="text" value="Tiempo: <%= tarea.totalTime %>" readonly>
+        <input type="text" value="Condición: <%= tarea.condition %> ">
+        <input type="textarea" value="Observaciones: <%= tarea.observations %>">
+    </article>
+    <article class="buttons">
+        <button class="edit"><a href="/tareas/editarTarea/<%= tarea.id %>"> Editar Tarea</a></button> 
+        <form action="/tareas/borrarTarea?m=DELETE" method="post" class="destroy">
+            <input type="hidden" name="id" id="id" value="<%= tarea.id %>">
+            <button type="submit">Eliminar Tarea</button>
+        </form>
+    </article>
+</section>
+</body>
+
+<script src="./resources/js/menulateral.js"></script>
+
+
+</html>

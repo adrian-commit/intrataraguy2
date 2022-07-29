@@ -16,6 +16,7 @@ body{
     width: 90%;
     max-height: 40vh;
     margin: auto;
+    margin-bottom: 400px;
     padding-top: 20px;
     display: flex;
     justify-content: space-around;
@@ -29,7 +30,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 5px;
+    gap: 15px;
 }
 
 .face img {
@@ -39,6 +40,10 @@ body{
 .datos {
     width: 60%;
     margin: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+     
 }
 
 .datos input {
@@ -52,7 +57,7 @@ body{
     width: 100%;
     padding: 10px 5px;
     background-color: white;
-    border: 0;
+    border: 1px solid rgb(53, 53, 53);
     cursor: pointer;
     font-weight: bold;
     font-size:medium;
@@ -68,6 +73,26 @@ body{
     color: black;
 }
 
+.editU{
+    width: 80%;
+    padding: 10px 5px;
+    background-color: white;
+    border: 1px solid rgb(53, 53, 53);
+    cursor: pointer;
+    font-weight: bold;
+    font-size:medium;
+    text-align: center;
+    /* Para dar la apariencia de un boton */
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;  
+}
+
+.editU a {
+    color: black;
+}
+
 .destroy {
     width: 100%;
 }
@@ -76,7 +101,7 @@ body{
     width: 100%;
     padding: 10px 5px;
     background-color: white;
-    border: 0;
+    border: 1px solid rgb(53, 53, 53);
     cursor: pointer;
     font-weight: bold;
     font-size:medium;
@@ -88,6 +113,40 @@ body{
     appearance: button;
     text-decoration: none;  
 }
+
+.register{
+    max-width: 40%;
+    margin: auto;
+}
+
+/* Estilos boton REGISTER*/
+.btn-register{
+    width: 100%;
+    padding: 15px;
+    background-color: #34D399;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: large;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+    /* Para dar la apariencia de un boton */
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;  
+  }
+  .btn-register:hover,.btn-register:active{
+    color:#fff;
+    background-color: #10B981;
+    border-color:#10B981
+  ;
+  }
+  .btn-register:focus{
+    box-shadow:0 0 0 3px #10B981;
+  }
 
 
 
